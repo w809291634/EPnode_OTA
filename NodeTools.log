@@ -1,19 +1,595 @@
 
-c�n�l`���n�l�l����n��|rls��n��|rl�nn��no�쒜��`��nn�쒜��`�c�nn�쒜��`�ph����p�n�|r�ccllll`b�����r��l�|: command not found.
 msh >sensor
 Version: V2.0.220331
 Sensor type: 504
 msh >
 msh >rf
-RF interface1 device: NULL
-RF Link: OFF
+RF interface1 device: LORA
+RF Link: ON
 RF RSSI: 0
+LoRa info:
+	Node ID: 54514
+	Net ID: 50
+	FP: 433
+	PV: 15
+	SF: 8
+	CR: 1
+	PS: 15
+	BW: 5
+	HOP: 0
+	HOP Tab: 431,435,431,435,431,435,431,435,431,435
 msh >
 msh >{A0=?,A1=?,A2=?,A5=?,A6=?,A7=?,D0=?,D1=?}
-{A0=0.00,A1=0.0,A2=432,A5=89,A6=0,A7=0,D0=255,D1=1}
+msh >{A0=0.00,A1=0.0,A2=438,A5=90,A6=0,A7=0,D0=255,D1=1}
+
+msh >{V0=?,V3=?}
+msh >{V0=30,V3=114.406319&30.462533}
+IAP update
+
+ \ | /
+- RT -     Thread Operating System
+ / | \     4.0.2 build Apr 18 2023
+ 2006 - 2020 Copyright by rt-thread team
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >LoRa link on! Delay 4270ms...
+
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >RF Link: ON
+{A0=0.00,A1=0.0,A2=438,A5=90,A6=0,A7=0,D1=1}
+
+msh >rf
+RF interface1 device: LORA
+RF Link: ON
+RF RSSI: 0
+LoRa info:
+	Node ID: 54514
+	Net ID: 50
+	FP: 433
+	PV: 15
+	SF: 8
+	CR: 1
+	PS: 15
+	BW: 5
+	HOP: 0
+	HOP Tab: 431,435,431,435,431,435,431,435,431,435
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+: command not found.
+msh >IAP update�
+ \ | /
+- RT -     Thread Operating System
+ / | \     4.0.2 build Apr 18 2023
+ 2006 - 2020 Copyright by rt-thread team
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >LoRa link on! Delay 4270ms...
+
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >RF Link: ON
+{A0=0.00,A1=0.0,A2=439,A5=90,A6=0,A7=0,D1=1}
+
+: command not found.
+msh >rf
+RF interface1 device: LORA
+RF Link: ON
+RF RSSI: 0
+LoRa info:
+	Node ID: 54514
+	Net ID: 50
+	FP: 433
+	PV: 15
+	SF: 8
+	CR: 1
+	PS: 15
+	BW: 5
+	HOP: 0
+	HOP Tab: 431,435,431,435,431,435,431,435,431,435
+msh >-_-
+ \ | /
+- RT -     Thread Operating System
+ / | \     4.0.2 build Apr 18 2023
+ 2006 - 2020 Copyright by rt-thread team
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >IAP update
+IAP: command not found.
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+: command not found.
+msh >-_-
+V1.2 > APP Mode Fixed
+msh >
+msh >sensor
+Version: V2.0.220331
+Sensor type: 504
+msh >
+msh >rf
+RF interface1 device: LORA
+RF Link: OFF
+RF RSSI: 0
+LoRa info:
+	Node ID: 54514
+	Net ID: 50
+	FP: 433
+	PV: 15
+	SF: 8
+	CR: 1
+	PS: 15
+	BW: 5
+	HOP: 0
+	HOP Tab: 431,435,431,435,431,435,431,435,431,435
+msh >
+msh >{A0=?,A1=?,A2=?,A5=?,A6=?,A7=?,D0=?,D1=?}
+{A0=0.00,A1=0.0,A2=439,A5=90,A6=0,A7=0,D0=255,D1=1}
 msh >
 msh >{V0=?,V3=?}
 {V0=30,V3=114.406319&30.462533}
+msh >RF Link: ON
+{A0=0.00,A1=0.0,A2=439,A5=90,A6=0,A7=0,D1=1}
+
+msh >rf
+RF interface1 device: LORA
+RF Link: ON
+RF RSSI: 0
+LoRa info:
+	Node ID: 54514
+	Net ID: 50
+	FP: 433
+	PV: 15
+	SF: 8
+	CR: 1
+	PS: 15
+	BW: 5
+	HOP: 0
+	HOP Tab: 431,435,431,435,431,435,431,435,431,435
+msh >-_-
+msh >
+ \ | /
+- RT -     Thread Operating System
+ / | \     4.0.2 build Apr 18 2023
+ 2006 - 2020 Copyright by rt-thread team
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >
+msh >{A0=0.00,A1=0.0,A2=441,A5=90,A6=0,A7=0,D1=1}
+
+: command not found.
 msh >-_-
 V1.2 > IAP app
 APP Mode Fixed
@@ -31,50 +607,12 @@ LoRa info:
 	Net ID: 50
 	FP: 433
 	PV: 15
-	SF: 8
-	CR: 1
-	PS: 15
-	BW: 5
+	SF: 0
+	CR: 0
+	PS: 0
+	BW: 0
 	HOP: 0
 	HOP Tab: 
 msh >
 msh >{A0=?,A1=?,A2=?,A5=?,A6=?,A7=?,D0=?,D1=?}
-msh >{A0=0.00,A1=0.0,A2=435,A5=90,A6=0,A7=0,D0=255,D1=1}
-LoRa link on! Delay 4270ms...
-
-msh >{V0=?,V3=?}
-{V0=30,V3=114.406319&30.462533}
-msh >RF Link: ON
-{A0=0.00,A1=0.0,A2=435,A5=89,A6=0,A7=0,D1=1}
-
-msh >rf
-RF interface1 device: LORA
-RF Link: ON
-RF RSSI: 0
-LoRa info:
-	Node ID: 54514
-	Net ID: 50
-	FP: 433
-	PV: 15
-	SF: 8
-	CR: 1
-	PS: 15
-	BW: 5
-	HOP: 0
-	HOP Tab: 431,435,431,435,431,435,431,435,431,435
-msh >{A0=0.00,A1=0.0,A2=432,A5=90,A6=0,A7=0,D1=1}
-
- \ | /
-- RT -     Thread Operating System
- / | \     4.0.2 build Apr 17 2023
- 2006 - 2020 Copyright by rt-thread team
-msh >
- \ | /
-- RT -     Thread Operating System
- / | \     4.0.2 build Apr 17 2023
- 2006 - 2020�
- \ | /
-- RT -     Thread Operating System
- / | \     4.0.2 build Apr 17 2023
- 2006 - 2020 Copyright by rt-thread team
-msh >
+msh >LoRa link on! Delay 4270ms...
