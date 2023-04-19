@@ -52,7 +52,7 @@ typedef struct{
 
 /* define the address from where user application will be loaded,
    the application address should be a start sector address */
-#define PARAMETER_ADDRESS     (uint32_t)0x0801FE00
+#define PARAMETER_ADDRESS     (uint32_t)0x0801FC00
 #define APPLICATION_ADDRESS   (uint32_t)0x08004000
 
 /* define the address from where IAP will be loaded, 0x08000000:BANK1 or 
