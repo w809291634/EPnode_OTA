@@ -13,7 +13,7 @@
 /*串口2通过17/18脚（RX-PA3/TX-PA2）连接RJ45口，串口3通过7/8脚（RX-PB11/TX-PB10）连接USB口*/
 /*需要使用透传节点的设备一般只连接了17/18脚*/
 #define TERM_UART_BAUD        38400
-#define USB_TEST  0
+#define USB_TEST  1
 #if USB_TEST==1
   #define TERM_UART           USART3
   #define TERM_UART_CLK_INIT  RCC_APB1PeriphClockCmd
