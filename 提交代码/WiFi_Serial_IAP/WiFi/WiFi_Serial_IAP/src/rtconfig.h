@@ -172,11 +172,10 @@
 
 #define BSP_USING_GPIO
 #define BSP_USING_UART
-//#define BSP_USING_UART3
+#define BSP_USING_UART3
 
 /* Board extended module Drivers */
-//#define RT_USING_UART3
+#define RT_USING_UART3
 
-#define CONFIG_AT_IAP
 
 #endif

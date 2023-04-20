@@ -65,14 +65,14 @@ static void sensor_process_tag(char *ptag, char *pval) {
   }
   else 
   {
-//#ifdef CONFIG_SENSOR_NODE
-//    if(sensor_fun_p.z_process_command_call(ptag, pval, buf) > 0) {
-//#else
-//    if(z_process_command_call(ptag, pval, buf) > 0) {
-//#endif
-//      if(strlen(ptag) == 3) ptag += 1;
-//      zxbeeAdd(ptag, buf);
-//    }
+#ifdef CONFIG_SENSOR_NODE
+    if(sensor_fun_p.z_process_command_call(ptag, pval, buf) > 0) {
+#else
+    if(z_process_command_call(ptag, pval, buf) > 0) {
+#endif
+      if(strlen(ptag) == 3) ptag += 1;
+      zxbeeAdd(ptag, buf);
+    }
   }
 }
 

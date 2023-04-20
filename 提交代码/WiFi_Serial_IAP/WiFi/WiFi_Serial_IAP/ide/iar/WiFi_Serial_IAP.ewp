@@ -176,7 +176,8 @@
           <state>__ICCARM__</state>
           <state>USE_STDPERIPH_DRIVER</state>
           <state>STM32F10X_MD</state>
-          <state>WIFI_SERIAL2</state>
+          <state>WIFI_SERIAL</state>
+          <state>CONFIG_AT_IAP</state>
         </option>
         <option>
           <name>CCPreprocFile</name>

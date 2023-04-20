@@ -49,12 +49,12 @@ void rf_if_run(void) {
           rt_kprintf("RF Link: OFF\n");
         } else {
           at_recv(recv);
-//#ifndef WIFI_SERIAL      /*终端节点*/
-//          if(recv[0]=='{' && recv[length-1]=='}') { //control类数据
-//            recv[length] = 0;
-//            zxbee_onrecv_fun(recv, length);
-//          }
-//#endif
+#ifndef WIFI_SERIAL      /*终端节点*/
+          if(recv[0]=='{' && recv[length-1]=='}') { //control类数据
+            recv[length] = 0;
+            zxbee_onrecv_fun(recv, length);
+          }
+#endif
         }
       }
     }
@@ -259,13 +259,13 @@ void rf_if_Link(void) {
             rf_if_NetStatus(SET);
             at_uart_send("+LINK:1\r\nOK\r\n");
             rt_kprintf("RF Link: ON\n");
-//            #ifndef WIFI_SERIAL      /*终端节点*/
-//              #ifdef CONFIG_SENSOR_NODE
-//              sensor_fun_p.sensorLinkOn();
-//              #else
-//              sensorLinkOn();
-//              #endif
-//            #endif
+            #ifndef WIFI_SERIAL      /*终端节点*/
+              #ifdef CONFIG_SENSOR_NODE
+              sensor_fun_p.sensorLinkOn();
+              #else
+              sensorLinkOn();
+              #endif
+            #endif
             break;
           } else if(strstr(recv, "error") != NULL) {
             rf_Link_On = 0;
