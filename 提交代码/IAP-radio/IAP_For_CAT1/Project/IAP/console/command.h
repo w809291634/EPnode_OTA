@@ -23,14 +23,11 @@ typedef struct user_data {
   uint16_t boot_mode;
   uint16_t app_en;
   uint32_t flag;
-  char mac[40];                 //模块mac
-  char wifi_ssid[40];           //wifi ssid
-  char wifi_key[20];            //wifi key
-  char zhiyun_id[40];           //id
+  char mac[24];                 //模块mac
+  char zhiyun_id[40];           //智云id
   char zhiyun_key[120];         //智云key
-  char ip[38];                  //智云IP
+  char ip[38];                  //连接IP
   uint16_t port;                //连接Port
-  uint16_t sensor_type;         // sensor_node类型
 }user_data_t;
 
 typedef struct user_command {
