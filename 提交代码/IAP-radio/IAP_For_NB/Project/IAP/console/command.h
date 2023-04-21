@@ -23,11 +23,12 @@ typedef struct user_data {
   uint16_t boot_mode;
   uint16_t app_en;
   uint32_t flag;
-  char mac[24];                 //模块mac
-  char zhiyun_id[40];           //智云id
-  char zhiyun_key[120];         //智云key
-  char ip[38];                  //连接IP
-  uint16_t port;                //连接Port
+  char id[40]; //ID
+  char key[120]; //KEY
+  char ip[64]; //
+  unsigned char nbandFlag;
+  int port;
+  int mode;
 }user_data_t;
 
 typedef struct user_command {
