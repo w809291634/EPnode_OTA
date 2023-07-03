@@ -1,1 +1,0 @@
-CC2530-Serial	- Plus节点ZigBee透传工程
