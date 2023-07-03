@@ -4,3 +4,5 @@ rtthread\zonesion\xLab\WiFi\*\ide\iar\settings
 contiki-3.0
 超级终端
 XBootF4 V1.1
+STM32F4 XBootF4 V1.1
+CC2530 IAP\zstack-2.4.0-1.4.0x
