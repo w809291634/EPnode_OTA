@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include "shell.h"
 
 /*定义数据类型*/
 typedef   signed          char int8_t;
@@ -36,24 +37,9 @@ typedef signed long long 		s64;
 
 #define CLKSPD  ( CLKCONCMD & 0x07 )    //getting the clock division factor
 
-/*********************************************************************************************
-* 名称：xtal_init
-* 功能：系统时钟初始化
-* 参数：无
-* 返回：无
-* 修改：
-* 注释：
-*********************************************************************************************/
+#define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
+void assert_failed(uint8_t* file, uint32_t line);
 void xtal_init(void);
-
-/*********************************************************************************************
-* 名称：delay_ms
-* 功能：延时函数，ms
-* 参数：t:延时时间
-* 返回：无
-* 修改：
-* 注释：
-*********************************************************************************************/
 void delay_ms(u16 t);
 
 #endif

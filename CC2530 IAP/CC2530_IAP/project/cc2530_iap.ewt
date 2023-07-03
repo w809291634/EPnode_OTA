@@ -33,7 +33,13 @@
   <group>
     <name>system</name>
     <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\soft_timer.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\source\system\sys\sys.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\time.c</name>
     </file>
   </group>
   <file>

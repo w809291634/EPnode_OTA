@@ -5,7 +5,7 @@ void xtal_init(void)
 {
   SLEEPCMD &= ~0x04;              //都上电
   while(!(CLKCONSTA & 0x40));     //晶体振荡器开启且稳定
-  CLKCONCMD &= ~0x47;             //选择32MHz晶体振荡器
+  CLKCONCMD &= ~0x7F;             //选择32MHz晶体振荡器 并将TICKSPD设置为000
   SLEEPCMD |= 0x04;
 }
 
@@ -33,5 +33,17 @@ void delay_ms(u16 t)
   while(t--)
   {
     halWait(1);
+  }
+}
+
+void assert_failed(uint8_t* file, uint32_t line)
+{ 
+  /* User can add his own implementation to report the file name and line number,
+  ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  printk("\r\nWrong parameters value: file %s on line %d\r\n", file, line);
+  
+  /* Infinite loop */
+  while (1)
+  {
   }
 }

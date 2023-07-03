@@ -466,6 +466,7 @@
           <state>$PROJ_DIR$\..\source\shell</state>
           <state>$PROJ_DIR$\..\source\drive\uart</state>
           <state>$PROJ_DIR$\..\source\system\sys</state>
+          <state>$PROJ_DIR$\..\source\system\soft_timer</state>
           <state>$PROJ_DIR$\..\..\CC2530_CONFIG</state>
         </option>
         <option>
@@ -741,7 +742,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>rfid_unlock_exp.d51</state>
+          <state>cc2530_iap.d51</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -1110,7 +1111,13 @@
   <group>
     <name>system</name>
     <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\soft_timer.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\source\system\sys\sys.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\time.c</name>
     </file>
   </group>
   <file>

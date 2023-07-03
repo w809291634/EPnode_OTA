@@ -1,19 +1,15 @@
 #ifndef __SOFT_TIMER_H__
 #define __SOFT_TIMER_H__
 #include "sys.h"
-#include "stm32f4xx_conf.h"
 #include "stdio.h"
 
 /*****************************************************
 * 已使用定时器ID
 ******************************************************/
-#define ESP32_TIMEOUT_TIMER_ID    0
-#define LED_APP_TIMER_ID          1
+#define LED_APP_TIMER_ID          0
 
 
-
-
-#define TEST_TIMER_ID             9
+#define TEST_TIMER_ID             4
 
 typedef void TIMER_CALLBACK(void);
  
