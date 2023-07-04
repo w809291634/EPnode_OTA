@@ -1,4 +1,6 @@
 #include "sys.h"
+#include "soft_timer.h"
+#include "time.h"
 
 // 功能：系统时钟初始化
 void xtal_init(void)
@@ -34,6 +36,19 @@ void delay_ms(u16 t)
   {
     halWait(1);
   }
+}
+
+//获取系统的运行时间，单位ms
+uint32_t millis(void)
+{
+  return (tickCnt_Get()*(1000/TICK_PER_SECOND));
+}
+
+// 毫秒延时
+void hw_ms_delay(unsigned int ms)
+{
+  uint32_t start_ms= tickCnt_Get();
+  while(tickCnt_Get()- start_ms <ms);
 }
 
 void assert_failed(uint8_t* file, uint32_t line)

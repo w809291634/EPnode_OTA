@@ -12,6 +12,8 @@
 
 extern shellinput_t shell_1;
 extern unsigned char usart0_mode;
+
+int usart0_getchar(uint8_t* data);
 void shell_app_cycle(void);
 void shell_hw_init(double baud);
 void Uart0_Send_char(unsigned char ch);

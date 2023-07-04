@@ -110,6 +110,17 @@ static unsigned short UART_GetRemain(void) {
   return remain_length;
 }
 
+// 从缓存区读取一个字节
+// 注意：数据处理结果和shell_app_cycle只能选择其一
+int usart0_getchar(uint8_t* data)
+{
+  if(Write_Index!=Read_Index){
+    *data=shell_ringbuf[Read_Index];
+    Read_Index = (Read_Index+1)% USART0_RINGBUF_SIZE;   // 读取索引加1
+    return 1;
+  }else return 0;
+}
+
 // shell控制台获取输入数据
 void shell_app_cycle(void)
 {
@@ -153,4 +164,10 @@ __interrupt void uart0_RxInt(void)
     Write_Index = Write_Index % USART0_RINGBUF_SIZE;
     URX0IF = 0;
 	}
+}
+
+__near_func int putchar(int c)
+{
+    Uart0_Send_char(c);
+    return(c);
 }

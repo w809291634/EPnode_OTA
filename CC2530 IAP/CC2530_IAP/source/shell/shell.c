@@ -512,7 +512,7 @@ static void shell_clean_screen(void * arg)
 {
 	struct shell_input * shellin ; 
 	shellin = container_of(arg, struct shell_input, cmdline);
-	printk("\033[2J\033[%d;%dH%s",0,0,shellin->sign);
+	printk("\033[2J\033[%d;%dH%s",(long)0,(long)0,shellin->sign);
 	return ;
 }
 

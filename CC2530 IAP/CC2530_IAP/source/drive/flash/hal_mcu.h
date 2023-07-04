@@ -163,7 +163,7 @@ typedef unsigned char halIntState_t;
 /* CLKCONCMD bit definitions */
 #define OSC              BV(6)
 #define TICKSPD(x)       (x << 3)
-#define CLKSPD(x)        (x << 0)
+//#define CLKSPD(x)        (x << 0)
 #define CLKCONCMD_32MHZ  (0)
 #define CLKCONCMD_16MHZ  (CLKSPD(1) | TICKSPD(1) | OSC)
 

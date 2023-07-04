@@ -12,11 +12,29 @@
   <group>
     <name>drive</name>
     <file>
+      <name>$PROJ_DIR$\..\source\drive\flash\hal_dma.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\drive\flash\hal_flash.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\drive\led\led.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\source\drive\uart\uart.c</name>
     </file>
   </group>
   <group>
     <name>iap</name>
+    <file>
+      <name>$PROJ_DIR$\..\source\iap\app_start.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\iap\download.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\iap\ymodem.c</name>
+    </file>
   </group>
   <group>
     <name>shell</name>

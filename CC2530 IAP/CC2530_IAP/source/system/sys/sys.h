@@ -41,5 +41,6 @@ typedef signed long long 		s64;
 void assert_failed(uint8_t* file, uint32_t line);
 void xtal_init(void);
 void delay_ms(u16 t);
-
+uint32_t millis(void);
+void hw_ms_delay(unsigned int ms);
 #endif

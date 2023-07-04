@@ -25,36 +25,29 @@ typedef  void (*pFunction)(void);
 #define APP_OK      0x4D
 #define APP_ERR     0xFF
 
-#define FLAG_OK     0xDA
-#define FLAG_NOK    0xFF
+#define BOOT_PARTITION_START_ADDR         CC2530_FLASH_BASE     // bootloader 分区大小为36KB        
+#define BOOT_PARTITION_END_ADDR           (PARA_PARTITION_START_ADDR-1)  
+#define PARA_PARTITION_START_ADDR         (0xA000)              // 参数分区起始地址
+#define PARA_PARTITION_SIZE               (0x1000)              // 参数分区大小4KB
+#define APP1_PARTITION_START_ADDR         (PARA_PARTITION_START_ADDR+PARA_PARTITION_SIZE)                 // APP分区起始地址
+#define APP1_PARTITION_END_ADDR           CC2530_FLASH_END
+#define APP1_PARTITION_SIZE               (CC2530_FLASH_SIZE-CC2530_FLASH_BASE-APP1_PARTITION_START_ADDR) 
 
-#define BOOTLOADER_START_ADDR             ADDR_FLASH_SECTOR_0             // BOOT区域地址(64 Kbytes )
-#define SYS_PARAMETER_START_ADDR          ADDR_FLASH_SECTOR_4             // 参数区域地址(64 Kbytes )
-#define APP1_START_ADDR                   ADDR_FLASH_SECTOR_5             // APP区域1(384 Kbytes ) 可以当做工厂分区，不允许轻易覆盖这个分区
-#define APP1_END_ADDR                     (ADDR_FLASH_SECTOR_8-1)
-#define APP1_SIZE                         (ADDR_FLASH_SECTOR_8-ADDR_FLASH_SECTOR_5)
+// 计算上传镜像(没有使用)
+#define FLASH_IMAGE_SIZE                 (uint32_t) (CC2530_FLASH_SIZE - (APP1_PARTITION_START_ADDR - CC2530_FLASH_BASE)) // 没有适配
 
-#define APP2_START_ADDR                   ADDR_FLASH_SECTOR_8             // APP区域2(512 Kbytes )
-#define APP2_END_ADDR                     ADDR_FLASH_SECTOR_11_END
-#define APP2_SIZE                         (ADDR_FLASH_SECTOR_11_END+1 -ADDR_FLASH_SECTOR_8)
-
-// 计算上传镜像 
-#define FLASH_IMAGE_SIZE                 (uint32_t) (STM32_FLASH_SIZE - (APP1_START_ADDR - 0x08000000)) // 没有适配
-
-/** 参数区域定义 **/
-#define SYS_PARAMETER_END_ADDR            (ADDR_FLASH_SECTOR_5-1)
-#define SYS_PARAMETER_PART_SIZE           ((APP1_START_ADDR-SYS_PARAMETER_START_ADDR)/4)              // 参数分区容量 单位：字
-#define SYS_PARAMETER_SIZE                (sizeof(sys_parameter)/4+((sizeof(sys_parameter)%4)?1:0))   // 多少个字
-#define SYS_PARAMETER_READ                {STMFLASH_Read(SYS_PARAMETER_START_ADDR,\
-                                            (uint32_t*)&sys_parameter,SYS_PARAMETER_SIZE);}
-#define SYS_PARAMETER_WRITE               STMFLASH_Write(SYS_PARAMETER_START_ADDR,\
-                                            (uint32_t*)&sys_parameter,SYS_PARAMETER_SIZE)
+/** 参数定义 **/
+#define SYS_PARAMETER_SIZE                (sizeof(sys_parameter)/4+((sizeof(sys_parameter)%4)?1:0))     // 多少个字
+#define SYS_PARAMETER_READ                {FlashRead(PARA_PARTITION_START_ADDR,\
+                                            (uint8_t*)&sys_parameter,sizeof(sys_parameter));}
+#define SYS_PARAMETER_WRITE               FlashWrite(PARA_PARTITION_START_ADDR,\
+                                            (uint8_t*)&sys_parameter,SYS_PARAMETER_SIZE)
 
 /** FLASH地址 **/
 // 起始地址和大小
-#define STM32_FLASH_BASE        0x08000000 	        //STM32 FLASH的起始地址
-#define STM32_FLASH_SIZE        (0x100000)          /* 1 MByte */
-#define STM32_FLASH_END         (STM32_FLASH_BASE+STM32_FLASH_SIZE-1)
+#define CC2530_FLASH_BASE        (0x0000) 	        // cc2530 FLASH的起始地址
+#define CC2530_FLASH_SIZE        (0x40000)          /* 256KB */
+#define CC2530_FLASH_END         (CC2530_FLASH_BASE+CC2530_FLASH_SIZE-1)
 
 /** debug 层控制 **/
 // 0xff 显示所有层的信息

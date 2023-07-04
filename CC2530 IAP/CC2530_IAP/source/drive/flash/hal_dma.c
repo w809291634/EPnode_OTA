@@ -45,7 +45,7 @@
 #include "hal_defs.h"
 #include "hal_dma.h"
 #include "hal_mcu.h"
-#include "hal_uart.h"
+//#include "hal_uart.h"
 
 #if (defined HAL_IRGEN) && (HAL_IRGEN == TRUE)
 #include "hal_irgen.h"

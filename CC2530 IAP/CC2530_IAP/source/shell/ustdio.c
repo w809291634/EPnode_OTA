@@ -109,15 +109,15 @@ int _write(int file, char *ptr, int len)
 	* @param    type      格式化，如左右对齐，左边是否填充 0
 	* @return   转换所得字符串长度
 */	
-static char *number(char *str, long num,int base, int size, int precision,
-                    int type)
+static char *number(char *str, long num,long base, long size, long precision,
+                    long type)
 {
 	/* we are called with base 8, 10 or 16, only, thus don't need "G..." */
 	static const char digits[16] = "0123456789ABCDEF"; /* "GHIJKLMNOPQRSTUVWXYZ"; */
 	unsigned long unum ;
 	char tmp[66];
 	char sign, locase,padding;
-	int chgsize;
+	long chgsize;
 
 	/* locase = 0 or 0x20. ORing digits or letters with 'locase'
 	 * produces same digits or (maybe lowercased) letters */
@@ -154,7 +154,7 @@ static char *number(char *str, long num,int base, int size, int precision,
 	}
 
 	chgsize = 0;
-	unum = (unsigned)num;
+	unum = (unsigned long)num;
 	do {
 		tmp[chgsize] = (digits[unum % base] | locase) ;
 		++chgsize;
@@ -211,12 +211,12 @@ static char *number(char *str, long num,int base, int size, int precision,
 	* @param    type      格式化，如左右对齐，左边是否填充 0
 	* @return   转换所得字符串长度
 */	
-static char * float2string(char *str,float num, int size, int precision,int type)
+static char * float2string(char *str,float num, long size, long precision,long type)
 {
 	char tmp[66];
 	char sign,padding;
-	int chgsize;
-	unsigned int ipart ;
+	long chgsize;
+	unsigned long ipart ;
 
 	if (type & LEFT)
 		type &= ~ZEROPAD;
@@ -235,14 +235,14 @@ static char * float2string(char *str,float num, int size, int precision,int type
 		sign = 0;
 
 	chgsize = 0;
-	ipart = (unsigned int)num; // 整数部分
+	ipart = (unsigned long)num; // 整数部分
 
 	if (precision) {           // 如果有小数转换，则提取小数部分
 		static const float mulf[7] = {
 			1.0f,10.0f,100.0f,1000.0f,10000.0f,100000.0f,1000000.0f};
-		unsigned int fpart = (unsigned int)((num - (float)ipart) * mulf[precision]) ;
+		unsigned long fpart = (unsigned long)((num - (float)ipart) * mulf[precision]) ;
 		
-		for(int i = 0 ; i < precision ; ++i) { 
+		for(long i = 0 ; i < precision ; ++i) { 
 			tmp[chgsize++] = (char)(fpart % 10 + '0');
 			fpart /= 10;
 		}
@@ -287,6 +287,8 @@ static char * float2string(char *str,float num, int size, int precision,int type
   * @param    fmt     要格式化的信息字符串指针
   * @param    ...     不定参
   * @return   void
+注意：这个函数是STM32的适配函数，CC2530适配上会有些问题。
+注意：int %d 整型中只支持long型，不要使用int型，宽度不一致会出现打印错误。
 */
 void printk(const char* fmt, ...) 
 {
@@ -294,14 +296,14 @@ void printk(const char* fmt, ...)
 		return ;
 
 	char tmp[88] ;      // 此段内存仅用于缓存数字转换成的字符串
-	char * substr;
+	char * substr=0;
 	unsigned long num;
-	int len , base;
-	int flags;          /* flags to number() */
-	int field_width;    /* width of output field */
-	int precision;      /* min. # of digits for integers; max
+	long len , base;
+	long flags;          /* flags to number() */
+	long field_width;    /* width of output field */
+	long precision;      /* min. # of digits for integers; max
                            number of chars for from string */
-	int qualifier;      /* 'h', 'l', or 'L' for integer fields */
+	long qualifier;      /* 'h', 'l', or 'L' for integer fields */
 
 	char * fmthead = (char *)fmt;
 	char * fmtout = fmthead;
@@ -372,7 +374,7 @@ void printk(const char* fmt, ...)
 				case 'c':
 					if (!(flags & LEFT))
 						for ( ; --field_width > 0 ; *str++ = ' '); // 右对齐，补全左边的空格
-					*str++ = (char)va_arg(args, int);
+					*str++ = (char)va_arg(args, long);
 					for ( ; --field_width > 0 ; *str++ = ' ') ;    // 左对齐，补全右边的空格
 					current_puts(tmp,str-tmp);
 					fmthead = fmtout + 1;
@@ -447,7 +449,7 @@ void printk(const char* fmt, ...)
 			if (qualifier == 'l')
 				num = va_arg(args, unsigned long);
 			else 
-				num = va_arg(args, int);
+				num = va_arg(args, long);
 
 			str = number(tmp, num, base, field_width, precision, flags);
 			current_puts(tmp,str-tmp);
