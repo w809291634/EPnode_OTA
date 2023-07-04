@@ -242,18 +242,14 @@ const uint8 TEXT_Buffer[]={"This a FLASH TEST Program"};
 // start_add: 起始地址(此地址必须为4的倍数!!) 
 // end_add：结束地址
 // HalFlash_test(0x10000,CC2530_FLASH_END); 可以进行测试
-#define ONLY_READ
 void HalFlash_test(uint32 start_add,uint32 end_add)
 {
   static char count=0;
   char datatemp[TEXT_LENTH+1]={0};
-  while(start_add < end_add && (start_add+SIZE*4-1)<=CC2530_FLASH_END && count==0){
+  while(count==0  && (start_add+SIZE*4-1)<=CC2530_FLASH_END && count==0){
     memset(datatemp,0,TEXT_LENTH+1);
-#ifdef ONLY_READ
-    FlashRead(start_add,(uint8*)datatemp,SIZE*4);
-    debug_info(INFO"FlashRead Success,start_add:0x%08x str:%s\r\n",start_add,datatemp);
-#else
     long write_len=FlashWrite(start_add,(uint8*)TEXT_Buffer,SIZE);
+    // hw_ms_delay(100);
     FlashRead(start_add,(uint8*)datatemp,SIZE*4);
     if(memcmp(datatemp,TEXT_Buffer,TEXT_LENTH)==0){
       debug_info(INFO"FlashRead Success,start_add:0x%08x writelen:%d str:%s\r\n",start_add,write_len,datatemp);
@@ -262,7 +258,6 @@ void HalFlash_test(uint32 start_add,uint32 end_add)
       debug_err(ERR"Read_test error! str:%s\r\n",datatemp);
       count=1;
     } 
-#endif
     start_add+=SIZE*4;
   }
   count=1;

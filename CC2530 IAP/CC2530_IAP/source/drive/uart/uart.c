@@ -144,10 +144,12 @@ void shell_app_cycle(void)
    
     /* 数据处理 */
     char object[3]={0};
-    object[0]=0x1B; object[1]='[';
+    object[0]=0x1B; //object[1]='['; 
     if(strstr(temp,object)){
       // 防止数据不全导致错误
-      if(strlen(temp)>2) SHELL_DATA_PROCESS
+      delay_ms(2);
+      if(strlen(temp)>2) 
+        SHELL_DATA_PROCESS
     }
     else SHELL_DATA_PROCESS
   }

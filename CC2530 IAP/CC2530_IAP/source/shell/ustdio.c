@@ -289,6 +289,7 @@ static char * float2string(char *str,float num, long size, long precision,long t
   * @return   void
 注意：这个函数是STM32的适配函数，CC2530适配上会有些问题。
 注意：int %d 整型中只支持long型，不要使用int型，宽度不一致会出现打印错误。
+注意：没有进行shell_init初始化，这里无效，之前使用printf函数
 */
 void printk(const char* fmt, ...) 
 {

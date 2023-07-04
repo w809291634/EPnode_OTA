@@ -9,11 +9,7 @@
 void SoftReset(void* arg)
 { 
   (void)arg;
-  HAL_DISABLE_INTERRUPTS();
-  // Abort all DMA channels to insure that ongoing operations do not
-  // interfere with re-configuration.
-  DMAARM = 0x80 | 0x1F;
-  asm("LJMP 0x0");
+  HAL_SYSTEM_RESET();
 }
 
 // Æô¶¯ IAP Ä£Ê½
@@ -30,7 +26,8 @@ void __IAP(void * arg)
     download_part=1;
   }else if(strstr(argv[1],"exit")){
     sys_parameter.current_part=1;
-    write_sys_parameter();  
+    write_sys_parameter(); 
+    HAL_SYSTEM_RESET();
   }else{
     debug_info(INFO"please input %s [<update> or <exit> ] \r\n",IAP_CMD);
   }

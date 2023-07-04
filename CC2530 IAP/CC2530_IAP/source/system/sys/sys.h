@@ -13,6 +13,7 @@
 #include <string.h>
 #include <math.h>
 #include "shell.h"
+#include "hal_mcu.h"
 
 /*定义数据类型*/
 typedef   signed          char int8_t;
@@ -39,6 +40,7 @@ typedef signed long long 		s64;
 
 #define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
 void assert_failed(uint8_t* file, uint32_t line);
+void vddWait(uint8 vdd);
 void xtal_init(void);
 void delay_ms(u16 t);
 uint32_t millis(void);

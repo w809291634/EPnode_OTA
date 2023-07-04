@@ -3,12 +3,26 @@
 #include "time.h"
 
 // 功能：系统时钟初始化
+// 不建议使用
 void xtal_init(void)
 {
   SLEEPCMD &= ~0x04;              //都上电
   while(!(CLKCONSTA & 0x40));     //晶体振荡器开启且稳定
   CLKCONCMD &= ~0x7F;             //选择32MHz晶体振荡器 并将TICKSPD设置为000
-  SLEEPCMD |= 0x04;
+  SLEEPCMD &= ~0x03;
+}
+
+// 等待电压
+void vddWait(uint8 vdd)
+{
+  uint8 cnt = 16;
+
+  do {
+    do {
+      ADCCON3 = 0x0F;
+      while (!(ADCCON1 & 0x80));
+    } while (ADCH < vdd);
+  } while (--cnt);
 }
 
 //功能：延时函数，ms

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
@@ -28,7 +29,7 @@
         </option>
         <option>
           <name>GoToEnable</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>GoToName</name>
@@ -194,7 +195,7 @@
         </option>
         <option>
           <name>ChipconEraseFlash</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>ChipconRetainMemory</name>
@@ -264,7 +265,7 @@
         </option>
         <option>
           <name>ChipconRetainPages</name>
-          <state></state>
+          <state>21,22</state>
         </option>
         <option>
           <name>ChipconFlashPages</name>
@@ -659,3 +660,5 @@
     </debuggerPlugins>
   </configuration>
 </project>
+
+

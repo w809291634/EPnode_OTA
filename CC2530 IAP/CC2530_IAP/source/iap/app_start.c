@@ -37,22 +37,41 @@ void JumpToApp(uint32_t app_addr)
   }
 }
 
+typedef void (*AppStartFunction)(void);
+// 跳转到指定地址运行
+void JumpToApp1(uint32_t app_addr)
+{
+  // 关闭中断
+  EA = 0;
+
+  // 定义函数指针，并将其设置为APP分区的起始地址
+  AppStartFunction appStart = (AppStartFunction)(app_addr);
+
+  // 执行跳转到APP分区
+  appStart();
+
+  /* 跳转成功的话，不会执行到这里，用户可以在这里添加代码 */
+  while (1)
+  {
+  }
+}
+
 // 启动app系统分区
 void start_app_partition(uint8_t partition)
 {
   switch(partition){
     case 1:{
       if(sys_parameter.app1_flag==APP_OK){
-        printk(INFO"Starting partition 1!\r\n");
-        printk(INFO"Next automatic start partition 1!\r\n");
-        JumpToApp(APP1_PARTITION_START_ADDR);
+        printf(INFO"Starting partition 1!\r\n");
+        printf(INFO"Next automatic start partition 1!\r\n");
+        JumpToApp1(APP1_PARTITION_START_ADDR);
       }else{
-        printk(INFO"Starting partition 1 fail!\r\n");
+        printf(INFO"Starting partition 1 fail!\r\n");
       }
     }break;
     case 0xff:break;
     default:{
-      printk(INFO"partition %d not assigned!\r\n",partition);
+      printf(INFO"partition %d not assigned!\r\n",partition);
     }break;
   }
 }

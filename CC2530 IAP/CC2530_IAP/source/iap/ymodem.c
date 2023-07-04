@@ -345,7 +345,7 @@ int32_t Ymodem_Receive (uint32_t partition_start ,uint32_t partition_size,uint32
                     }
 
                     /* 擦除需要的flash部分 */
-                    uint8 spage = (addrx >> 11) & 0xFFFFF;    // 除以2048得到页码
+                    uint8 spage = (addrx >> 11) & 0xFFFFF;        // 除以2048得到页码
                     uint8 epage = (end_addr >> 11) & 0xFFFFF;     // 除以2048得到页码
                     if(epage > HAL_FLASH_MAX_PAGE){
                       debug_err(ERR"Get_Page error! epage:%d\r\n",epage);

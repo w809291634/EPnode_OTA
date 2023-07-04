@@ -11,6 +11,7 @@
 #include "hal_dma.h"
 #include "download.h"
 #include "app_start.h"
+#include "hal_board_cfg.h"
 
 // 系统参数保存区域
 sys_parameter_t sys_parameter ;
@@ -19,17 +20,17 @@ sys_parameter_t sys_parameter ;
 static void system_init()
 {
   /* 初始化系统基本硬件 */
-  xtal_init();                                        // 系统时钟初始化
-  PREFETCH_ENABLE();
+  HAL_BOARD_INIT();                                   // 系统时钟初始化
+  vddWait(VDD_MIN_RUN);                               // 等待芯片的供电电压（VDD）达到指定的电压值
   HalDmaInit();                                       // 用于flash的读写
   shell_hw_init(38400);											          // 初始化 控制台串口硬件
   /* 判断启动 APP 程序 */
-//  SYS_PARAMETER_READ;
-//  
-//  FlashRead(PARA_PARTITION_START_ADDR,(uint8_t*)&sys_parameter,sizeof(sys_parameter));
-//  start_app_partition(sys_parameter.current_part);
-//  
- 
+  SYS_PARAMETER_READ;
+  
+  FlashRead(PARA_PARTITION_START_ADDR,(uint8_t*)&sys_parameter,sizeof(sys_parameter));
+  printf("current_part:%d\r\n",sys_parameter.current_part);
+  printf("app1_flag:0x%02x\r\n",sys_parameter.app1_flag);
+  start_app_partition(sys_parameter.current_part);
   
   /* 启动 boot程序和控制台 */
   shell_init("shell >" ,Uart0_Send_LenString);        // 初始化 控制台输出
@@ -44,7 +45,6 @@ static void system_init()
 // 硬件初始化
 static void hardware_init(void)
 {
-  
   time1Int_init(1000);        // 1ms
   led_init();
 }
@@ -53,12 +53,9 @@ static void hardware_init(void)
 static void app_init()
 {
   register_user_cmd();
-  led_app_init();
-  
-
+  led_app_init(); 
 }
 
-static char data1[2];
 // 主程序
 void main(void)
 {	
@@ -67,14 +64,6 @@ void main(void)
   app_init();                         // 应用初始化
   while(1)
   {
-//    SYS_PARAMETER_READ;
-//    hw_ms_delay(1000);
-//    printk("0x%x 0x%x\r\n",(long)sys_parameter.current_part,(long)sys_parameter.app1_flag);
-//    FlashRead(PARA_PARTITION_START_ADDR, (uint8_t*)&data1,2);
-//    printf("0x%x 0x%x\r\n",data1[0],data1[1]);
-    
-    HalFlash_test(0x10000,CC2530_FLASH_END);
-  
     softTimer_Update();               // 软件定时器
     if(usart0_mode==0)                // 串口数据走向
       shell_app_cycle();

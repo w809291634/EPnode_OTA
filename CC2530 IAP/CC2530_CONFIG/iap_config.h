@@ -27,7 +27,7 @@ typedef  void (*pFunction)(void);
 
 #define BOOT_PARTITION_START_ADDR         CC2530_FLASH_BASE     // bootloader 分区大小为36KB        
 #define BOOT_PARTITION_END_ADDR           (PARA_PARTITION_START_ADDR-1)  
-#define PARA_PARTITION_START_ADDR         (0xA000)              // 参数分区起始地址
+#define PARA_PARTITION_START_ADDR         (0xA000)              // 参数分区起始地址,这里页为20,21
 #define PARA_PARTITION_SIZE               (0x1000)              // 参数分区大小4KB
 #define APP1_PARTITION_START_ADDR         (PARA_PARTITION_START_ADDR+PARA_PARTITION_SIZE)                 // APP分区起始地址
 #define APP1_PARTITION_END_ADDR           CC2530_FLASH_END
