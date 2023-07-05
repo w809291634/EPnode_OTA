@@ -3,11 +3,7 @@
 // 复位外设寄存器
 static void peripheral_reset(void)
 {
-  U0CSR = 0;
-  URX0IE = 0;
-  URX0IF = 0;
-  IEN2 &= ~0x04;  
-  UTX0IF = 0;
+
 }
 
 // 复位中断控制器
@@ -62,8 +58,8 @@ void flash_jump_to_app()
   P0SEL = 0;
   U0CSR = 0;
   T2CTRL = 0;
-  asm("LJMP 0xc000\n");
-  HAL_SYSTEM_RESET();
+  asm("LJMP 0xc000");  
+//  HAL_SYSTEM_RESET();
   while(1){};
 }
 
