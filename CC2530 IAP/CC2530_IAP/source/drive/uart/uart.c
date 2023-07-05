@@ -168,6 +168,7 @@ __interrupt void uart0_RxInt(void)
 	}
 }
 
+// ÊÊÅäprintfº¯Êı
 __near_func int putchar(int c)
 {
     Uart0_Send_char(c);

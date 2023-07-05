@@ -113,10 +113,6 @@ void HalFlashWrite(uint16 addr, uint8 *buf, uint16 cnt);
  **************************************************************************************************
  */
 void HalFlashErase(uint8 pg);
-void HalFlash_test(uint32 start_add,uint32 end_add);
-uint16 FlashWrite(uint32 WriteAddr, uint8 *buf, uint16 NumToWrite);
-uint16 FlashRead(uint32 address, uint8 *buffer, uint16 NumToRead);
-void write_sys_parameter();
 #ifdef __cplusplus
 };
 #endif

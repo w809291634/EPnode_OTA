@@ -7,7 +7,7 @@
 #include "iap_config.h"
 #include "time.h"
 #include "soft_timer.h"
-#include "hal_flash.h"
+#include "flash.h"
 #include "hal_dma.h"
 #include "download.h"
 #include "app_start.h"

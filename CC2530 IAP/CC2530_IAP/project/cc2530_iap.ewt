@@ -12,16 +12,22 @@
   <group>
     <name>drive</name>
     <file>
-      <name>$PROJ_DIR$\..\source\drive\flash\hal_dma.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\source\drive\flash\hal_flash.c</name>
+      <name>$PROJ_DIR$\..\source\drive\flash\flash.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\source\drive\led\led.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\source\drive\uart\uart.c</name>
+    </file>
+  </group>
+  <group>
+    <name>hal_drive</name>
+    <file>
+      <name>$PROJ_DIR$\..\source\hal_drive\hal_dma.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\hal_drive\hal_flash.c</name>
     </file>
   </group>
   <group>

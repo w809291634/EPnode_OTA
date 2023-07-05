@@ -3,6 +3,7 @@
 #include "ymodem.h"
 #include "uart.h"
 #include "hal_flash.h"
+#include "flash.h"
 
 extern uint8_t file_name[FILE_NAME_LENGTH];
 uint8_t download_part;

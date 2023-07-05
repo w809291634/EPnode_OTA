@@ -25,10 +25,10 @@ typedef  void (*pFunction)(void);
 #define APP_OK      0x4D
 #define APP_ERR     0xFF
 
-#define BOOT_PARTITION_START_ADDR         CC2530_FLASH_BASE     // bootloader 分区大小为36KB        
-#define BOOT_PARTITION_END_ADDR           (PARA_PARTITION_START_ADDR-1)  
-#define PARA_PARTITION_START_ADDR         (0xA000)              // 参数分区起始地址,这里页为20,21
-#define PARA_PARTITION_SIZE               (0x1000)              // 参数分区大小4KB
+#define BOOT_PARTITION_START_ADDR         CC2530_FLASH_BASE      
+#define BOOT_PARTITION_END_ADDR           (PARA_PARTITION_START_ADDR-1)  // bootloader 分区大小为46KB       
+#define PARA_PARTITION_START_ADDR         (0xB800)              // 参数分区起始地址
+#define PARA_PARTITION_SIZE               (0x800)               // 参数分区大小2KB
 #define APP1_PARTITION_START_ADDR         (PARA_PARTITION_START_ADDR+PARA_PARTITION_SIZE)                 // APP分区起始地址
 #define APP1_PARTITION_END_ADDR           CC2530_FLASH_END
 #define APP1_PARTITION_SIZE               (CC2530_FLASH_SIZE-CC2530_FLASH_BASE-APP1_PARTITION_START_ADDR) 
@@ -62,31 +62,31 @@ typedef  void (*pFunction)(void);
 #define INFO "INFORMATION:"
 
 #if (DEBUG & 0x01)
-#define debug printk
+#define debug printf
 #else
 #define debug(...)
 #endif
 
 #if (DEBUG & 0x02)
-#define debug_err printk
+#define debug_err printf
 #else
 #define debug_err(...)
 #endif
 
 #if (DEBUG & 0x04)
-#define debug_war printk
+#define debug_war printf
 #else
 #define debug_war(...)
 #endif
 
 #if (DEBUG & 0x08)
-#define debug_info printk
+#define debug_info printf
 #else
 #define debug_info(...)
 #endif
 
 #if (DEBUG & 0x10)
-#define debug_at printk
+#define debug_at printf
 #else
 #define debug_at(...)
 #endif

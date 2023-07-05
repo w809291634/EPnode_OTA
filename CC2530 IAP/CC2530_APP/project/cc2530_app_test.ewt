@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <configuration>
+    <name>Release</name>
+    <toolchain>
+      <name>8051</name>
+    </toolchain>
+    <debug>1</debug>
+  </configuration>
+  <group>
+    <name>drive</name>
+    <file>
+      <name>$PROJ_DIR$\..\source\drive\led\led.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\drive\uart\uart.c</name>
+    </file>
+  </group>
+  <group>
+    <name>hal_drive</name>
+    <file>
+      <name>$PROJ_DIR$\..\source\hal_drive\hal_dma.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\hal_drive\hal_flash.c</name>
+    </file>
+  </group>
+  <group>
+    <name>system</name>
+    <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\soft_timer.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\system\sys\sys.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\system\soft_timer\time.c</name>
+    </file>
+  </group>
+  <file>
+    <name>$PROJ_DIR$\..\..\CC2530_CONFIG\iap_config.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\lnk51ew_cc2530F256_banked.xcl</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\source\main.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\readme.txt</name>
+  </file>
+</project>
+
+

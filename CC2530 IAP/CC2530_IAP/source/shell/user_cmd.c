@@ -4,6 +4,7 @@
 #include "iap_config.h"
 #include "sys.h"
 #include "hal_flash.h"
+#include "flash.h"
 #include "download.h"
 
 void SoftReset(void* arg)
@@ -18,7 +19,7 @@ void __IAP(void * arg)
   char * argv[2];
   int argc =cmdline_strtok((char*)arg,argv,2);
   if(argc<2){
-    debug_info(INFO"please input %s [<update> or <exit> ] \r\n",IAP_CMD);
+    debug_info(INFO"please input %s [<update> or <exit>] \r\n",IAP_CMD);
     return;
   }
   if(strstr(argv[1],"update")){
@@ -29,7 +30,7 @@ void __IAP(void * arg)
     write_sys_parameter(); 
     HAL_SYSTEM_RESET();
   }else{
-    debug_info(INFO"please input %s [<update> or <exit> ] \r\n",IAP_CMD);
+    debug_info(INFO"please input %s [<update> or <exit>] \r\n",IAP_CMD);
   }
 }
 

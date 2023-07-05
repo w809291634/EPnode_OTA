@@ -30,6 +30,7 @@
 #include "string.h"
 #include "iap_config.h"
 #include "uart.h"
+#include "flash.h"
 #include "hal_flash.h"
 
 /* Private typedef -----------------------------------------------------------*/

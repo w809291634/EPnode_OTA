@@ -2,6 +2,7 @@
 #define __APP_START_H__
 #include "iap_config.h"
 #include "sys.h"
+#include "flash.h"
 
 void nvic_reset(void) ;
 void reset_peripheral_register(void);

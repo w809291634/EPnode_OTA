@@ -3,7 +3,11 @@
 // 复位外设寄存器
 static void peripheral_reset(void)
 {
-
+  U0CSR = 0;
+  URX0IE = 0;
+  URX0IF = 0;
+  IEN2 &= ~0x04;  
+  UTX0IF = 0;
 }
 
 // 复位中断控制器
@@ -19,13 +23,10 @@ static void NVIC_Reset(void)
 }
 
 // 跳转到指定地址运行
-void JumpToApp(uint32_t app_addr)
+void JumpToApp(uint32_t JumpAddress)
 {
   pFunction Jump_To_Application; 
-  uint32_t JumpAddress;	
-  
-  /* Jump to user application */
-//  JumpAddress = *(volatile uint32_t*)(app_addr + 4);
+
   Jump_To_Application = (pFunction) JumpAddress;
   
   /* Initialize user application's Stack Pointer */
@@ -56,6 +57,28 @@ void JumpToApp1(uint32_t app_addr)
   }
 }
 
+void flash_jump_to_app()
+{
+  P0SEL = 0;
+  U0CSR = 0;
+  T2CTRL = 0;
+  asm("LJMP 0xc000\n");
+  HAL_SYSTEM_RESET();
+  while(1){};
+}
+
+typedef void (*FunctionPtr)(void);
+void StartAppPartition(uint32_t app_addr)
+{
+    FunctionPtr app_start = (FunctionPtr)app_addr;
+    
+    // 使用占位符和约束引入外部参数
+//    asm("LJMP %0" : : "m" (*app_start));
+}
+
+
+
+
 // 启动app系统分区
 void start_app_partition(uint8_t partition)
 {
@@ -64,7 +87,8 @@ void start_app_partition(uint8_t partition)
       if(sys_parameter.app1_flag==APP_OK){
         printf(INFO"Starting partition 1!\r\n");
         printf(INFO"Next automatic start partition 1!\r\n");
-        JumpToApp1(APP1_PARTITION_START_ADDR);
+//        JumpToApp1(APP1_PARTITION_START_ADDR);
+        flash_jump_to_app();
       }else{
         printf(INFO"Starting partition 1 fail!\r\n");
       }
