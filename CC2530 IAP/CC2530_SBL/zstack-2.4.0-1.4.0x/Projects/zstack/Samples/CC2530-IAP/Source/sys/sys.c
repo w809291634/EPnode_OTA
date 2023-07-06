@@ -18,6 +18,12 @@ void led_init(void)
     LED1 = 1;
 }
 
+void key_led_uninit(void)
+{
+    P1SEL &= ~0x03;          
+    P1DIR |= 0x03;        
+}
+
 // LEDµÄAPP
 void led_app(void)
 {

@@ -3,7 +3,7 @@
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
-    <name>sensor-eh</name>
+    <name>sensor-b</name>
     <toolchain>
       <name>8051</name>
     </toolchain>
@@ -114,15 +114,15 @@
         </option>
         <option>
           <name>ExePath</name>
-          <state>sensor-eh\Exe</state>
+          <state>sensor-b\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>sensor-eh\Obj</state>
+          <state>sensor-b\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>sensor-eh\List</state>
+          <state>sensor-b\List</state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -303,7 +303,6 @@
           <state>REFLECTOR</state>
           <state>NV_INIT</state>
           <state>XLAB</state>
-          <state>MAKE_CRC_SHDW</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -742,7 +741,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>"$PROJ_DIR$\..\..\..\Tools\CC2530DB\oad.exe" "$PROJ_DIR$\sensor-eh\Exe\sensor-eh.sim" "$PROJ_DIR$\sensor-eh\Exe\sensor-eh.bin"</postbuild>
+        <postbuild></postbuild>
       </data>
     </settings>
     <settings>
@@ -762,7 +761,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>sensor-eh.d51</state>
+          <state>sensor-b.d51</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -828,7 +827,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$PROJ_DIR$\cc2530-sb.xcl</state>
+          <state>$PROJ_DIR$\..\..\..\Tools\CC2530DB\f8w2530.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -948,11 +947,11 @@
         </option>
         <option>
           <name>AllowExtraOutput</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>GenerateExtraOutput</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>XExtraOutOverride</name>
@@ -960,7 +959,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state>sensor-eh.sim</state>
+          <state>sensor-b.sim</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
@@ -1117,13 +1116,25 @@
   <group>
     <name>App</name>
     <file>
-      <name>$PROJ_DIR$\..\Source\motor.c</name>
+      <name>$PROJ_DIR$\..\Source\beep.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\delay.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\fan.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\led.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\readme.txt</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\rfid900M.c</name>
+      <name>$PROJ_DIR$\..\Source\relay.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\rgb.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\sensor.c</name>
@@ -1132,7 +1143,10 @@
       <name>$PROJ_DIR$\..\Source\sensor.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\uart0.c</name>
+      <name>$PROJ_DIR$\..\Source\stepmotor.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\timer.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\UserAt.c</name>
@@ -1145,9 +1159,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\common\at-uart.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\common\at-uart.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\common\at.c</name>
@@ -1714,9 +1725,6 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
-  <file>
-    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
-  </file>
 </project>
 
 

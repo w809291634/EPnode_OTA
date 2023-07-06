@@ -3,7 +3,7 @@
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
-    <name>sensor-c</name>
+    <name>sensor-b</name>
     <toolchain>
       <name>8051</name>
     </toolchain>
@@ -12,19 +12,16 @@
   <group>
     <name>App</name>
     <file>
-      <name>$PROJ_DIR$\..\Source\Flame.c</name>
+      <name>$PROJ_DIR$\..\Source\beep.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\grating.c</name>
+      <name>$PROJ_DIR$\..\Source\delay.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\hall.c</name>
+      <name>$PROJ_DIR$\..\Source\fan.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\infrared.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\MP-4.c</name>
+      <name>$PROJ_DIR$\..\Source\led.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\readme.txt</name>
@@ -33,22 +30,22 @@
       <name>$PROJ_DIR$\..\Source\relay.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Source\rgb.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\sensor.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\sensor.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\syn6288.c</name>
+      <name>$PROJ_DIR$\..\Source\stepmotor.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\Touch.c</name>
+      <name>$PROJ_DIR$\..\Source\timer.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\UserAt.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\vibration.c</name>
     </file>
   </group>
   <group>
@@ -624,9 +621,6 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
-  <file>
-    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
-  </file>
 </project>
 
 

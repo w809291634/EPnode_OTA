@@ -12,13 +12,22 @@
   <group>
     <name>App</name>
     <file>
+      <name>$PROJ_DIR$\..\Source\motor.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\readme.txt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\rfid900M.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\sensor.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\sensor.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\uart0.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\UserAt.c</name>
@@ -600,6 +609,9 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
+  </file>
 </project>
 
 

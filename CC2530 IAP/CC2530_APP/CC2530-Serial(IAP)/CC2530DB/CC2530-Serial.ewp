@@ -3,7 +3,7 @@
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
-    <name>sensor-eh</name>
+    <name>CC2530-Serial</name>
     <toolchain>
       <name>8051</name>
     </toolchain>
@@ -114,15 +114,15 @@
         </option>
         <option>
           <name>ExePath</name>
-          <state>sensor-eh\Exe</state>
+          <state>CC2530-Serial\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>sensor-eh\Obj</state>
+          <state>CC2530-Serial\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>sensor-eh\List</state>
+          <state>CC2530-Serial\List</state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -303,6 +303,7 @@
           <state>REFLECTOR</state>
           <state>NV_INIT</state>
           <state>XLAB</state>
+          <state>CC2530_Serial</state>
           <state>MAKE_CRC_SHDW</state>
         </option>
         <option>
@@ -742,7 +743,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>"$PROJ_DIR$\..\..\..\Tools\CC2530DB\oad.exe" "$PROJ_DIR$\sensor-eh\Exe\sensor-eh.sim" "$PROJ_DIR$\sensor-eh\Exe\sensor-eh.bin"</postbuild>
+        <postbuild>"$PROJ_DIR$\..\..\..\Tools\CC2530DB\oad.exe" "$PROJ_DIR$\CC2530-Serial\Exe\CC2530-Serial.sim" "$PROJ_DIR$\CC2530-Serial\Exe\CC2530-Serial.bin"</postbuild>
       </data>
     </settings>
     <settings>
@@ -762,7 +763,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>sensor-eh.d51</state>
+          <state>CC2530-Serial.d51</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -960,7 +961,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state>sensor-eh.sim</state>
+          <state>CC2530-Serial.sim</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
@@ -1117,22 +1118,10 @@
   <group>
     <name>App</name>
     <file>
-      <name>$PROJ_DIR$\..\Source\motor.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\readme.txt</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\rfid900M.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\sensor.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Source\sensor.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\uart0.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\UserAt.c</name>

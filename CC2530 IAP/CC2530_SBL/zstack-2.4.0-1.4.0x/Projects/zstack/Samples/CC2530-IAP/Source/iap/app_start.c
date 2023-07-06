@@ -6,12 +6,12 @@
 static void resetPeripheral() 
 {
   // ¸´Î»GPIO
-  P0 = 0x00;
-  P1 = 0x00;
-  P2 = 0x00;
-  P0DIR = 0xFF;
-  P1DIR = 0xFF;
-  P2DIR = 0xFF;
+//  P0 = 0x00;
+//  P1 = 0x00;
+//  P2 = 0x00;
+//  P0DIR = 0xFF;
+//  P1DIR = 0xFF;
+//  P2DIR = 0xFF;
   // ¸´Î»´®¿Ú
   HalUARTUnInitISR();
 }
