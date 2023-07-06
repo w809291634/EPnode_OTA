@@ -627,6 +627,9 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
+  </file>
 </project>
 
 
