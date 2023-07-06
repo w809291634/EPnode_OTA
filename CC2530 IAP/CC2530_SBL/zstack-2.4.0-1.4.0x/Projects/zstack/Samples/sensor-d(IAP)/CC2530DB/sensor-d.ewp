@@ -303,6 +303,7 @@
           <state>REFLECTOR</state>
           <state>NV_INIT</state>
           <state>XLAB</state>
+          <state>MAKE_CRC_SHDW</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -741,7 +742,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild></postbuild>
+        <postbuild>"$PROJ_DIR$\..\..\..\Tools\CC2530DB\oad.exe" "$PROJ_DIR$\sensor-d\Exe\sensor-d.sim" "$PROJ_DIR$\sensor-d\Exe\sensor-d.bin"</postbuild>
       </data>
     </settings>
     <settings>
@@ -827,7 +828,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$PROJ_DIR$\..\..\..\Tools\CC2530DB\f8w2530.xcl</state>
+          <state>$PROJ_DIR$\cc2530-sb.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -947,11 +948,11 @@
         </option>
         <option>
           <name>AllowExtraOutput</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>GenerateExtraOutput</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>XExtraOutOverride</name>
@@ -1722,6 +1723,9 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
+  </file>
 </project>
 
 

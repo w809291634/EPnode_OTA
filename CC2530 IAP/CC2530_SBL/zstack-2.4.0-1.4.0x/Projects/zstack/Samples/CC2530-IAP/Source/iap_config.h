@@ -15,7 +15,7 @@
 #define HAL_SB_IMG_ADDR       0x2000
 #define HAL_SB_CRC_ADDR       0x2090
 // Size of internal flash less 4 pages for boot loader, 6 pages for NV, & 1 page for lock bits.
-#define HAL_SB_IMG_SIZE      (0x40000 - 0x2000 - 0x3000 - 0x0800)
+#define HAL_SB_IMG_SIZE      (0x40000 - 0x2000 - 0x3000 - 0x0800)   
 
 /** 系统参数类型 **/
 typedef struct{
@@ -39,12 +39,12 @@ extern sys_parameter_t sys_parameter;
 #define BOOT_PARTITION_START_ADDR         CC2530_FLASH_BASE      
 #define BOOT_PARTITION_END_ADDR           (PARA_PARTITION_START_ADDR-1)  // bootloader 分区大小为18KB       
 #define PARA_PARTITION_START_ADDR         (0x4800)              // 参数分区起始地址
-#define PARA_PARTITION_PAGE               (9)                   // 参数分区所在页,页大小2KB
+#define PARA_PARTITION_PAGE               (9)                   // 参数分区所在页
 #define PARA_PARTITION_SIZE               (0x800)               // 参数分区大小2KB
 
 #define APP1_PARTITION_START_ADDR         (long)(0x5000)       // APP分区起始地址
-// Size of internal flash less 4 pages for boot loader, 6 pages for NV, & 1 page for lock bits.
-#define APP1_PARTITION_SIZE               (long)(CC2530_FLASH_SIZE - APP1_PARTITION_START_ADDR - 0x3000 - 0x0800) 
+// Size of internal flash less 4 pages for boot loader, 6 pages for NV(12KB), & 1 page for lock bits(2KB).
+#define APP1_PARTITION_SIZE               (long)(CC2530_FLASH_SIZE - APP1_PARTITION_START_ADDR - 0x3000 - 0x0800)     // 222KB
 
 // 计算上传镜像(没有使用)
 #define FLASH_IMAGE_SIZE                 (uint32_t) (CC2530_FLASH_SIZE - (APP1_PARTITION_START_ADDR - CC2530_FLASH_BASE)) // 没有适配

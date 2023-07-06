@@ -72,8 +72,8 @@
  * ------------------------------------------------------------------------------------------------
  */
 
-#define SB1_PRESS  (P1_2 != 0)
-#define SB2_PRESS  (P1_3 != 0)
+#define SB1_PRESS  (P0_1 != 0)
+#define SB2_PRESS  (P2_0 != 0)
 
 #if HAL_LED
 #define SB_TURN_OFF_LED1()  HAL_TURN_OFF_LED1()

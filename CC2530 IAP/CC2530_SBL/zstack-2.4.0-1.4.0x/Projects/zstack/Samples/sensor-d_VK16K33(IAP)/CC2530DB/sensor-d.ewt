@@ -42,6 +42,9 @@
       <name>$PROJ_DIR$\..\Source\UserAt.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Source\vk16k33.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\zlg7290.c</name>
     </file>
   </group>
@@ -618,6 +621,9 @@
       <name>$PROJ_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\cc2530-sb.xcl</name>
+  </file>
 </project>
 
 
