@@ -88,7 +88,7 @@
     </file>
   </group>
   <file>
-    <name>$PROJ_DIR$\..\Source\iap_config.h</name>
+    <name>$PROJ_DIR$\..\..\common\iap_config.h</name>
   </file>
   <file>
     <name>$PROJ_DIR$\..\Source\main.c</name>

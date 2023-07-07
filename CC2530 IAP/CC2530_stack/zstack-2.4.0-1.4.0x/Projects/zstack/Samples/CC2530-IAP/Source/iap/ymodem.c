@@ -34,6 +34,7 @@
 
 uint8_t file_name[FILE_NAME_LENGTH];
 uint8_t packet_data[PACKET_1K_SIZE + PACKET_OVERHEAD];
+static uint8_t tcp_valid=0;
 
 /**
   * @brief  Receive byte from sender,阻塞式运行
@@ -199,6 +200,8 @@ static int32_t Receive_Packet (uint8_t *data, int32_t *length, uint32_t timeout)
   uint16_t i, packet_size;
   uint8_t c;
   *length = 0;
+  const char tcp_flag[6]={0xFF,0xFD,0x00,0xFF,0xFB,0x00};
+
   if (Receive_Byte(&c, timeout) != 0)
   {
     return -1;
@@ -227,16 +230,31 @@ static int32_t Receive_Packet (uint8_t *data, int32_t *length, uint32_t timeout)
     case ABORT1:  // 用户终止按键
     case ABORT2:
       return 1;
+    /** 清除掉标志位 **/
+    case YMODEM_TCP:
+      *data = c;
+      // 接收 "FF FD 00 FF FB 00" 标志位
+      for(i=1;i<6;i++){
+        if (Receive_Byte(data + i, timeout)!= 0) return -1;
+      }
+      if(strstr((char*)data,tcp_flag)) tcp_valid = 1;
+      return -1;
     default:
       return -1;
   }
   // 接收一个包
   *data = c;
-  for (i = 1; i < (packet_size + PACKET_OVERHEAD); i ++)
+  for (int ff_flag = 0,i = 1; i < (packet_size + PACKET_OVERHEAD); i ++)
   {
-    if (Receive_Byte(data + i, timeout) != 0)
-    {
-      return -1;
+    if (Receive_Byte(data + i, timeout) != 0) return -1;
+    /** 清除掉多余的 FF **/
+    if(tcp_valid != 1) continue;
+    if(ff_flag == 1 && *(data+i) == 0xFF){
+      i-=1;
+      ff_flag = 0;
+    }else{
+      if(*(data+i) == 0xFF) ff_flag =1;
+      else ff_flag =0;
     }
   }
   // 帧序号取反
@@ -267,11 +285,12 @@ int32_t Ymodem_Receive (uint32_t partition_start ,uint32_t partition_size,uint32
   uint8_t file_size[FILE_SIZE_LENGTH], *file_ptr;
   int32_t i, packet_length, session_done, file_done, packets_received, errors, session_begin, size = 0;
   uint32_t times=0;
-
+  tcp_valid = 0;
+  
   /* 初始化写flash的地址 */
   uint32_t FlashDestination = partition_start; 
   uint32_t partition_end = FlashDestination+partition_size;  // 加1
-
+  
   for (session_done = 0, errors = 0, session_begin = 0; ;)
   {
     /* 开始接收数据包,阻塞访问 */

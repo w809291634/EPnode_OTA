@@ -47,14 +47,14 @@ extern sys_parameter_t sys_parameter;
 #define APP1_PARTITION_SIZE               (long)(CC2530_FLASH_SIZE - APP1_PARTITION_START_ADDR - 0x3000 - 0x0800)     // 222KB
 
 // 计算上传镜像(没有使用)
-#define FLASH_IMAGE_SIZE                 (uint32_t) (CC2530_FLASH_SIZE - (APP1_PARTITION_START_ADDR - CC2530_FLASH_BASE)) // 没有适配
+#define FLASH_IMAGE_SIZE                 (uint32) (CC2530_FLASH_SIZE - (APP1_PARTITION_START_ADDR - CC2530_FLASH_BASE)) // 没有适配
 
 /** 参数定义 **/
 #define SYS_PARAMETER_WORDSIZE                (sizeof(sys_parameter)/4+((sizeof(sys_parameter)%4)?1:0))     // 多少个字
 #define SYS_PARAMETER_READ                {HalFlashRead(PARA_PARTITION_PAGE,0,\
-                                            (uint8_t*)&sys_parameter,sizeof(sys_parameter));}
+                                            (uint8*)&sys_parameter,sizeof(sys_parameter));}
 #define SYS_PARAMETER_WRITE               {HalFlashWrite(PARA_PARTITION_START_ADDR/4,\
-                                            (uint8_t*)&sys_parameter,SYS_PARAMETER_WORDSIZE);}
+                                            (uint8*)&sys_parameter,SYS_PARAMETER_WORDSIZE);}
 /** debug 层控制 **/
 // 0xff 显示所有层的信息
 // 0x00 所有层的信息都不显示

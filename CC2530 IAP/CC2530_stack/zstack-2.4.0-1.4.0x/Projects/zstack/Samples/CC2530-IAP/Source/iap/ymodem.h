@@ -45,12 +45,13 @@
 #define ACK                     (0x06)  /* acknowledge */
 #define NAK                     (0x15)  /* negative acknowledge */
 #define CA                      (0x18)  /* two of these in succession aborts transfer */
+#define YMODEM_TCP              (0xFF)
 #define CRC16                   (0x43)  /* 'C' == 0x43, request 16-bit CRC */
 
 #define ABORT1                  (0x41)  /* 'A' == 0x41, abort by user */
 #define ABORT2                  (0x61)  /* 'a' == 0x61, abort by user */
 
-#define NAK_TIMEOUT             (0x3000)
+#define NAK_TIMEOUT             (0x10000)
 #define MAX_ERRORS              (5)
 
 /* Exported macro ------------------------------------------------------------*/

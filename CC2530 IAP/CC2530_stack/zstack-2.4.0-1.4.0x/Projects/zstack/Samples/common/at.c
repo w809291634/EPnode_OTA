@@ -20,6 +20,11 @@
 #include "at.h"
 #include "AppCommon.h"
 #include "at-uart.h"
+#include "hal_flash.h"
+#include "iap_config.h"
+#include "hal_types.h"
+#include "hal_mcu.h"
+
 /*********************************************************************************************
 * 宏定义
 *********************************************************************************************/
@@ -35,6 +40,7 @@ static int at_recvdata = 0;
 static char atbuff[AT_BUFF_NUM][AT_BUFF_SIZE];                  //AT指令接收缓存
 static char bufferbit = 0;
 static char *pAtCommand = NULL;                                 // 存放接收到的at指令或数据
+sys_parameter_t sys_parameter;
 /*********************************************************************************************
 * 函数原型说明
 *********************************************************************************************/
@@ -331,6 +337,28 @@ void at_proc(void)
         at_response(ATERROR);
       }
     }
+#ifdef CC2530_USE_IAP 
+    else if (memcmp(p_msg, "AT+IAP=", 7) == 0) {
+      char* p=p_msg+7;
+      if(strstr(p,"IAP")){
+        SYS_PARAMETER_READ;
+        sys_parameter.current_part=0xff;
+        HalFlashErase(PARA_PARTITION_PAGE);
+        SYS_PARAMETER_WRITE;
+        at_response(ATOK);
+        HAL_SYSTEM_RESET();
+      }else if(strstr(p,"APP")){
+        SYS_PARAMETER_READ;
+        sys_parameter.current_part=0x01;
+        HalFlashErase(PARA_PARTITION_PAGE);
+        SYS_PARAMETER_WRITE;
+        at_response(ATOK);
+      }
+      else {
+        at_response(ATERROR);
+      }
+    }
+#endif  
     else {
       if (user_at_proc(p_msg)<0) {
         at_response(ATERROR);

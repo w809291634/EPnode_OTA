@@ -150,6 +150,7 @@ void zb_HandleOsalEvent( uint16 event )
 #endif
 #ifdef CC2530_Serial
      WatchDogEnable( WDTIMX );
+     
 #endif        
     osal_start_timerEx( sapi_TaskID, __START_EVT, 500);     
   }

@@ -11,8 +11,9 @@ void IAP_download(void)
 {
   uint8_t Number[11] = "          ";
   int32_t Size = 0;
-  uint32_t times=500;       // 发送500次
-
+  uint32_t times=300;       // 发送300次
+  LED1 = 1;
+  
   /* 进入下载模式 */
   debug_info("download partition start_address:0x%lx,size:%ld Bytes\n\r",
      APP1_PARTITION_START_ADDR,APP1_PARTITION_SIZE);

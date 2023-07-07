@@ -175,8 +175,7 @@ void Uart1SendByte(unsigned char ch)
 void at_uart_init(void)
 {
 #if defined(CC2530_Serial)
-//    uart0Init(38400);
-    uart1Init(38400);
+    uart0Init(38400);
 #else
     uart1Init(38400);
 #endif
@@ -192,8 +191,7 @@ void at_uart_init(void)
 void at_uart_write(char ch)
 {
 #if defined(CC2530_Serial)
-//    Uart0SendByte(ch);
-    Uart1SendByte(ch);
+    Uart0SendByte(ch);
 #else
     Uart1SendByte(ch);
 #endif
@@ -219,18 +217,10 @@ void at_uart_set_input_call(void (*c)(char ch))
 * ×¢ÊÍ£º
 *********************************************************************************************/
 #if defined(CC2530_Serial)
-//HAL_ISR_FUNCTION(halUart0TxIsr, URX0_VECTOR)
-//{
-//    char ch;
-//    ch = U0DBUF;
-//    if (_input != NULL) {
-//      _input(ch);
-//    }
-//}
-HAL_ISR_FUNCTION(halUart1TxIsr, URX1_VECTOR)
+HAL_ISR_FUNCTION(halUart0TxIsr, URX0_VECTOR)
 {
-  char ch;
-    ch = U1DBUF;
+    char ch;
+    ch = U0DBUF;
     if (_input != NULL) {
       _input(ch);
     }

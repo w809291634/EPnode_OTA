@@ -305,6 +305,7 @@
           <state>XLAB</state>
           <state>CC2530_Serial</state>
           <state>MAKE_CRC_SHDW</state>
+          <state>CC2530_USE_IAP</state>
         </option>
         <option>
           <name>CCPreprocFile</name>

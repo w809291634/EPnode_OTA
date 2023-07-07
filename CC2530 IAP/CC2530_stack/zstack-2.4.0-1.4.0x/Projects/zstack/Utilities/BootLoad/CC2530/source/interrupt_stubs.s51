@@ -48,8 +48,8 @@ OFFSET   EQU    0x2000
    LJMP  $ + OFFSET
    ORG     0x000B      ; ADC end of conversion
    LJMP  $ + OFFSET
-;  ORG     0x0013      ; USART0 Rx complete
-;  LJMP  $ + OFFSET
+  ORG     0x0013      ; USART0 Rx complete
+  LJMP  $ + OFFSET
    ORG     0x001B      ; USART1 Rx complete
    LJMP  $ + OFFSET
    ORG     0x0023      ; AES encryption/decryption complete
@@ -58,8 +58,8 @@ OFFSET   EQU    0x2000
    LJMP  $ + OFFSET
    ORG     0x0033      ; Port 2 inputs - used by USB library.
    LJMP  $ + OFFSET
-;  ORG     0x003B      ; USART0 Tx complete
-;  LJMP  $ + OFFSET
+  ORG     0x003B      ; USART0 Tx complete
+  LJMP  $ + OFFSET
    ORG     0x0043      ; DMA transfer complete
    LJMP  $ + OFFSET
    ORG     0x004B      ; Timer 1 (16-bit) capture/compare/overflow

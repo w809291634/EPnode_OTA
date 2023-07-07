@@ -1,11 +1,7 @@
 #include "uart.h"
 #include "math.h"
 
-#define USART0_RINGBUF_SIZE                 256    
 shellinput_t shell_1;
-static char shell_ringbuf[USART0_RINGBUF_SIZE]={0};
-static unsigned short Read_Index;
-static unsigned short Write_Index;
 unsigned char usart0_mode;
   
 //功能：uart0初始化，复用到位置1
@@ -24,13 +20,6 @@ void shell_hw_init(double baud)
   // 38400 U0GCR = 10; U0BAUD= 58;
 	U0GCR = 10;                  
 	U0BAUD = 58;                  						    //设置波特率
-    
-  //设置中断优先级最高
-  IP0 |= (1<<2);
-  IP1 |= (1<<2);
-    
-	URX0IE = 1;													        //串口接收中断使能
-	EA = 1;														          //开总中断
 }
 
 // 复位状态
@@ -43,11 +32,9 @@ void shell_hw_uninit(void)
 	U0CSR = 0x00;                  						
 	U0GCR = 0x02;                  
 	U0BAUD = 0x00; 
-  IP0 = 0x00; 
-  IP1 = 0x00; 
-  IEN0=0;  
 }
 
+// 发送字符
 void Uart0_Send_char(unsigned char ch)
 {
 	U0DBUF = ch;
@@ -55,6 +42,7 @@ void Uart0_Send_char(unsigned char ch)
 	UTX0IF = 0;
 }
 
+// 发送字符串
 void Uart0_Send_LenString(const char *Data,unsigned short len)
 {  
 	while (len--)
@@ -63,74 +51,43 @@ void Uart0_Send_LenString(const char *Data,unsigned short len)
 	}
 }
 
-/* 获取缓冲区中剩余未读取数据长度 */
-static unsigned short UART_GetRemain(void) {
-  unsigned short remain_length;             // 剩余数据长度
-  unsigned short write_index=Write_Index;   // 拷贝当前写索引位置
-  //获取剩余数据长度
-  if(write_index >= Read_Index) { 
-    remain_length = write_index - Read_Index;
-  } else {
-    remain_length = USART0_RINGBUF_SIZE - Read_Index + write_index;   // 此时说明串口缓存区数据从头开始缓存
-  }
-  return remain_length;
-}
-
-// 从缓存区读取一个字节
-// 注意：数据处理结果和shell_app_cycle只能选择其一
+// 使用查询法读取串口数据
+// boot程序建议不要使用中断法，可能APP无法使用串口中断 
 int usart0_getchar(uint8_t* data)
 {
-  if(Write_Index!=Read_Index){
-    *data=shell_ringbuf[Read_Index];
-    Read_Index = (Read_Index+1)% USART0_RINGBUF_SIZE;   // 读取索引加1
+  if(U0CSR & 0x04)
+  {
+    *data = U0DBUF;     // 读取接收寄存器的值
     return 1;
-  }else return 0;
+  }
+  return 0;
 }
 
 // shell控制台获取输入数据
 void shell_app_cycle(void)
 {
-#define SHELL_DATA_PROCESS          {shell_input(&shell_1, temp, data_len);\
-                                    Read_Index = (Read_Index+data_len)% USART0_RINGBUF_SIZE;}
-         
-  if(Write_Index!=Read_Index){
-    /* 取环形缓存区剩余数据 */
-    char temp[USART0_RINGBUF_SIZE];
-    memset(temp,0,USART0_RINGBUF_SIZE);
-    unsigned short data_len= UART_GetRemain();          // 获取当前数据长度
-    if(Read_Index+data_len>USART0_RINGBUF_SIZE){
-      // 索引处读取长度超出缓存
-      int len1=USART0_RINGBUF_SIZE-Read_Index;          // 环形末尾读长度
-      int len2=data_len-len1;
-      memcpy(temp,shell_ringbuf + Read_Index,len1);
-      memcpy(temp+len1,shell_ringbuf,len2);
-    }else{
-      memcpy(temp,shell_ringbuf + Read_Index,data_len);
-    } 
-   
-    /* 数据处理 */
-    char object[3]={0};
-    object[0]=0x1B; //object[1]='['; 
-    if(strstr(temp,object)){
-      // 防止数据不全导致错误
-      delay_ms(2);
-      if(strlen(temp)>2) 
-        SHELL_DATA_PROCESS
-    }
-    else SHELL_DATA_PROCESS
+  char data;
+  char flag=0x1B;             // 方向键的特殊字符
+  static char buf[3]={0};
+  
+  if(!usart0_getchar((uint8*)&data))return;
+    
+  /* 数据处理 */
+  if(data==flag){
+    memset(buf,0,3);
+    buf[0]=flag;
   }
-}
-// 串口0接收中断服务函数
-#pragma vector = URX0_VECTOR      
-__interrupt void uart0_RxInt(void)            
-{    
-	if (URX0IF == 1);
-	{
-    shell_ringbuf[Write_Index] = (char)U0DBUF;
-    Write_Index++;
-    Write_Index = Write_Index % USART0_RINGBUF_SIZE;
-    URX0IF = 0;
-	}
+  // 处理 上下左右方向键
+  if(buf[0]==flag){
+    if(data==flag)return;     // 已经接收，可以丢弃
+    strncat(buf,&data,1);
+    if(strlen(buf)>2){
+      shell_input(&shell_1, buf, 3);
+      memset(buf,0,3);
+    } 
+  }
+  // 处理字符
+  else shell_input(&shell_1, &data, 1);
 }
 
 // 适配printf函数

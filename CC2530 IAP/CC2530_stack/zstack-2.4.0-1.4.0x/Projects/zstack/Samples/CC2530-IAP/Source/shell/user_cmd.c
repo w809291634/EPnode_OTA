@@ -32,9 +32,15 @@ void __IAP(void * arg)
   }
 }
 
+// 确认进入IAP
+void iap_mode_confirm(void * arg){
+  printf("OK\r\n");
+}
+
 // 用户命令注册
 void register_user_cmd()
 {
   shell_register_command("reboot",SoftReset);
   shell_register_command(IAP_CMD,__IAP);
+  shell_register_command("AT+IAP=IAP",iap_mode_confirm);
 }
