@@ -1,0 +1,363 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                07/Jul/2023  16:40:18
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  near
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\iap\app_start.c
+#    Command line       =  
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\iap\app_start.c"
+#        -D HAL_SB_BOOT_CODE -D HAL_UART=TRUE -D HAL_UART_DMA=0 -D
+#        HAL_UART_ISR=1 -D HAL_UART_ISR_RX_MAX=254 -lC
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+#        -lA "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+#        --diag_suppress Pe001,Pa010,Pa050 -o "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\Obj\"
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=near --calling_convention=xdata_reentrant
+#        --place_constants=data --nr_virtual_regs 8 -I
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\drive\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\iap\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\shell\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\sys\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\common\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\ZMain\TI2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\_COMMON\CC2530\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\osal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\services\saddr\"
+#        -Ohz
+#    List file          =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\app_start.lst
+#    Object file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\Obj\app_start.r51
+#
+###############################################################################
+
+I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\iap\app_start.c
+      1          #include "app_start.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x89
+   \   unsigned char volatile __sfr P0IFG
+   \                     P0IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          #include "sys.h"
+      3          #include "uart.h"
+      4          
+      5          // 复位bootloader外设
+      6          static void resetPeripheral() 
+      7          {
+      8            // 复位串口
+      9            shell_hw_uninit();
+     10            // 复位GPIO
+     11            P0 = 0x00;
+     12            P1 = 0x00;
+     13            P2 = 0x00;
+     14            
+     15            P0DIR = 0x00;
+     16            P1DIR = 0x00;
+     17            P2DIR = 0x00;
+     18            
+     19            P0INP = 0x00;
+     20            P1INP = 0x00;
+     21            P2INP = 0x00;
+     22            
+     23            P0IFG = 0x00;
+     24            P1IFG = 0x00;
+     25          }
+     26          
+     27          // 跳转运行APP程序
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     28          void jump_to_app(void)
+   \                     jump_to_app:
+     29          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     30            resetPeripheral();
+   \   000000                ; Setup parameters for call to function shell_hw_uninit
+   \   000000   12....       LCALL   shell_hw_uninit
+   \   000003   758000       MOV     0x80,#0x0
+   \   000006   759000       MOV     0x90,#0x0
+   \   000009   75A000       MOV     0xa0,#0x0
+   \   00000C   75FD00       MOV     0xfd,#0x0
+   \   00000F   75FE00       MOV     0xfe,#0x0
+   \   000012   75FF00       MOV     0xff,#0x0
+   \   000015   758F00       MOV     0x8f,#0x0
+   \   000018   75F600       MOV     0xf6,#0x0
+   \   00001B   75F700       MOV     0xf7,#0x0
+   \   00001E   758900       MOV     0x89,#0x0
+   \   000021   758A00       MOV     0x8a,#0x0
+     31            // Simulate a reset for the Application code by an absolute jump to location 0x2000.
+     32            asm("LJMP 0x5000\n");
+   \   000024   025000       LJMP 0x5000
+     33            HAL_SYSTEM_RESET();
+   \   000027   C2AF         CLR     0xa8.7
+   \   000029   75C9AB       MOV     0xc9,#-0x55
+   \   00002C   75C95B       MOV     0xc9,#0x5b
+   \                     ??jump_to_app_0:
+   \   00002F   80FE         SJMP    ??jump_to_app_0
+   \   000031                REQUIRE _A_IEN0
+   \   000031                REQUIRE WDCTL
+   \   000031                REQUIRE _A_P0
+   \   000031                REQUIRE _A_P1
+   \   000031                REQUIRE _A_P2
+   \   000031                REQUIRE P0DIR
+   \   000031                REQUIRE P1DIR
+   \   000031                REQUIRE P2DIR
+   \   000031                REQUIRE P0INP
+   \   000031                REQUIRE P1INP
+   \   000031                REQUIRE P2INP
+   \   000031                REQUIRE P0IFG
+   \   000031                REQUIRE P1IFG
+     34          }
+     35          
+     36          // 启动app系统分区
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     37          void start_app_partition(uint8_t partition)
+   \                     start_app_partition:
+     38          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     39            // 强制进入boot
+     40            if(SB1_PRESS || SB2_PRESS) return;
+   \   000007   A292         MOV     C,0x90.2
+   \   000009   5039         JNC     ??start_app_partition_0
+   \   00000B   A293         MOV     C,0x90.3
+   \   00000D   5035         JNC     ??start_app_partition_0
+     41              
+     42            // 根据falsh参数启动
+     43            switch(partition){
+   \   00000F   14           DEC     A
+   \   000010   6006         JZ      ??start_app_partition_1
+   \   000012   2402         ADD     A,#0x2
+   \   000014   602E         JZ      ??start_app_partition_0
+   \   000016   8016         SJMP    ??start_app_partition_2
+     44              case 1:{
+     45                if(sys_parameter.app1_flag==APP_OK){
+   \                     ??start_app_partition_1:
+   \   000018   90....       MOV     DPTR,#sys_parameter + 1
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   644D         XRL     A,#0x4d
+   \   00001E   7005         JNZ     ??start_app_partition_3
+     46                  jump_to_app();
+   \   000020                ; Setup parameters for call to function jump_to_app
+   \   000020   12....       LCALL   jump_to_app
+   \   000023   801F         SJMP    ??start_app_partition_0
+     47                }else{
+     48                  printf(INFO"Starting partition 1 fail!\r\n");
+   \                     ??start_app_partition_3:
+   \   000025                ; Setup parameters for call to function printf
+   \   000025   7A..         MOV     R2,#`?<Constant "INFORMATION:Starting ...">` & 0xff
+   \   000027   7B..         MOV     R3,#(`?<Constant "INFORMATION:Starting ...">` >> 8) & 0xff
+   \   000029   12....       LCALL   printf
+   \   00002C   8016         SJMP    ??start_app_partition_0
+     49                }
+     50              }break;
+     51              case 0xff:break;
+     52              default:{
+     53                printf(INFO"partition %d not assigned!\r\n",partition);
+   \                     ??start_app_partition_2:
+   \   00002E                ; Setup parameters for call to function printf
+   \   00002E   8E..         MOV     ?V0,R6
+   \   000030   75..00       MOV     ?V1,#0x0
+   \   000033   78..         MOV     R0,#?V0
+   \   000035   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000038   7A..         MOV     R2,#`?<Constant "INFORMATION:partition...">` & 0xff
+   \   00003A   7B..         MOV     R3,#(`?<Constant "INFORMATION:partition...">` >> 8) & 0xff
+   \   00003C   12....       LCALL   printf
+   \   00003F   7402         MOV     A,#0x2
+   \   000041   12....       LCALL   ?DEALLOC_XSTACK8
+     54              }break;
+     55            }
+     56          }
+   \                     ??start_app_partition_0:
+   \   000044   7F02         MOV     R7,#0x2
+   \   000046   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000049                REQUIRE _A_P1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "INFORMATION:Start`:
+   \   000000   494E464F     DB "INFORMATION:Starting partition 1 fail!\015\012"
+   \            524D4154
+   \            494F4E3A
+   \            53746172
+   \            74696E67
+   \            20706172
+   \            74697469
+   \            6F6E2031
+   \            20666169
+   \            6C210D0A
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "INFORMATION:parti`:
+   \   000000   494E464F     DB "INFORMATION:partition %d not assigned!\015\012"
+   \            524D4154
+   \            494F4E3A
+   \            70617274
+   \            6974696F
+   \            6E202564
+   \            206E6F74
+   \            20617373
+   \            69676E65
+   \            64210D0A
+   \            00      
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "INFORMATION:Starting ...">`:
+   \   000000                DS 41
+   \   000029                REQUIRE `?<Initializer for <Constant "INFORMATION:Start`
+   \   000029                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "INFORMATION:partition...">`:
+   \   000000                DS 41
+   \   000029                REQUIRE `?<Initializer for <Constant "INFORMATION:parti`
+   \   000029                REQUIRE __INIT_XDATA_I
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      9   jump_to_app
+        0   -> shell_hw_uninit
+     11   start_app_partition
+        9   -> jump_to_app
+       11   -> printf
+        9   -> printf
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      41  ?<Constant "INFORMATION:Starting ...">
+      41  ?<Constant "INFORMATION:partition...">
+      41  ?<Initializer for <Constant "INFORMATION:Start
+      41  ?<Initializer for <Constant "INFORMATION:parti
+       1  P0DIR
+       1  P0IFG
+       1  P0INP
+       1  P1DIR
+       1  P1IFG
+       1  P1INP
+       1  P2DIR
+       1  P2INP
+       1  WDCTL
+       1  _A_IEN0
+       1  _A_P0
+       1  _A_P1
+       1  _A_P2
+      49  jump_to_app
+      73  start_app_partition
+
+ 
+ 122 bytes in segment NEAR_CODE
+  13 bytes in segment SFR_AN
+  82 bytes in segment XDATA_I
+  82 bytes in segment XDATA_ID
+ 
+ 204 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 13 bytes shared)
+  82 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,849 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                07/Jul/2023  16:40:48
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c
+#    Command line       =  
+#        -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DRTR_NWK) -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=8448
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)
+#        -DREJOIN_POLL_RATE=440 "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c"
+#        -D HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR -D NV_INIT -D
+#        XLAB -D CC2530_Serial -D MAKE_CRC_SHDW -D CC2530_USE_IAP -lC
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        -lA "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        --diag_suppress Pe001,Pa010 -o "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\"
+#        -e --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 8 -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\Source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\common\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -On
+#    List file          =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\zxbee-sys-command.lst
+#    Object file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\zxbee-sys-command.r51
+#
+###############################################################################
+
+I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c
+      1          /*********************************************************************************************
+      2          * 文件：zxbee-sys-command.c
+      3          * 作者：Xuzhy 2018.5.16
+      4          * 说明：ZXBee通信协议数据包命令解析
+      5          * 修改：fuyou 增加透传驱动
+      6          * 注释：
+      7          *********************************************************************************************/
+      8          
+      9          /*********************************************************************************************
+     10          * 头文件
+     11          *********************************************************************************************/
+     12          #include "string.h"
+     13          #include "hal_types.h"
+     14          #include "AppCommon.h"
+     15          #include "ZComDef.h"
+     16          #include "sensor.h"
+     17          #include "zxbee.h"
+     18          #include "stdlib.h"
+     19          #include "stdio.h"
+     20          #include "at.h"
+     21          /*********************************************************************************************
+     22          * 函数原型说明
+     23          *********************************************************************************************/
+     24          void starReportTPN(uint16 t, uint16 n);
+     25          /*********************************************************************************************
+     26          * 名称：ZXBeeSysCommandProc()
+     27          * 功能：ZXBee通信协议数据包命令解析
+     28          * 参数：*ptag -- 变量；*pval -- 值
+     29          * 返回：
+     30          * 修改：
+     31          * 注释：
+     32          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          int ZXBeeSysCommandProc(char *ptag, char *pval)
+   \                     ZXBeeSysCommandProc:
+     34          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 24
+   \   000005   74E8         MOV     A,#-0x18
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7402         MOV     A,#0x2
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   85..82       MOV     DPL,?XSP + 0
+   \   000017   85..83       MOV     DPH,?XSP + 1
+   \   00001A   EC           MOV     A,R4
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   ED           MOV     A,R5
+   \   00001E   F0           MOVX    @DPTR,A
+     35              int val;
+     36              int ret = -1;
+   \   00001F   7EFF         MOV     R6,#-0x1
+   \   000021   7FFF         MOV     R7,#-0x1
+     37              char buf[16];
+     38              
+     39              val = atoi(pval);
+   \   000023                ; Setup parameters for call to function atoi
+   \   000023   85..82       MOV     DPL,?XSP + 0
+   \   000026   85..83       MOV     DPH,?XSP + 1
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   FA           MOV     R2,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   FB           MOV     R3,A
+   \   00002E   12....       LCALL   ??atoi?relay         ; Banked call to: atoi
+   \   000031   8A..         MOV     ?V2,R2
+   \   000033   8B..         MOV     ?V3,R3
+   \   000035   85....       MOV     ?V0,?V2
+   \   000038   85....       MOV     ?V1,?V3
+     40              if (0 == strcmp("ECHO", ptag)) {
+   \   00003B                ; Setup parameters for call to function strcmp
+   \   00003B   7402         MOV     A,#0x2
+   \   00003D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   FC           MOV     R4,A
+   \   000042   A3           INC     DPTR
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   FD           MOV     R5,A
+   \   000045   7A..         MOV     R2,#`?<Constant "ECHO">` & 0xff
+   \   000047   7B..         MOV     R3,#(`?<Constant "ECHO">` >> 8) & 0xff
+   \   000049   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   00004C   8A..         MOV     ?V2,R2
+   \   00004E   8B..         MOV     ?V3,R3
+   \   000050   E5..         MOV     A,?V2
+   \   000052   45..         ORL     A,?V3
+   \   000054   701A         JNZ     ??ZXBeeSysCommandProc_0
+     41                  ZXBeeAdd("ECHO", pval);
+   \   000056                ; Setup parameters for call to function ZXBeeAdd
+   \   000056   85..82       MOV     DPL,?XSP + 0
+   \   000059   85..83       MOV     DPH,?XSP + 1
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   FC           MOV     R4,A
+   \   00005E   A3           INC     DPTR
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   FD           MOV     R5,A
+   \   000061   7A..         MOV     R2,#`?<Constant "ECHO">` & 0xff
+   \   000063   7B..         MOV     R3,#(`?<Constant "ECHO">` >> 8) & 0xff
+   \   000065   12....       LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+   \   000068   E9           MOV     A,R1
+     42                  ret = 1;
+   \   000069   7E01         MOV     R6,#0x1
+   \   00006B   7F00         MOV     R7,#0x0
+   \   00006D   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     43              } else  
+     44                if (0 == strcmp("RSSI", ptag)) {
+   \                     ??ZXBeeSysCommandProc_0:
+   \   000070                ; Setup parameters for call to function strcmp
+   \   000070   7402         MOV     A,#0x2
+   \   000072   12....       LCALL   ?XSTACK_DISP0_8
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   FC           MOV     R4,A
+   \   000077   A3           INC     DPTR
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   FD           MOV     R5,A
+   \   00007A   7A..         MOV     R2,#`?<Constant "RSSI">` & 0xff
+   \   00007C   7B..         MOV     R3,#(`?<Constant "RSSI">` >> 8) & 0xff
+   \   00007E   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000081   8A..         MOV     ?V2,R2
+   \   000083   8B..         MOV     ?V3,R3
+   \   000085   E5..         MOV     A,?V2
+   \   000087   45..         ORL     A,?V3
+   \   000089   7050         JNZ     ??ZXBeeSysCommandProc_2
+     45                  if (0 == strcmp("?", pval)){
+   \   00008B                ; Setup parameters for call to function strcmp
+   \   00008B   85..82       MOV     DPL,?XSP + 0
+   \   00008E   85..83       MOV     DPH,?XSP + 1
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   FC           MOV     R4,A
+   \   000093   A3           INC     DPTR
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   FD           MOV     R5,A
+   \   000096   7A..         MOV     R2,#`?<Constant "?">` & 0xff
+   \   000098   7B..         MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+   \   00009A   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   00009D   8A..         MOV     ?V2,R2
+   \   00009F   8B..         MOV     ?V3,R3
+   \   0000A1   E5..         MOV     A,?V2
+   \   0000A3   45..         ORL     A,?V3
+   \   0000A5   6003         JZ      $+5
+   \   0000A7   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     46                    int8 getLastPkgRssi(void);
+     47                    sprintf(buf, "%d", getLastPkgRssi());
+   \   0000AA                ; Setup parameters for call to function getLastPkgRssi
+   \   0000AA   12....       LCALL   ??getLastPkgRssi?relay; Banked call to: getLastPkgRssi
+   \   0000AD   E9           MOV     A,R1
+   \   0000AE                ; Setup parameters for call to function sprintf
+   \   0000AE   F5..         MOV     ?V2,A
+   \   0000B0   33           RLC     A
+   \   0000B1   95E0         SUBB    A,0xE0 /* A   */
+   \   0000B3   F5..         MOV     ?V3,A
+   \   0000B5   78..         MOV     R0,#?V2
+   \   0000B7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BA   7C..         MOV     R4,#`?<Constant "%d">` & 0xff
+   \   0000BC   7D..         MOV     R5,#(`?<Constant "%d">` >> 8) & 0xff
+   \   0000BE   740A         MOV     A,#0xa
+   \   0000C0   12....       LCALL   ?XSTACK_DISP101_8
+   \   0000C3   12....       LCALL   ??sprintf?relay      ; Banked call to: sprintf
+   \   0000C6   7402         MOV     A,#0x2
+   \   0000C8   12....       LCALL   ?DEALLOC_XSTACK8
+     48                    ZXBeeAdd("RSSI", buf);
+   \   0000CB                ; Setup parameters for call to function ZXBeeAdd
+   \   0000CB   7408         MOV     A,#0x8
+   \   0000CD   12....       LCALL   ?XSTACK_DISP102_8
+   \   0000D0   7A..         MOV     R2,#`?<Constant "RSSI">` & 0xff
+   \   0000D2   7B..         MOV     R3,#(`?<Constant "RSSI">` >> 8) & 0xff
+   \   0000D4   12....       LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+   \   0000D7   E9           MOV     A,R1
+   \   0000D8   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     49                  }
+     50                } else if (0 == strcmp("LQI", ptag)) {
+   \                     ??ZXBeeSysCommandProc_2:
+   \   0000DB                ; Setup parameters for call to function strcmp
+   \   0000DB   7402         MOV     A,#0x2
+   \   0000DD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E0   E0           MOVX    A,@DPTR
+   \   0000E1   FC           MOV     R4,A
+   \   0000E2   A3           INC     DPTR
+   \   0000E3   E0           MOVX    A,@DPTR
+   \   0000E4   FD           MOV     R5,A
+   \   0000E5   7A..         MOV     R2,#`?<Constant "LQI">` & 0xff
+   \   0000E7   7B..         MOV     R3,#(`?<Constant "LQI">` >> 8) & 0xff
+   \   0000E9   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   0000EC   8A..         MOV     ?V2,R2
+   \   0000EE   8B..         MOV     ?V3,R3
+   \   0000F0   E5..         MOV     A,?V2
+   \   0000F2   45..         ORL     A,?V3
+   \   0000F4   704E         JNZ     ??ZXBeeSysCommandProc_3
+     51                  if (0 == strcmp("?", pval)){
+   \   0000F6                ; Setup parameters for call to function strcmp
+   \   0000F6   85..82       MOV     DPL,?XSP + 0
+   \   0000F9   85..83       MOV     DPH,?XSP + 1
+   \   0000FC   E0           MOVX    A,@DPTR
+   \   0000FD   FC           MOV     R4,A
+   \   0000FE   A3           INC     DPTR
+   \   0000FF   E0           MOVX    A,@DPTR
+   \   000100   FD           MOV     R5,A
+   \   000101   7A..         MOV     R2,#`?<Constant "?">` & 0xff
+   \   000103   7B..         MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+   \   000105   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000108   8A..         MOV     ?V2,R2
+   \   00010A   8B..         MOV     ?V3,R3
+   \   00010C   E5..         MOV     A,?V2
+   \   00010E   45..         ORL     A,?V3
+   \   000110   6003         JZ      $+5
+   \   000112   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     52                    uint8 getLastPkgLQI(void);
+     53                    sprintf(buf, "%d", getLastPkgLQI());
+   \   000115                ; Setup parameters for call to function getLastPkgLQI
+   \   000115   12....       LCALL   ??getLastPkgLQI?relay; Banked call to: getLastPkgLQI
+   \   000118   E9           MOV     A,R1
+   \   000119   F5..         MOV     ?V2,A
+   \   00011B                ; Setup parameters for call to function sprintf
+   \   00011B   75..00       MOV     ?V3,#0x0
+   \   00011E   78..         MOV     R0,#?V2
+   \   000120   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000123   7C..         MOV     R4,#`?<Constant "%d">` & 0xff
+   \   000125   7D..         MOV     R5,#(`?<Constant "%d">` >> 8) & 0xff
+   \   000127   740A         MOV     A,#0xa
+   \   000129   12....       LCALL   ?XSTACK_DISP101_8
+   \   00012C   12....       LCALL   ??sprintf?relay      ; Banked call to: sprintf
+   \   00012F   7402         MOV     A,#0x2
+   \   000131   12....       LCALL   ?DEALLOC_XSTACK8
+     54                    ZXBeeAdd("LQI", buf);
+   \   000134                ; Setup parameters for call to function ZXBeeAdd
+   \   000134   7408         MOV     A,#0x8
+   \   000136   12....       LCALL   ?XSTACK_DISP102_8
+   \   000139   7A..         MOV     R2,#`?<Constant "LQI">` & 0xff
+   \   00013B   7B..         MOV     R3,#(`?<Constant "LQI">` >> 8) & 0xff
+   \   00013D   12....       LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+   \   000140   E9           MOV     A,R1
+   \   000141   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     55                  }
+     56                } else
+     57                  if (0 == strcmp("PANID", ptag)) { 
+   \                     ??ZXBeeSysCommandProc_3:
+   \   000144                ; Setup parameters for call to function strcmp
+   \   000144   7402         MOV     A,#0x2
+   \   000146   12....       LCALL   ?XSTACK_DISP0_8
+   \   000149   E0           MOVX    A,@DPTR
+   \   00014A   FC           MOV     R4,A
+   \   00014B   A3           INC     DPTR
+   \   00014C   E0           MOVX    A,@DPTR
+   \   00014D   FD           MOV     R5,A
+   \   00014E   7A..         MOV     R2,#`?<Constant "PANID">` & 0xff
+   \   000150   7B..         MOV     R3,#(`?<Constant "PANID">` >> 8) & 0xff
+   \   000152   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000155   8A..         MOV     ?V2,R2
+   \   000157   8B..         MOV     ?V3,R3
+   \   000159   E5..         MOV     A,?V2
+   \   00015B   45..         ORL     A,?V3
+   \   00015D   705C         JNZ     ??ZXBeeSysCommandProc_4
+     58                      if (0 == strcmp("?", pval)) {
+   \   00015F                ; Setup parameters for call to function strcmp
+   \   00015F   85..82       MOV     DPL,?XSP + 0
+   \   000162   85..83       MOV     DPH,?XSP + 1
+   \   000165   E0           MOVX    A,@DPTR
+   \   000166   FC           MOV     R4,A
+   \   000167   A3           INC     DPTR
+   \   000168   E0           MOVX    A,@DPTR
+   \   000169   FD           MOV     R5,A
+   \   00016A   7A..         MOV     R2,#`?<Constant "?">` & 0xff
+   \   00016C   7B..         MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+   \   00016E   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000171   8A..         MOV     ?V2,R2
+   \   000173   8B..         MOV     ?V3,R3
+   \   000175   E5..         MOV     A,?V2
+   \   000177   45..         ORL     A,?V3
+   \   000179   7032         JNZ     ??ZXBeeSysCommandProc_5
+     59                          uint16 tmp16 = GetPanId();
+   \   00017B                ; Setup parameters for call to function GetPanId
+   \   00017B   12....       LCALL   ??GetPanId?relay     ; Banked call to: GetPanId
+   \   00017E   8A..         MOV     ?V4,R2
+   \   000180   8B..         MOV     ?V5,R3
+   \   000182   85....       MOV     ?V2,?V4
+   \   000185   85....       MOV     ?V3,?V5
+     60                          sprintf(buf, "%u", tmp16);
+   \   000188                ; Setup parameters for call to function sprintf
+   \   000188   78..         MOV     R0,#?V2
+   \   00018A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00018D   7C..         MOV     R4,#`?<Constant "%u">` & 0xff
+   \   00018F   7D..         MOV     R5,#(`?<Constant "%u">` >> 8) & 0xff
+   \   000191   740A         MOV     A,#0xa
+   \   000193   12....       LCALL   ?XSTACK_DISP101_8
+   \   000196   12....       LCALL   ??sprintf?relay      ; Banked call to: sprintf
+   \   000199   7402         MOV     A,#0x2
+   \   00019B   12....       LCALL   ?DEALLOC_XSTACK8
+     61                          ZXBeeAdd("PANID", buf); 
+   \   00019E                ; Setup parameters for call to function ZXBeeAdd
+   \   00019E   7408         MOV     A,#0x8
+   \   0001A0   12....       LCALL   ?XSTACK_DISP102_8
+   \   0001A3   7A..         MOV     R2,#`?<Constant "PANID">` & 0xff
+   \   0001A5   7B..         MOV     R3,#(`?<Constant "PANID">` >> 8) & 0xff
+   \   0001A7   12....       LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+   \   0001AA   E9           MOV     A,R1
+   \   0001AB   8007         SJMP    ??ZXBeeSysCommandProc_6
+     62                      } else {
+     63                          SetPanId(val);
+   \                     ??ZXBeeSysCommandProc_5:
+   \   0001AD                ; Setup parameters for call to function SetPanId
+   \   0001AD   AA..         MOV     R2,?V0
+   \   0001AF   AB..         MOV     R3,?V1
+   \   0001B1   12....       LCALL   ??SetPanId?relay     ; Banked call to: SetPanId
+     64                      }
+     65                      ret = 1;
+   \                     ??ZXBeeSysCommandProc_6:
+   \   0001B4   7E01         MOV     R6,#0x1
+   \   0001B6   7F00         MOV     R7,#0x0
+   \   0001B8   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     66                  } else
+     67                      if (0 == strcmp("CHANNEL", ptag)) { 
+   \                     ??ZXBeeSysCommandProc_4:
+   \   0001BB                ; Setup parameters for call to function strcmp
+   \   0001BB   7402         MOV     A,#0x2
+   \   0001BD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001C0   E0           MOVX    A,@DPTR
+   \   0001C1   FC           MOV     R4,A
+   \   0001C2   A3           INC     DPTR
+   \   0001C3   E0           MOVX    A,@DPTR
+   \   0001C4   FD           MOV     R5,A
+   \   0001C5   7A..         MOV     R2,#`?<Constant "CHANNEL">` & 0xff
+   \   0001C7   7B..         MOV     R3,#(`?<Constant "CHANNEL">` >> 8) & 0xff
+   \   0001C9   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   0001CC   8A..         MOV     ?V2,R2
+   \   0001CE   8B..         MOV     ?V3,R3
+   \   0001D0   E5..         MOV     A,?V2
+   \   0001D2   45..         ORL     A,?V3
+   \   0001D4   705A         JNZ     ??ZXBeeSysCommandProc_7
+     68                          if (0 == strcmp("?", pval)) {
+   \   0001D6                ; Setup parameters for call to function strcmp
+   \   0001D6   85..82       MOV     DPL,?XSP + 0
+   \   0001D9   85..83       MOV     DPH,?XSP + 1
+   \   0001DC   E0           MOVX    A,@DPTR
+   \   0001DD   FC           MOV     R4,A
+   \   0001DE   A3           INC     DPTR
+   \   0001DF   E0           MOVX    A,@DPTR
+   \   0001E0   FD           MOV     R5,A
+   \   0001E1   7A..         MOV     R2,#`?<Constant "?">` & 0xff
+   \   0001E3   7B..         MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+   \   0001E5   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   0001E8   8A..         MOV     ?V2,R2
+   \   0001EA   8B..         MOV     ?V3,R3
+   \   0001EC   E5..         MOV     A,?V2
+   \   0001EE   45..         ORL     A,?V3
+   \   0001F0   7032         JNZ     ??ZXBeeSysCommandProc_8
+     69                              sprintf(buf, "%u", GetChannel());
+   \   0001F2                ; Setup parameters for call to function GetChannel
+   \   0001F2   12....       LCALL   ??GetChannel?relay   ; Banked call to: GetChannel
+   \   0001F5   E9           MOV     A,R1
+   \   0001F6   F5..         MOV     ?V2,A
+   \   0001F8                ; Setup parameters for call to function sprintf
+   \   0001F8   75..00       MOV     ?V3,#0x0
+   \   0001FB   78..         MOV     R0,#?V2
+   \   0001FD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000200   7C..         MOV     R4,#`?<Constant "%u">` & 0xff
+   \   000202   7D..         MOV     R5,#(`?<Constant "%u">` >> 8) & 0xff
+   \   000204   740A         MOV     A,#0xa
+   \   000206   12....       LCALL   ?XSTACK_DISP101_8
+   \   000209   12....       LCALL   ??sprintf?relay      ; Banked call to: sprintf
+   \   00020C   7402         MOV     A,#0x2
+   \   00020E   12....       LCALL   ?DEALLOC_XSTACK8
+     70                              ZXBeeAdd("CHANNEL", buf);
+   \   000211                ; Setup parameters for call to function ZXBeeAdd
+   \   000211   7408         MOV     A,#0x8
+   \   000213   12....       LCALL   ?XSTACK_DISP102_8
+   \   000216   7A..         MOV     R2,#`?<Constant "CHANNEL">` & 0xff
+   \   000218   7B..         MOV     R3,#(`?<Constant "CHANNEL">` >> 8) & 0xff
+   \   00021A   12....       LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+   \   00021D   E9           MOV     A,R1
+     71                              ret = 1;
+   \   00021E   7E01         MOV     R6,#0x1
+   \   000220   7F00         MOV     R7,#0x0
+   \   000222   8005         SJMP    ??ZXBeeSysCommandProc_9
+     72                          } else {
+     73                              SetChannel(val);
+   \                     ??ZXBeeSysCommandProc_8:
+   \   000224                ; Setup parameters for call to function SetChannel
+   \   000224   A9..         MOV     R1,?V0
+   \   000226   12....       LCALL   ??SetChannel?relay   ; Banked call to: SetChannel
+     74                          }
+     75                          ret = 1;
+   \                     ??ZXBeeSysCommandProc_9:
+   \   000229   7E01         MOV     R6,#0x1
+   \   00022B   7F00         MOV     R7,#0x0
+   \   00022D   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     76                      }
+     77                      else if (0 == strcmp("TYPE", ptag))
+   \                     ??ZXBeeSysCommandProc_7:
+   \   000230                ; Setup parameters for call to function strcmp
+   \   000230   7402         MOV     A,#0x2
+   \   000232   12....       LCALL   ?XSTACK_DISP0_8
+   \   000235   E0           MOVX    A,@DPTR
+   \   000236   FC           MOV     R4,A
+   \   000237   A3           INC     DPTR
+   \   000238   E0           MOVX    A,@DPTR
+   \   000239   FD           MOV     R5,A
+   \   00023A   7A..         MOV     R2,#`?<Constant "TYPE">` & 0xff
+   \   00023C   7B..         MOV     R3,#(`?<Constant "TYPE">` >> 8) & 0xff
+   \   00023E   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000241   8A..         MOV     ?V2,R2
+   \   000243   8B..         MOV     ?V3,R3
+   \   000245   E5..         MOV     A,?V2
+   \   000247   45..         ORL     A,?V3
+   \   000249   701D         JNZ     ??ZXBeeSysCommandProc_10
+     78                      {
+     79                          if (0 == strcmp("?", pval))
+   \   00024B                ; Setup parameters for call to function strcmp
+   \   00024B   85..82       MOV     DPL,?XSP + 0
+   \   00024E   85..83       MOV     DPH,?XSP + 1
+   \   000251   E0           MOVX    A,@DPTR
+   \   000252   FC           MOV     R4,A
+   \   000253   A3           INC     DPTR
+   \   000254   E0           MOVX    A,@DPTR
+   \   000255   FD           MOV     R5,A
+   \   000256   7A..         MOV     R2,#`?<Constant "?">` & 0xff
+   \   000258   7B..         MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+   \   00025A   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   00025D   8A..         MOV     ?V2,R2
+   \   00025F   8B..         MOV     ?V3,R3
+   \   000261   A8..         MOV     R0,?V2
+   \   000263   A9..         MOV     R1,?V3
+   \   000265   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     80                          {
+     81          #ifndef CC2530_Serial
+     82                              sprintf(buf, "%d%d%s", NODE_CATEGORY, GetCurrentLogicalType(), NODE_NAME);
+     83                              ZXBeeAdd("TYPE", buf);
+     84                              ret = 1;
+     85          #else
+     86                              //at_notify_data("AT+TYPE?\r\n",strlen("AT+TYPE?\r\n"));
+     87          #endif
+     88                          }
+     89                      }
+     90                      else if (0 == strcmp("TPN", ptag))
+   \                     ??ZXBeeSysCommandProc_10:
+   \   000268                ; Setup parameters for call to function strcmp
+   \   000268   7402         MOV     A,#0x2
+   \   00026A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00026D   E0           MOVX    A,@DPTR
+   \   00026E   FC           MOV     R4,A
+   \   00026F   A3           INC     DPTR
+   \   000270   E0           MOVX    A,@DPTR
+   \   000271   FD           MOV     R5,A
+   \   000272   7A..         MOV     R2,#`?<Constant "TPN">` & 0xff
+   \   000274   7B..         MOV     R3,#(`?<Constant "TPN">` >> 8) & 0xff
+   \   000276   12....       LCALL   ??strcmp?relay       ; Banked call to: strcmp
+   \   000279   8A..         MOV     ?V2,R2
+   \   00027B   8B..         MOV     ?V3,R3
+   \   00027D   E5..         MOV     A,?V2
+   \   00027F   45..         ORL     A,?V3
+   \   000281   6003         JZ      $+5
+   \   000283   02....       LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+     91                      {
+     92                          /*  参数格式 x/y  表示在y分钟内上报x次数据
+     93                          *  x = 0 停止上报,
+     94                          *  限制每分钟最大上报6次,最少上报1次
+     95                          */
+     96                          char *s = strchr(pval, '/');
+   \   000286                ; Setup parameters for call to function strchr
+   \   000286   7C2F         MOV     R4,#0x2f
+   \   000288   7D00         MOV     R5,#0x0
+   \   00028A   85..82       MOV     DPL,?XSP + 0
+   \   00028D   85..83       MOV     DPH,?XSP + 1
+   \   000290   E0           MOVX    A,@DPTR
+   \   000291   FA           MOV     R2,A
+   \   000292   A3           INC     DPTR
+   \   000293   E0           MOVX    A,@DPTR
+   \   000294   FB           MOV     R3,A
+   \   000295   12....       LCALL   ??strchr?relay       ; Banked call to: strchr
+   \   000298   7404         MOV     A,#0x4
+   \   00029A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00029D   EA           MOV     A,R2
+   \   00029E   F0           MOVX    @DPTR,A
+   \   00029F   A3           INC     DPTR
+   \   0002A0   EB           MOV     A,R3
+   \   0002A1   F0           MOVX    @DPTR,A
+     97                          if (s != NULL)
+   \   0002A2   7404         MOV     A,#0x4
+   \   0002A4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002A7   E0           MOVX    A,@DPTR
+   \   0002A8   F8           MOV     R0,A
+   \   0002A9   A3           INC     DPTR
+   \   0002AA   E0           MOVX    A,@DPTR
+   \   0002AB   F9           MOV     R1,A
+   \   0002AC   E8           MOV     A,R0
+   \   0002AD   49           ORL     A,R1
+   \   0002AE   7003         JNZ     $+5
+   \   0002B0   02....       LJMP    ??ZXBeeSysCommandProc_11 & 0xFFFF
+     98                          {
+     99                              int v1, v2;
+    100                              
+    101                              *s = 0;
+   \   0002B3   7404         MOV     A,#0x4
+   \   0002B5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002B8   E0           MOVX    A,@DPTR
+   \   0002B9   F8           MOV     R0,A
+   \   0002BA   A3           INC     DPTR
+   \   0002BB   E0           MOVX    A,@DPTR
+   \   0002BC   F583         MOV     DPH,A
+   \   0002BE   8882         MOV     DPL,R0
+   \   0002C0   7400         MOV     A,#0x0
+   \   0002C2   F0           MOVX    @DPTR,A
+    102                              v1 = atoi(pval);
+   \   0002C3                ; Setup parameters for call to function atoi
+   \   0002C3   85..82       MOV     DPL,?XSP + 0
+   \   0002C6   85..83       MOV     DPH,?XSP + 1
+   \   0002C9   E0           MOVX    A,@DPTR
+   \   0002CA   FA           MOV     R2,A
+   \   0002CB   A3           INC     DPTR
+   \   0002CC   E0           MOVX    A,@DPTR
+   \   0002CD   FB           MOV     R3,A
+   \   0002CE   12....       LCALL   ??atoi?relay         ; Banked call to: atoi
+   \   0002D1   8A..         MOV     ?V2,R2
+   \   0002D3   8B..         MOV     ?V3,R3
+   \   0002D5   85....       MOV     ?V6,?V2
+   \   0002D8   85....       MOV     ?V7,?V3
+    103                              v2 = atoi(s+1);
+   \   0002DB                ; Setup parameters for call to function atoi
+   \   0002DB   7404         MOV     A,#0x4
+   \   0002DD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002E0   E0           MOVX    A,@DPTR
+   \   0002E1   2401         ADD     A,#0x1
+   \   0002E3   FA           MOV     R2,A
+   \   0002E4   A3           INC     DPTR
+   \   0002E5   E0           MOVX    A,@DPTR
+   \   0002E6   3400         ADDC    A,#0x0
+   \   0002E8   FB           MOV     R3,A
+   \   0002E9   12....       LCALL   ??atoi?relay         ; Banked call to: atoi
+   \   0002EC   7406         MOV     A,#0x6
+   \   0002EE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002F1   EA           MOV     A,R2
+   \   0002F2   F0           MOVX    @DPTR,A
+   \   0002F3   A3           INC     DPTR
+   \   0002F4   EB           MOV     A,R3
+   \   0002F5   F0           MOVX    @DPTR,A
+    104                              
+    105                              if (v1 > 0 && v2 > 0)
+   \   0002F6   C3           CLR     C
+   \   0002F7   E5..         MOV     A,?V6
+   \   0002F9   9401         SUBB    A,#0x1
+   \   0002FB   E5..         MOV     A,?V7
+   \   0002FD   9400         SUBB    A,#0x0
+   \   0002FF   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000301   65D0         XRL     A,PSW
+   \   000303   33           RLC     A
+   \   000304   406B         JC      ??ZXBeeSysCommandProc_11
+   \   000306   7406         MOV     A,#0x6
+   \   000308   12....       LCALL   ?XSTACK_DISP0_8
+   \   00030B   C3           CLR     C
+   \   00030C   E0           MOVX    A,@DPTR
+   \   00030D   9401         SUBB    A,#0x1
+   \   00030F   A3           INC     DPTR
+   \   000310   E0           MOVX    A,@DPTR
+   \   000311   9400         SUBB    A,#0x0
+   \   000313   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000315   65D0         XRL     A,PSW
+   \   000317   33           RLC     A
+   \   000318   4057         JC      ??ZXBeeSysCommandProc_11
+    106                              {
+    107                                  uint16 delay = v2*60/v1;
+   \   00031A   7406         MOV     A,#0x6
+   \   00031C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00031F   E0           MOVX    A,@DPTR
+   \   000320   F8           MOV     R0,A
+   \   000321   A3           INC     DPTR
+   \   000322   E0           MOVX    A,@DPTR
+   \   000323   F9           MOV     R1,A
+   \   000324   E8           MOV     A,R0
+   \   000325   75F03C       MOV     B,#0x3c
+   \   000328   A4           MUL     AB
+   \   000329   C8           XCH     A,R0
+   \   00032A   AAF0         MOV     R2,B
+   \   00032C   75F000       MOV     B,#0x0
+   \   00032F   A4           MUL     AB
+   \   000330   2A           ADD     A,R2
+   \   000331   FA           MOV     R2,A
+   \   000332   75F03C       MOV     B,#0x3c
+   \   000335   E9           MOV     A,R1
+   \   000336   A4           MUL     AB
+   \   000337   2A           ADD     A,R2
+   \   000338   F9           MOV     R1,A
+   \   000339   AA..         MOV     R2,?V6
+   \   00033B   AB..         MOV     R3,?V7
+   \   00033D   12....       LCALL   ?S_DIV_MOD
+   \   000340   88..         MOV     ?V4,R0
+   \   000342   89..         MOV     ?V5,R1
+   \   000344   85....       MOV     ?V2,?V4
+   \   000347   85....       MOV     ?V3,?V5
+    108                                  uint16 cnt = v1;
+   \   00034A   85....       MOV     ?V4,?V6
+   \   00034D   85....       MOV     ?V5,?V7
+    109                                  if (delay >= 10 && delay <= 65)
+   \   000350   C3           CLR     C
+   \   000351   E5..         MOV     A,?V2
+   \   000353   940A         SUBB    A,#0xa
+   \   000355   E5..         MOV     A,?V3
+   \   000357   9400         SUBB    A,#0x0
+   \   000359   4016         JC      ??ZXBeeSysCommandProc_11
+   \   00035B   C3           CLR     C
+   \   00035C   E5..         MOV     A,?V2
+   \   00035E   9442         SUBB    A,#0x42
+   \   000360   E5..         MOV     A,?V3
+   \   000362   9400         SUBB    A,#0x0
+   \   000364   500B         JNC     ??ZXBeeSysCommandProc_11
+    110                                  {
+    111                                      starReportTPN(delay, cnt);
+   \   000366                ; Setup parameters for call to function starReportTPN
+   \   000366   AC..         MOV     R4,?V4
+   \   000368   AD..         MOV     R5,?V5
+   \   00036A   AA..         MOV     R2,?V2
+   \   00036C   AB..         MOV     R3,?V3
+   \   00036E   12....       LCALL   ??starReportTPN?relay; Banked call to: starReportTPN
+    112                                  }
+    113                              }
+    114                          }
+    115                          ret = 1;
+   \                     ??ZXBeeSysCommandProc_11:
+   \   000371   7E01         MOV     R6,#0x1
+   \   000373   7F00         MOV     R7,#0x0
+    116                      } //TPN
+    117              return ret;
+   \                     ??ZXBeeSysCommandProc_1:
+   \   000375   EE           MOV     A,R6
+   \   000376   FA           MOV     R2,A
+   \   000377   EF           MOV     A,R7
+   \   000378   FB           MOV     R3,A
+   \   000379   7418         MOV     A,#0x18
+   \   00037B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00037E   7F08         MOV     R7,#0x8
+   \   000380   02....       LJMP    ?BANKED_LEAVE_XDATA
+    118          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ZXBeeSysCommandProc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZXBeeSysCommandProc
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "ECHO">`:
+   \   000000   4543484F     DB "ECHO"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "RSSI">`:
+   \   000000   52535349     DB "RSSI"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "?">`:
+   \   000000   3F00         DB "?"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "%d">`:
+   \   000000   256400       DB "%d"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "LQI">`:
+   \   000000   4C514900     DB "LQI"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "PANID">`:
+   \   000000   50414E49     DB "PANID"
+   \            4400    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "%u">`:
+   \   000000   257500       DB "%u"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "CHANNEL">`:
+   \   000000   4348414E     DB "CHANNEL"
+   \            4E454C00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "TYPE">`:
+   \   000000   54595045     DB "TYPE"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "TPN">`:
+   \   000000   54504E00     DB "TPN"
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+     42   ZXBeeSysCommandProc
+       40   -> GetChannel
+       40   -> GetPanId
+       40   -> SetChannel
+       40   -> SetPanId
+       40   -> ZXBeeAdd
+       40   -> atoi
+       40   -> getLastPkgLQI
+       40   -> getLastPkgRssi
+       42   -> sprintf
+       40   -> starReportTPN
+       40   -> strchr
+       40   -> strcmp
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       3  ?<Constant "%d">
+       3  ?<Constant "%u">
+       2  ?<Constant "?">
+       8  ?<Constant "CHANNEL">
+       5  ?<Constant "ECHO">
+       4  ?<Constant "LQI">
+       6  ?<Constant "PANID">
+       5  ?<Constant "RSSI">
+       4  ?<Constant "TPN">
+       5  ?<Constant "TYPE">
+       6  ??ZXBeeSysCommandProc?relay
+     899  ZXBeeSysCommandProc
+
+ 
+ 899 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+  45 bytes in segment XDATA_ROM_C
+ 
+ 905 bytes of CODE  memory
+  45 bytes of CONST memory
+
+Errors: none
+Warnings: none

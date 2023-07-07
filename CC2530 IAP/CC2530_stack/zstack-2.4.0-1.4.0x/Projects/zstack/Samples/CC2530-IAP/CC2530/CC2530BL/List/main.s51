@@ -1,0 +1,864 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V9.10.1.2146 for 8051               07/Jul/2023  16:40:18
+// Copyright 2004-2014 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  near
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\main.c
+//    Command line       =  
+//        "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\main.c"
+//        -D HAL_SB_BOOT_CODE -D HAL_UART=TRUE -D HAL_UART_DMA=0 -D
+//        HAL_UART_ISR=1 -D HAL_UART_ISR_RX_MAX=254 -lC
+//        "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+//        -lA "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+//        --diag_suppress Pe001,Pa010,Pa050 -o "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\Obj\"
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=near --calling_convention=xdata_reentrant
+//        --place_constants=data --nr_virtual_regs 8 -I
+//        "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\drive\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\iap\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\shell\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\sys\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\source\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\common\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\ZMain\TI2530DB\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\include\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\_COMMON\CC2530\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\osal\include\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\services\saddr\"
+//        -Ohz
+//    List file          =  
+//        I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\main.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?XLOAD_R2345
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBWEAK DMA0CFGH
+        PUBWEAK DMA0CFGL
+        PUBWEAK P0INP
+        PUBWEAK P1DIR
+        PUBWEAK SLEEPCMD
+        PUBWEAK SLEEPSTA
+        PUBWEAK _A_P1
+        PUBWEAK __Constant_47160000
+        PUBLIC dmaCh0
+        PUBLIC main
+        FUNCTION main,021a03H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC sys_parameter
+        FUNCTION system_init,0a1201H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 11, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` Undefined
+          CFI `B.BR0` Undefined
+          CFI `B.BR1` Undefined
+          CFI `B.BR2` Undefined
+          CFI `B.BR3` Undefined
+          CFI `B.BR4` Undefined
+          CFI `B.BR5` Undefined
+          CFI `B.BR6` Undefined
+          CFI `B.BR7` Undefined
+          CFI `VB.BR8` Undefined
+          CFI `VB.BR9` Undefined
+          CFI `VB.BR10` Undefined
+          CFI `VB.BR11` Undefined
+          CFI `VB.BR12` Undefined
+          CFI `VB.BR13` Undefined
+          CFI `VB.BR14` Undefined
+          CFI `VB.BR15` Undefined
+          CFI VB Undefined
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW Undefined
+          CFI DPL0 Undefined
+          CFI DPH0 Undefined
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 Undefined
+          CFI R7 Undefined
+          CFI V0 Undefined
+          CFI V1 Undefined
+          CFI V2 Undefined
+          CFI V3 Undefined
+          CFI V4 Undefined
+          CFI V5 Undefined
+          CFI V6 Undefined
+          CFI V7 Undefined
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+        EXTERN HalFlashRead
+        FUNCTION HalFlashRead,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN IAP_download
+        FUNCTION IAP_download,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Uart0_Send_LenString
+        FUNCTION Uart0_Send_LenString,0602H
+        EXTERN cmdline_gets
+        FUNCTION cmdline_gets,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN keyInit
+        FUNCTION keyInit,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN led_app
+        FUNCTION led_app,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN led_init
+        FUNCTION led_init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN register_user_cmd
+        FUNCTION register_user_cmd,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN shell_1
+        EXTERN shell_app_cycle
+        FUNCTION shell_app_cycle,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN shell_hw_init
+        FUNCTION shell_hw_init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN shell_init
+        FUNCTION shell_init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN shell_input_init
+        FUNCTION shell_input_init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN start_app_partition
+        FUNCTION start_app_partition,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN usart0_mode
+        EXTERN vddWait
+        FUNCTION vddWait,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN welcome_gets
+        FUNCTION welcome_gets,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\main.c
+//    1 #include "sys.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr SLEEPSTA
+SLEEPSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEPCMD
+SLEEPCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d4H
+// unsigned char volatile __sfr DMA0CFGL
+DMA0CFGL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d5H
+// unsigned char volatile __sfr DMA0CFGH
+DMA0CFGH:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//    2 #include "uart.h"
+//    3 #include "download.h"
+//    4 #include "app_start.h"
+//    5 #include "shell.h"
+//    6 #include "user_cmd.h"
+//    7 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//    8 sys_parameter_t sys_parameter;
+sys_parameter:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    9 halDMADesc_t dmaCh0;
+dmaCh0:
+        DS 8
+        REQUIRE __INIT_XDATA_Z
+//   10 
+//   11 // 系统初始化
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   12 static void system_init()
+system_init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function system_init
+        CODE
+//   13 {
+        FUNCALL system_init, vddWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, keyInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, shell_hw_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, HalFlashRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, start_app_partition
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, shell_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, shell_input_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, welcome_gets
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL system_init, cmdline_gets
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//   14   /* 初始化系统基本硬件 */
+//   15   HAL_BOARD_INIT();
+        ANL     0xbe,#0xfb
+??system_init_0:
+        MOV     A,0x9d
+        MOV     C,0xE0 /* A   */.6
+        JNC     ??system_init_0
+        NOP
+        MOV     R0,#-0x8
+        MOV     R1,#0x1
+??system_init_1:
+        NOP
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??system_init_1
+        MOV     0xc6,#0x0
+??system_init_2:
+        MOV     A,0x9e
+        JNZ     ??system_init_2
+        ORL     0xbe,#0x4
+        MOV     DPTR,#0x6270
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+        SETB    0x90.0
+        ORL     0xfe,#0x1
+        SETB    0x90.1
+        ORL     0xfe,#0x2
+        SETB    0x90.2
+        ORL     0xfe,#0x4
+        ORL     0x8f,#0x8
+//   16   vddWait(VDD_MIN_RUN);
+        ; Setup parameters for call to function vddWait
+        MOV     R1,#0x4a
+        LCALL   vddWait
+//   17   HAL_DMA_SET_ADDR_DESC0(&dmaCh0);                    // 用于flash的读写
+        MOV     A,#(dmaCh0 >> 8) & 0xff
+        MOV     0xd5,A
+        MOV     0xd4,#dmaCh0 & 0xff
+//   18   keyInit();                                          // 可以使用按键进入boot模式
+        ; Setup parameters for call to function keyInit
+        LCALL   keyInit
+//   19   shell_hw_init(38400);
+        ; Setup parameters for call to function shell_hw_init
+        MOV     DPTR,#__Constant_47160000
+        LCALL   ?XLOAD_R2345
+        LCALL   shell_hw_init
+//   20   /* 判断启动 APP 程序 */
+//   21   SYS_PARAMETER_READ;
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0,#0x2
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R4,#sys_parameter & 0xff
+        MOV     R5,#(sys_parameter >> 8) & 0xff
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R1,#0x9
+        LCALL   HalFlashRead
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+//   22   start_app_partition(sys_parameter.current_part);
+        ; Setup parameters for call to function start_app_partition
+        MOV     DPTR,#sys_parameter
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   start_app_partition
+//   23   
+//   24   /* 启动 boot程序和控制台 */
+//   25   shell_init("shell >" ,Uart0_Send_LenString);        // 初始化 控制台输出
+        ; Setup parameters for call to function shell_init
+        MOV     R4,#Uart0_Send_LenString & 0xff
+        MOV     R5,#(Uart0_Send_LenString >> 8) & 0xff
+        MOV     R2,#`?<Constant "shell >">` & 0xff
+        MOV     R3,#(`?<Constant "shell >">` >> 8) & 0xff
+        LCALL   shell_init
+//   26   shell_input_init(&shell_1,Uart0_Send_LenString);    // 初始化 交互
+        ; Setup parameters for call to function shell_input_init
+        MOV     R4,#Uart0_Send_LenString & 0xff
+        MOV     R5,#(Uart0_Send_LenString >> 8) & 0xff
+        MOV     R2,#shell_1 & 0xff
+        MOV     R3,#(shell_1 >> 8) & 0xff
+        LCALL   shell_input_init
+//   27   welcome_gets(&shell_1,0,0);                         // 主动显示 welcome
+        ; Setup parameters for call to function welcome_gets
+        CLR     A
+        MOV     ?V0,A
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#shell_1 & 0xff
+        MOV     R3,#(shell_1 >> 8) & 0xff
+        LCALL   welcome_gets
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+//   28 
+//   29   /* shell 控制台进行用户输入 */
+//   30   cmdline_gets(&shell_1,"\r",1);                      // 一次换行
+        ; Setup parameters for call to function cmdline_gets
+        MOV     ?V0,#0x1
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R4,#`?<Constant "\\r">` & 0xff
+        MOV     R5,#(`?<Constant "\\r">` >> 8) & 0xff
+        MOV     R2,#shell_1 & 0xff
+        MOV     R3,#(shell_1 >> 8) & 0xff
+        LCALL   cmdline_gets
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+//   31 }
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock0
+        REQUIRE SLEEPCMD
+        REQUIRE SLEEPSTA
+        REQUIRE CLKCONCMD
+        REQUIRE CLKCONSTA
+        REQUIRE _A_P1
+        REQUIRE P1DIR
+        REQUIRE P0INP
+        REQUIRE DMA0CFGH
+        REQUIRE DMA0CFGL
+//   32 
+//   33 // APP初始化
+//   34 static void app_init()
+//   35 {
+//   36   led_init();
+//   37   register_user_cmd();
+//   38 }
+//   39 
+//   40 // 主函数
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   41 void main(void)
+main:
+          CFI Block cfiBlock1 Using cfiCommon1
+          CFI Function main
+        CODE
+//   42 {
+        FUNCALL main, system_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, led_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, register_user_cmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, shell_app_cycle
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, led_app
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, shell_app_cycle
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL main, IAP_download
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        ; Auto size: 0
+//   43   system_init();
+        ; Setup parameters for call to function system_init
+        LCALL   system_init
+//   44   app_init();
+        ; Setup parameters for call to function led_init
+        LCALL   led_init
+        ; Setup parameters for call to function register_user_cmd
+        LCALL   register_user_cmd
+        SJMP    ??main_0
+//   45   while(1){
+//   46     led_app();
+//   47     shell_app_cycle();
+//   48     if(usart0_mode==0)                // 串口数据走向
+//   49       shell_app_cycle();
+??main_1:
+        ; Setup parameters for call to function shell_app_cycle
+        LCALL   shell_app_cycle
+??main_0:
+        ; Setup parameters for call to function led_app
+        LCALL   led_app
+        ; Setup parameters for call to function shell_app_cycle
+        LCALL   shell_app_cycle
+        MOV     DPTR,#usart0_mode
+        MOVX    A,@DPTR
+        JZ      ??main_1
+//   50     else
+//   51       IAP_download();
+        ; Setup parameters for call to function IAP_download
+        LCALL   IAP_download
+        SJMP    ??main_0
+          CFI EndBlock cfiBlock1
+//   52   }
+//   53 }
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "shell >">>`:
+        DB "shell >"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "\\r">>`:
+        DB "\015"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_47160000>`:
+        DATA32
+        DD 47160000H
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "shell >">`:
+        DS 8
+        REQUIRE `?<Initializer for <Constant "shell >">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA16
+`?<Constant "\\r">`:
+        DS 2
+        REQUIRE `?<Initializer for <Constant "\\r">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_47160000:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_47160000>`
+        REQUIRE __INIT_XDATA_I
+
+        END
+// 
+// 233 bytes in segment NEAR_CODE
+//   9 bytes in segment SFR_AN
+//  14 bytes in segment XDATA_I
+//  14 bytes in segment XDATA_ID
+//  10 bytes in segment XDATA_Z
+// 
+// 243 bytes of CODE  memory (+ 4 bytes shared)
+//   0 bytes of DATA  memory (+ 9 bytes shared)
+//  20 bytes of XDATA memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: 1

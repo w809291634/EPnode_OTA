@@ -1,0 +1,1200 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                07/Jul/2023  16:40:36
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\at-uart.c
+#    Command line       =  
+#        -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DRTR_NWK) -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=8448
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)
+#        -DREJOIN_POLL_RATE=440 "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\at-uart.c"
+#        -D HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR -D NV_INIT -D
+#        XLAB -D CC2530_Serial -D MAKE_CRC_SHDW -D CC2530_USE_IAP -lC
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        -lA "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        --diag_suppress Pe001,Pa010 -o "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\"
+#        -e --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 8 -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\Source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\common\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -On
+#    List file          =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\at-uart.lst
+#    Object file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\at-uart.r51
+#
+###############################################################################
+
+I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\at-uart.c
+      1          /*********************************************************************************************
+      2          * 文件：at-uart.c
+      3          * 作者：Xuzhy 2018.5.16
+      4          * 说明：节点AT指令串口初始化
+      5          * 修改：fuyou 增加透传驱动
+      6          * 注释：
+      7          *********************************************************************************************/
+      8          
+      9          /*********************************************************************************************
+     10          * 头文件
+     11          *********************************************************************************************/
+     12          #include <iocc2530.h>
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc1
+   \   unsigned char volatile __sfr U0DBUF
+   \                     U0DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc2
+   \   unsigned char volatile __sfr U0BAUD
+   \                     U0BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc5
+   \   unsigned char volatile __sfr U0GCR
+   \                     U0GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+     13          #include <stdio.h>
+     14          #include "hal_mcu.h"
+     15          #include "at-uart.h"
+     16          #include "math.h"
+     17          /*********************************************************************************************
+     18          * 宏定义
+     19          *********************************************************************************************/
+     20          #define SUPPOER_DEBUG 1
+     21          /*********************************************************************************************
+     22          * 函数原型说明
+     23          *********************************************************************************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     24          static void (*_input)(char ch);
+   \                     _input:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     25          /*********************************************************************************************
+     26          * 名称：UART_BuadCount
+     27          * 功能：串口波特率计算
+     28          * 参数：baud:波特率
+     29          * 返回：无
+     30          * 修改：
+     31          * 注释：根据波特率计算寄存器值
+     32          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void UART_BuadCount(double* baud,char* baud_e,char* baud_m)
+   \                     UART_BuadCount:
+     34          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 6
+   \   000005   74FA         MOV     A,#-0x6
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EC           MOV     A,R4
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   ED           MOV     A,R5
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   EA           MOV     A,R2
+   \   000016   FE           MOV     R6,A
+   \   000017   EB           MOV     A,R3
+   \   000018   FF           MOV     R7,A
+     35          	double sys_clk_baud = 32000000.0;							//系统时钟
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7B24         MOV     R3,#0x24
+   \   00001D   7CF4         MOV     R4,#-0xc
+   \   00001F   7D4B         MOV     R5,#0x4b
+   \   000021   7402         MOV     A,#0x2
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   EA           MOV     A,R2
+   \   000027   F0           MOVX    @DPTR,A
+   \   000028   A3           INC     DPTR
+   \   000029   EB           MOV     A,R3
+   \   00002A   F0           MOVX    @DPTR,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   EC           MOV     A,R4
+   \   00002D   F0           MOVX    @DPTR,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   ED           MOV     A,R5
+   \   000030   F0           MOVX    @DPTR,A
+     36          	
+     37          	/*根据波特率选择baud_e*/
+     38          	if(*baud<4800)
+   \   000031   8E82         MOV     DPL,R6
+   \   000033   8F83         MOV     DPH,R7
+   \   000035   78..         MOV     R0,#?V4
+   \   000037   12....       LCALL   ?L_MOV_X
+   \   00003A   90....       MOV     DPTR,#__Constant_45960000
+   \   00003D   78..         MOV     R0,#?V0
+   \   00003F   12....       LCALL   ?L_MOV_X
+   \   000042   78..         MOV     R0,#?V4
+   \   000044   79..         MOV     R1,#?V0
+   \   000046   12....       LCALL   ?FLT_LT
+   \   000049   5014         JNC     ??UART_BuadCount_0
+     39          	{
+     40          		*baud_e = 6;
+   \   00004B   85..82       MOV     DPL,?XSP + 0
+   \   00004E   85..83       MOV     DPH,?XSP + 1
+   \   000051   E0           MOVX    A,@DPTR
+   \   000052   F8           MOV     R0,A
+   \   000053   A3           INC     DPTR
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   F583         MOV     DPH,A
+   \   000057   8882         MOV     DPL,R0
+   \   000059   7406         MOV     A,#0x6
+   \   00005B   F0           MOVX    @DPTR,A
+   \   00005C   02....       LJMP    ??UART_BuadCount_1 & 0xFFFF
+     41          	}
+     42          	else if((*baud>=4800)&&(*baud<9600))
+   \                     ??UART_BuadCount_0:
+   \   00005F   8E82         MOV     DPL,R6
+   \   000061   8F83         MOV     DPH,R7
+   \   000063   78..         MOV     R0,#?V4
+   \   000065   12....       LCALL   ?L_MOV_X
+   \   000068   90....       MOV     DPTR,#__Constant_45960000
+   \   00006B   78..         MOV     R0,#?V0
+   \   00006D   12....       LCALL   ?L_MOV_X
+   \   000070   78..         MOV     R0,#?V4
+   \   000072   79..         MOV     R1,#?V0
+   \   000074   12....       LCALL   ?FLT_GE
+   \   000077   502E         JNC     ??UART_BuadCount_2
+   \   000079   8E82         MOV     DPL,R6
+   \   00007B   8F83         MOV     DPH,R7
+   \   00007D   78..         MOV     R0,#?V4
+   \   00007F   12....       LCALL   ?L_MOV_X
+   \   000082   90....       MOV     DPTR,#__Constant_46160000
+   \   000085   78..         MOV     R0,#?V0
+   \   000087   12....       LCALL   ?L_MOV_X
+   \   00008A   78..         MOV     R0,#?V4
+   \   00008C   79..         MOV     R1,#?V0
+   \   00008E   12....       LCALL   ?FLT_LT
+   \   000091   5014         JNC     ??UART_BuadCount_2
+     43          	{
+     44          		*baud_e = 7;
+   \   000093   85..82       MOV     DPL,?XSP + 0
+   \   000096   85..83       MOV     DPH,?XSP + 1
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   F8           MOV     R0,A
+   \   00009B   A3           INC     DPTR
+   \   00009C   E0           MOVX    A,@DPTR
+   \   00009D   F583         MOV     DPH,A
+   \   00009F   8882         MOV     DPL,R0
+   \   0000A1   7407         MOV     A,#0x7
+   \   0000A3   F0           MOVX    @DPTR,A
+   \   0000A4   02....       LJMP    ??UART_BuadCount_1 & 0xFFFF
+     45          	}
+     46          	else if((*baud>=9600)&&(*baud<19200))
+   \                     ??UART_BuadCount_2:
+   \   0000A7   8E82         MOV     DPL,R6
+   \   0000A9   8F83         MOV     DPH,R7
+   \   0000AB   78..         MOV     R0,#?V4
+   \   0000AD   12....       LCALL   ?L_MOV_X
+   \   0000B0   90....       MOV     DPTR,#__Constant_46160000
+   \   0000B3   78..         MOV     R0,#?V0
+   \   0000B5   12....       LCALL   ?L_MOV_X
+   \   0000B8   78..         MOV     R0,#?V4
+   \   0000BA   79..         MOV     R1,#?V0
+   \   0000BC   12....       LCALL   ?FLT_GE
+   \   0000BF   502E         JNC     ??UART_BuadCount_3
+   \   0000C1   8E82         MOV     DPL,R6
+   \   0000C3   8F83         MOV     DPH,R7
+   \   0000C5   78..         MOV     R0,#?V4
+   \   0000C7   12....       LCALL   ?L_MOV_X
+   \   0000CA   90....       MOV     DPTR,#__Constant_46960000
+   \   0000CD   78..         MOV     R0,#?V0
+   \   0000CF   12....       LCALL   ?L_MOV_X
+   \   0000D2   78..         MOV     R0,#?V4
+   \   0000D4   79..         MOV     R1,#?V0
+   \   0000D6   12....       LCALL   ?FLT_LT
+   \   0000D9   5014         JNC     ??UART_BuadCount_3
+     47          	{
+     48          		*baud_e = 8;
+   \   0000DB   85..82       MOV     DPL,?XSP + 0
+   \   0000DE   85..83       MOV     DPH,?XSP + 1
+   \   0000E1   E0           MOVX    A,@DPTR
+   \   0000E2   F8           MOV     R0,A
+   \   0000E3   A3           INC     DPTR
+   \   0000E4   E0           MOVX    A,@DPTR
+   \   0000E5   F583         MOV     DPH,A
+   \   0000E7   8882         MOV     DPL,R0
+   \   0000E9   7408         MOV     A,#0x8
+   \   0000EB   F0           MOVX    @DPTR,A
+   \   0000EC   02....       LJMP    ??UART_BuadCount_1 & 0xFFFF
+     49          	}
+     50          	else if((*baud>=19200)&&(*baud<38400))
+   \                     ??UART_BuadCount_3:
+   \   0000EF   8E82         MOV     DPL,R6
+   \   0000F1   8F83         MOV     DPH,R7
+   \   0000F3   78..         MOV     R0,#?V4
+   \   0000F5   12....       LCALL   ?L_MOV_X
+   \   0000F8   90....       MOV     DPTR,#__Constant_46960000
+   \   0000FB   78..         MOV     R0,#?V0
+   \   0000FD   12....       LCALL   ?L_MOV_X
+   \   000100   78..         MOV     R0,#?V4
+   \   000102   79..         MOV     R1,#?V0
+   \   000104   12....       LCALL   ?FLT_GE
+   \   000107   502E         JNC     ??UART_BuadCount_4
+   \   000109   8E82         MOV     DPL,R6
+   \   00010B   8F83         MOV     DPH,R7
+   \   00010D   78..         MOV     R0,#?V4
+   \   00010F   12....       LCALL   ?L_MOV_X
+   \   000112   90....       MOV     DPTR,#__Constant_47160000
+   \   000115   78..         MOV     R0,#?V0
+   \   000117   12....       LCALL   ?L_MOV_X
+   \   00011A   78..         MOV     R0,#?V4
+   \   00011C   79..         MOV     R1,#?V0
+   \   00011E   12....       LCALL   ?FLT_LT
+   \   000121   5014         JNC     ??UART_BuadCount_4
+     51          	{
+     52          		*baud_e = 9;
+   \   000123   85..82       MOV     DPL,?XSP + 0
+   \   000126   85..83       MOV     DPH,?XSP + 1
+   \   000129   E0           MOVX    A,@DPTR
+   \   00012A   F8           MOV     R0,A
+   \   00012B   A3           INC     DPTR
+   \   00012C   E0           MOVX    A,@DPTR
+   \   00012D   F583         MOV     DPH,A
+   \   00012F   8882         MOV     DPL,R0
+   \   000131   7409         MOV     A,#0x9
+   \   000133   F0           MOVX    @DPTR,A
+   \   000134   02....       LJMP    ??UART_BuadCount_1 & 0xFFFF
+     53          	}
+     54          	else if((*baud>=38400)&&(*baud<76800))
+   \                     ??UART_BuadCount_4:
+   \   000137   8E82         MOV     DPL,R6
+   \   000139   8F83         MOV     DPH,R7
+   \   00013B   78..         MOV     R0,#?V4
+   \   00013D   12....       LCALL   ?L_MOV_X
+   \   000140   90....       MOV     DPTR,#__Constant_47160000
+   \   000143   78..         MOV     R0,#?V0
+   \   000145   12....       LCALL   ?L_MOV_X
+   \   000148   78..         MOV     R0,#?V4
+   \   00014A   79..         MOV     R1,#?V0
+   \   00014C   12....       LCALL   ?FLT_GE
+   \   00014F   502D         JNC     ??UART_BuadCount_5
+   \   000151   8E82         MOV     DPL,R6
+   \   000153   8F83         MOV     DPH,R7
+   \   000155   78..         MOV     R0,#?V4
+   \   000157   12....       LCALL   ?L_MOV_X
+   \   00015A   90....       MOV     DPTR,#__Constant_47960000
+   \   00015D   78..         MOV     R0,#?V0
+   \   00015F   12....       LCALL   ?L_MOV_X
+   \   000162   78..         MOV     R0,#?V4
+   \   000164   79..         MOV     R1,#?V0
+   \   000166   12....       LCALL   ?FLT_LT
+   \   000169   5013         JNC     ??UART_BuadCount_5
+     55          	{
+     56          		*baud_e = 10;
+   \   00016B   85..82       MOV     DPL,?XSP + 0
+   \   00016E   85..83       MOV     DPH,?XSP + 1
+   \   000171   E0           MOVX    A,@DPTR
+   \   000172   F8           MOV     R0,A
+   \   000173   A3           INC     DPTR
+   \   000174   E0           MOVX    A,@DPTR
+   \   000175   F583         MOV     DPH,A
+   \   000177   8882         MOV     DPL,R0
+   \   000179   740A         MOV     A,#0xa
+   \   00017B   F0           MOVX    @DPTR,A
+   \   00017C   8058         SJMP    ??UART_BuadCount_1
+     57          	}
+     58          	else if((*baud>=76800)&&(*baud<230400))
+   \                     ??UART_BuadCount_5:
+   \   00017E   8E82         MOV     DPL,R6
+   \   000180   8F83         MOV     DPH,R7
+   \   000182   78..         MOV     R0,#?V4
+   \   000184   12....       LCALL   ?L_MOV_X
+   \   000187   90....       MOV     DPTR,#__Constant_47960000
+   \   00018A   78..         MOV     R0,#?V0
+   \   00018C   12....       LCALL   ?L_MOV_X
+   \   00018F   78..         MOV     R0,#?V4
+   \   000191   79..         MOV     R1,#?V0
+   \   000193   12....       LCALL   ?FLT_GE
+   \   000196   502D         JNC     ??UART_BuadCount_6
+   \   000198   8E82         MOV     DPL,R6
+   \   00019A   8F83         MOV     DPH,R7
+   \   00019C   78..         MOV     R0,#?V4
+   \   00019E   12....       LCALL   ?L_MOV_X
+   \   0001A1   90....       MOV     DPTR,#__Constant_48610000
+   \   0001A4   78..         MOV     R0,#?V0
+   \   0001A6   12....       LCALL   ?L_MOV_X
+   \   0001A9   78..         MOV     R0,#?V4
+   \   0001AB   79..         MOV     R1,#?V0
+   \   0001AD   12....       LCALL   ?FLT_LT
+   \   0001B0   5013         JNC     ??UART_BuadCount_6
+     59          	{
+     60          		*baud_e = 11;
+   \   0001B2   85..82       MOV     DPL,?XSP + 0
+   \   0001B5   85..83       MOV     DPH,?XSP + 1
+   \   0001B8   E0           MOVX    A,@DPTR
+   \   0001B9   F8           MOV     R0,A
+   \   0001BA   A3           INC     DPTR
+   \   0001BB   E0           MOVX    A,@DPTR
+   \   0001BC   F583         MOV     DPH,A
+   \   0001BE   8882         MOV     DPL,R0
+   \   0001C0   740B         MOV     A,#0xb
+   \   0001C2   F0           MOVX    @DPTR,A
+   \   0001C3   8011         SJMP    ??UART_BuadCount_1
+     61          	}
+     62          	else
+     63          	{
+     64          		*baud_e = 12;
+   \                     ??UART_BuadCount_6:
+   \   0001C5   85..82       MOV     DPL,?XSP + 0
+   \   0001C8   85..83       MOV     DPH,?XSP + 1
+   \   0001CB   E0           MOVX    A,@DPTR
+   \   0001CC   F8           MOV     R0,A
+   \   0001CD   A3           INC     DPTR
+   \   0001CE   E0           MOVX    A,@DPTR
+   \   0001CF   F583         MOV     DPH,A
+   \   0001D1   8882         MOV     DPL,R0
+   \   0001D3   740C         MOV     A,#0xc
+   \   0001D5   F0           MOVX    @DPTR,A
+     65          	}
+     66          	
+     67          	/*计算baud_m*/
+     68          	*baud_m = (char)((((*baud)*pow(2,28))/(sys_clk_baud*pow(2,*baud_e)))-256.0);
+   \                     ??UART_BuadCount_1:
+   \   0001D6                ; Setup parameters for call to function pow
+   \   0001D6   90....       MOV     DPTR,#__Constant_41e00000
+   \   0001D9   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   0001DC   90....       MOV     DPTR,#__Constant_40000000
+   \   0001DF   12....       LCALL   ?XLOAD_R2345
+   \   0001E2   12....       LCALL   ??pow?relay          ; Banked call to: pow
+   \   0001E5   7404         MOV     A,#0x4
+   \   0001E7   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001EA   8A..         MOV     ?V4,R2
+   \   0001EC   8B..         MOV     ?V5,R3
+   \   0001EE   8C..         MOV     ?V6,R4
+   \   0001F0   8D..         MOV     ?V7,R5
+   \   0001F2   8E82         MOV     DPL,R6
+   \   0001F4   8F83         MOV     DPH,R7
+   \   0001F6   78..         MOV     R0,#?V0
+   \   0001F8   12....       LCALL   ?L_MOV_X
+   \   0001FB   78..         MOV     R0,#?V0
+   \   0001FD   79..         MOV     R1,#?V4
+   \   0001FF   12....       LCALL   ?FLT_MUL
+   \   000202   C0..         PUSH    ?V0
+   \   000204   C0..         PUSH    ?V1
+   \   000206   C0..         PUSH    ?V2
+   \   000208   C0..         PUSH    ?V3
+   \   00020A   7402         MOV     A,#0x2
+   \   00020C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00020F   78..         MOV     R0,#?V4
+   \   000211   12....       LCALL   ?L_MOV_X
+   \   000214                ; Setup parameters for call to function pow
+   \   000214   85..82       MOV     DPL,?XSP + 0
+   \   000217   85..83       MOV     DPH,?XSP + 1
+   \   00021A   E0           MOVX    A,@DPTR
+   \   00021B   F8           MOV     R0,A
+   \   00021C   A3           INC     DPTR
+   \   00021D   E0           MOVX    A,@DPTR
+   \   00021E   F583         MOV     DPH,A
+   \   000220   8882         MOV     DPL,R0
+   \   000222   E0           MOVX    A,@DPTR
+   \   000223   F5..         MOV     ?V0,A
+   \   000225   E4           CLR     A
+   \   000226   F5..         MOV     ?V1,A
+   \   000228   F5..         MOV     ?V2,A
+   \   00022A   F5..         MOV     ?V3,A
+   \   00022C   78..         MOV     R0,#?V0
+   \   00022E   12....       LCALL   ?UL_TO_FLT
+   \   000231   78..         MOV     R0,#?V0
+   \   000233   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   000236   90....       MOV     DPTR,#__Constant_40000000
+   \   000239   12....       LCALL   ?XLOAD_R2345
+   \   00023C   12....       LCALL   ??pow?relay          ; Banked call to: pow
+   \   00023F   7404         MOV     A,#0x4
+   \   000241   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000244   8A..         MOV     ?V0,R2
+   \   000246   8B..         MOV     ?V1,R3
+   \   000248   8C..         MOV     ?V2,R4
+   \   00024A   8D..         MOV     ?V3,R5
+   \   00024C   78..         MOV     R0,#?V4
+   \   00024E   79..         MOV     R1,#?V0
+   \   000250   12....       LCALL   ?FLT_MUL
+   \   000253   D0..         POP     ?V3
+   \   000255   D0..         POP     ?V2
+   \   000257   D0..         POP     ?V1
+   \   000259   D0..         POP     ?V0
+   \   00025B   78..         MOV     R0,#?V0
+   \   00025D   79..         MOV     R1,#?V4
+   \   00025F   12....       LCALL   ?FLT_DIV
+   \   000262   90....       MOV     DPTR,#__Constant_c3800000
+   \   000265   78..         MOV     R0,#?V4
+   \   000267   12....       LCALL   ?L_MOV_X
+   \   00026A   78..         MOV     R0,#?V0
+   \   00026C   79..         MOV     R1,#?V4
+   \   00026E   12....       LCALL   ?FLT_ADD
+   \   000271   78..         MOV     R0,#?V0
+   \   000273   12....       LCALL   ?FLT_TO_L
+   \   000276   E5..         MOV     A,?V0
+   \   000278   C0E0         PUSH    A
+   \   00027A   7416         MOV     A,#0x16
+   \   00027C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00027F   E0           MOVX    A,@DPTR
+   \   000280   F8           MOV     R0,A
+   \   000281   A3           INC     DPTR
+   \   000282   E0           MOVX    A,@DPTR
+   \   000283   F583         MOV     DPH,A
+   \   000285   8882         MOV     DPL,R0
+   \   000287   D0E0         POP     A
+   \   000289   F0           MOVX    @DPTR,A
+     69          }
+   \   00028A   7406         MOV     A,#0x6
+   \   00028C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00028F   7F08         MOV     R7,#0x8
+   \   000291   02....       LJMP    ?BANKED_LEAVE_XDATA
+     70          /*********************************************************************************************
+     71          * 名称：uart0Init
+     72          * 功能：uart0初始化，复用到位置1
+     73          * 参数：baud:波特率
+     74          * 返回：无
+     75          * 修改：
+     76          * 注释：
+     77          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          void uart0Init(double baud)
+   \                     uart0Init:
+     79          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 6
+   \   000005   74FA         MOV     A,#-0x6
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7402         MOV     A,#0x2
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   EC           MOV     A,R4
+   \   000016   F0           MOVX    @DPTR,A
+   \   000017   A3           INC     DPTR
+   \   000018   ED           MOV     A,R5
+   \   000019   F0           MOVX    @DPTR,A
+     80          	char baud_e,baud_m;
+     81          	
+     82          	P0SEL |=  0x0C;                 							//初始化UART0端口
+   \   00001A   43F30C       ORL     0xf3,#0xc
+     83          	PERCFG&= ~0x01;                 							//选择UART0为可选位置一
+   \   00001D   53F1FE       ANL     0xf1,#0xfe
+     84          	P0DIR &= ~(1<<2);                 							//P02,IN
+   \   000020   53FDFB       ANL     0xfd,#0xfb
+     85          	P0DIR |= (1<<3);                 							//PO3,OUT
+   \   000023   43FD08       ORL     0xfd,#0x8
+     86          	P2DIR &= ~0xC0;                 							//P0优先作为串口0
+   \   000026   53FF3F       ANL     0xff,#0x3f
+     87          	
+     88          	U0CSR = 0xC0;                   							//设置为UART模式,而且使能接受器
+   \   000029   7586C0       MOV     0x86,#-0x40
+     89          	UART_BuadCount(&baud,&baud_e,&baud_m);						//计算波特率
+   \   00002C                ; Setup parameters for call to function UART_BuadCount
+   \   00002C   A8..         MOV     R0,?XSP + 0
+   \   00002E   A9..         MOV     R1,?XSP + 1
+   \   000030   88..         MOV     ?V0,R0
+   \   000032   89..         MOV     ?V1,R1
+   \   000034   78..         MOV     R0,#?V0
+   \   000036   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000039   7403         MOV     A,#0x3
+   \   00003B   12....       LCALL   ?XSTACK_DISP102_8
+   \   00003E   7404         MOV     A,#0x4
+   \   000040   12....       LCALL   ?XSTACK_DISP101_8
+   \   000043   12....       LCALL   ??UART_BuadCount?relay; Banked call to: UART_BuadCount
+   \   000046   7402         MOV     A,#0x2
+   \   000048   12....       LCALL   ?DEALLOC_XSTACK8
+     90          	U0GCR = baud_e;                  
+   \   00004B   7401         MOV     A,#0x1
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   F5C5         MOV     0xc5,A
+     91          	U0BAUD = baud_m;                  							//设置波特率
+   \   000053   85..82       MOV     DPL,?XSP + 0
+   \   000056   85..83       MOV     DPH,?XSP + 1
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F5C2         MOV     0xc2,A
+     92              
+     93              //设置中断优先级最高
+     94              //IP0 |= (1<<2);
+     95              //IP1 |= (1<<2);
+     96              
+     97          	URX0IE = 1;													//串口接收中断使能
+   \   00005C   D2AA         SETB    0xa8.2
+     98          	//EA = 1;														//开总中断
+     99          }
+   \   00005E   7406         MOV     A,#0x6
+   \   000060   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000063   7F02         MOV     R7,#0x2
+   \   000065   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000068                REQUIRE P0SEL
+   \   000068                REQUIRE PERCFG
+   \   000068                REQUIRE P0DIR
+   \   000068                REQUIRE P2DIR
+   \   000068                REQUIRE U0CSR
+   \   000068                REQUIRE U0GCR
+   \   000068                REQUIRE U0BAUD
+   \   000068                REQUIRE _A_IEN0
+    100          /*********************************************************************************************
+    101          * 名称：uart1Init
+    102          * 功能：uart1初始化，复用到位置2
+    103          * 参数：baud:波特率
+    104          * 返回：无
+    105          * 修改：
+    106          * 注释：
+    107          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    108          void uart1Init(double baud)
+   \                     uart1Init:
+    109          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 6
+   \   000005   74FA         MOV     A,#-0x6
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7402         MOV     A,#0x2
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   EC           MOV     A,R4
+   \   000016   F0           MOVX    @DPTR,A
+   \   000017   A3           INC     DPTR
+   \   000018   ED           MOV     A,R5
+   \   000019   F0           MOVX    @DPTR,A
+    110          	char baud_e,baud_m;
+    111          	
+    112          	/*UART1，IO初始化,P16,P17*/
+    113          	P1SEL |= ((1<<6)|(1<<7));									//选择IO功能为外设
+   \   00001A   43F4C0       ORL     0xf4,#0xc0
+    114          	PERCFG |= (1<<1);											//选择复用到位置2
+   \   00001D   43F102       ORL     0xf1,#0x2
+    115          	P1DIR &= ~(1<<7);											//设置P17为输入
+   \   000020   53FE7F       ANL     0xfe,#0x7f
+    116          	P1DIR |= (1<<6);											//设置P16为输出
+   \   000023   43FE40       ORL     0xfe,#0x40
+    117              
+    118          	/*UART初始化*/
+    119          	U1CSR = ((1<<7)|(1<<6));									//设置为UART模式,使能接收
+   \   000026   75F8C0       MOV     0xf8,#-0x40
+    120          	UART_BuadCount(&baud,&baud_e,&baud_m);						//计算波特率
+   \   000029                ; Setup parameters for call to function UART_BuadCount
+   \   000029   A8..         MOV     R0,?XSP + 0
+   \   00002B   A9..         MOV     R1,?XSP + 1
+   \   00002D   88..         MOV     ?V0,R0
+   \   00002F   89..         MOV     ?V1,R1
+   \   000031   78..         MOV     R0,#?V0
+   \   000033   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000036   7403         MOV     A,#0x3
+   \   000038   12....       LCALL   ?XSTACK_DISP102_8
+   \   00003B   7404         MOV     A,#0x4
+   \   00003D   12....       LCALL   ?XSTACK_DISP101_8
+   \   000040   12....       LCALL   ??UART_BuadCount?relay; Banked call to: UART_BuadCount
+   \   000043   7402         MOV     A,#0x2
+   \   000045   12....       LCALL   ?DEALLOC_XSTACK8
+    121          	U1GCR = baud_e;
+   \   000048   7401         MOV     A,#0x1
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   F5FC         MOV     0xfc,A
+    122          	U1BAUD = baud_m;											//设置波特率
+   \   000050   85..82       MOV     DPL,?XSP + 0
+   \   000053   85..83       MOV     DPH,?XSP + 1
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   F5FA         MOV     0xfa,A
+    123              
+    124              //设置中断优先级最高
+    125              //IP0 |= (1<<3);
+    126              //IP1 |= (1<<3);
+    127              
+    128          	URX1IE = 1;													//串口接收中断使能
+   \   000059   D2AB         SETB    0xa8.3
+    129          	//EA = 1;														//开总中断
+    130          }
+   \   00005B   7406         MOV     A,#0x6
+   \   00005D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000060   7F02         MOV     R7,#0x2
+   \   000062   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000065                REQUIRE P1SEL
+   \   000065                REQUIRE PERCFG
+   \   000065                REQUIRE P1DIR
+   \   000065                REQUIRE _A_U1CSR
+   \   000065                REQUIRE U1GCR
+   \   000065                REQUIRE U1BAUD
+   \   000065                REQUIRE _A_IEN0
+    131          /*********************************************************************************************
+    132          * 名称：Uart0SendByte
+    133          * 功能：串口0发送字节函数
+    134          * 参数：ch:要发送的字节
+    135          * 返回：无
+    136          * 修改：
+    137          * 注释：
+    138          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    139          void Uart0SendByte(unsigned char ch)
+   \                     Uart0SendByte:
+    140          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    141            /*
+    142          	U0DBUF = ch;
+    143          	while(UTX0IF == 0);
+    144          	UTX0IF = 0;
+    145            */
+    146                 U0DBUF = ch;
+   \   000000   89C1         MOV     0xc1,R1
+    147               while((U0CSR&0x02) == 0);
+   \                     ??Uart0SendByte_0:
+   \   000002   E586         MOV     A,0x86
+   \   000004   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000006   50FA         JNC     ??Uart0SendByte_0
+    148               U0CSR = U0CSR&~0x02;
+   \   000008   5386FD       ANL     0x86,#0xfd
+    149          }
+   \   00000B   02....       LJMP    ?BRET
+   \   00000E                REQUIRE U0DBUF
+   \   00000E                REQUIRE U0CSR
+    150          /*********************************************************************************************
+    151          * 名称：Uart1SendByte
+    152          * 功能：串口1发送字节函数
+    153          * 参数：ch:要发送的字节
+    154          * 返回：无
+    155          * 修改：
+    156          * 注释：
+    157          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    158          void Uart1SendByte(unsigned char ch)
+   \                     Uart1SendByte:
+    159          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    160          	/*U1DBUF = ch;
+    161          	while(UTX1IF == 0);
+    162          	UTX1IF = 0;*/
+    163               U1DBUF = ch;
+   \   000000   89F9         MOV     0xf9,R1
+    164               while(U1TX_BYTE == 0);
+   \                     ??Uart1SendByte_0:
+   \   000002   A2F9         MOV     C,0xf8.1
+   \   000004   50FC         JNC     ??Uart1SendByte_0
+    165               U1TX_BYTE = 0;
+   \   000006   C2F9         CLR     0xf8.1
+    166          }
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE U1DBUF
+   \   00000B                REQUIRE _A_U1CSR
+    167          /*********************************************************************************************
+    168          * 名称：at_uart_init()
+    169          * 功能：节点AT指令串口初始化
+    170          * 参数：
+    171          * 返回：
+    172          * 修改：
+    173          * 注释：
+    174          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    175          void at_uart_init(void)
+   \                     at_uart_init:
+    176          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    177          #if defined(CC2530_Serial)
+    178              uart0Init(38400);
+   \   000004                ; Setup parameters for call to function uart0Init
+   \   000004   90....       MOV     DPTR,#__Constant_47160000
+   \   000007   12....       LCALL   ?XLOAD_R2345
+   \   00000A   12....       LCALL   ??uart0Init?relay    ; Banked call to: uart0Init
+    179          #else
+    180              uart1Init(38400);
+    181          #endif
+    182          }
+   \   00000D   D083         POP     DPH
+   \   00000F   D082         POP     DPL
+   \   000011   02....       LJMP    ?BRET
+    183          /*********************************************************************************************
+    184          * 名称：at_uart_write()
+    185          * 功能：节点AT指令串口写数据
+    186          * 参数：
+    187          * 返回：
+    188          * 修改：
+    189          * 注释：
+    190          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    191          void at_uart_write(char ch)
+   \                     at_uart_write:
+    192          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    193          #if defined(CC2530_Serial)
+    194              Uart0SendByte(ch);
+   \   000007                ; Setup parameters for call to function Uart0SendByte
+   \   000007   EE           MOV     A,R6
+   \   000008   F9           MOV     R1,A
+   \   000009   12....       LCALL   ??Uart0SendByte?relay; Banked call to: Uart0SendByte
+    195          #else
+    196              Uart1SendByte(ch);
+    197          #endif
+    198          }
+   \   00000C   7F01         MOV     R7,#0x1
+   \   00000E   02....       LJMP    ?BANKED_LEAVE_XDATA
+    199          /*********************************************************************************************
+    200          * 名称：at_uart_set_input_call()
+    201          * 功能：节点AT指令串口读数据
+    202          * 参数：
+    203          * 返回：
+    204          * 修改：
+    205          * 注释：
+    206          *********************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    207          void at_uart_set_input_call(void (*c)(char ch))
+   \                     at_uart_set_input_call:
+    208          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    209            _input = c;
+   \   000004   90....       MOV     DPTR,#_input
+   \   000007   EA           MOV     A,R2
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   EB           MOV     A,R3
+   \   00000B   F0           MOVX    @DPTR,A
+    210          }
+   \   00000C   D083         POP     DPH
+   \   00000E   D082         POP     DPL
+   \   000010   02....       LJMP    ?BRET
+    211          /*********************************************************************************************
+    212          * 名称：HAL_ISR_FUNCTION()
+    213          * 功能：节点AT指令串口中断处理
+    214          * 参数：
+    215          * 返回：
+    216          * 修改：
+    217          * 注释：
+    218          *********************************************************************************************/
+    219          #if defined(CC2530_Serial)
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    220          HAL_ISR_FUNCTION(halUart0TxIsr, URX0_VECTOR)
+   \                     halUart0TxIsr:
+    221          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+    222              char ch;
+    223              ch = U0DBUF;
+   \   000007   AEC1         MOV     R6,0xc1+0x0
+    224              if (_input != NULL) {
+   \   000009   90....       MOV     DPTR,#_input
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   F8           MOV     R0,A
+   \   00000E   A3           INC     DPTR
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F9           MOV     R1,A
+   \   000011   E8           MOV     A,R0
+   \   000012   49           ORL     A,R1
+   \   000013   6010         JZ      ??halUart0TxIsr_0
+    225                _input(ch);
+   \   000015                ; Setup parameters for indirect call
+   \   000015   EE           MOV     A,R6
+   \   000016   F9           MOV     R1,A
+   \   000017   90....       MOV     DPTR,#_input
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F8           MOV     R0,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   F583         MOV     DPH,A
+   \   000020   8882         MOV     DPL,R0
+   \   000022   12....       LCALL   ?CALL_IND
+    226              }
+    227          }
+   \                     ??halUart0TxIsr_0:
+   \   000025   7F01         MOV     R7,#0x1
+   \   000027   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   00002A                REQUIRE U0DBUF
+    228          #else
+    229          HAL_ISR_FUNCTION(halUart1TxIsr, URX1_VECTOR)
+    230          {
+    231            char ch;
+    232              ch = U1DBUF;
+    233              if (_input != NULL) {
+    234                _input(ch);
+    235              }
+    236          }
+    237          #endif
+    238          /*********************************************************************************************
+    239          * 名称：putchar()
+    240          * 功能：printf iar 调试接口
+    241          * 参数：
+    242          * 返回：
+    243          * 修改：
+    244          * 注释：
+    245          *********************************************************************************************/
+    246          #if  SUPPOER_DEBUG
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    247          __near_func int  putchar(int ch) 
+   \                     putchar:
+    248          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    249            at_uart_write(ch);
+   \   000009                ; Setup parameters for call to function at_uart_write
+   \   000009   EE           MOV     A,R6
+   \   00000A   F9           MOV     R1,A
+   \   00000B   12....       LCALL   ??at_uart_write?relay; Banked call to: at_uart_write
+    250            return ch;
+   \   00000E   EE           MOV     A,R6
+   \   00000F   FA           MOV     R2,A
+   \   000010   EF           MOV     A,R7
+   \   000011   FB           MOV     R3,A
+   \   000012   7F01         MOV     R7,#0x1
+   \   000014   02....       LJMP    ?FUNC_LEAVE_XDATA
+    251          }
+
+   \                                 In  segment INTVEC, offset 0x13, root
+   \                     `??halUart0TxIsr??INTVEC 19`:
+   \   000013   02....       LJMP       (halUart0TxIsr)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_45960000:
+   \   000000   00009645     DD 45960000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_46160000:
+   \   000000   00001646     DD 46160000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_46960000:
+   \   000000   00009646     DD 46960000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_47160000:
+   \   000000   00001647     DD 47160000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_47960000:
+   \   000000   00009647     DD 47960000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_48610000:
+   \   000000   00006148     DD 48610000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_41e00000:
+   \   000000   0000E041     DD 41E00000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_40000000:
+   \   000000   00000040     DD 40000000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_c3800000:
+   \   000000   000080C3     DD 0C3800000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UART_BuadCount?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UART_BuadCount
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??uart0Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    uart0Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??uart1Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    uart1Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Uart0SendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Uart0SendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Uart1SendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Uart1SendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??at_uart_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    at_uart_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??at_uart_write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    at_uart_write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??at_uart_set_input_call?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    at_uart_set_input_call
+    252          #endif
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      4     44   UART_BuadCount
+        0     26   -> pow
+        4     26   -> pow
+      0      9   Uart0SendByte
+      0      0   Uart1SendByte
+      2      0   at_uart_init
+        2      0   -> uart0Init
+      2      0   at_uart_set_input_call
+      0     17   at_uart_write
+        0      9   -> Uart0SendByte
+      0     14   halUart0TxIsr
+      0      8   putchar
+        0      8   -> at_uart_write
+      0     18   uart0Init
+        0     18   -> UART_BuadCount
+      0     18   uart1Init
+        0     18   -> UART_BuadCount
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??UART_BuadCount?relay
+       6  ??Uart0SendByte?relay
+       6  ??Uart1SendByte?relay
+       6  ??at_uart_init?relay
+       6  ??at_uart_set_input_call?relay
+       6  ??at_uart_write?relay
+       3  ??halUart0TxIsr??INTVEC 19
+       6  ??uart0Init?relay
+       6  ??uart1Init?relay
+       1  P0DIR
+       1  P0SEL
+       1  P1DIR
+       1  P1SEL
+       1  P2DIR
+       1  PERCFG
+       1  U0BAUD
+       1  U0CSR
+       1  U0DBUF
+       1  U0GCR
+       1  U1BAUD
+       1  U1DBUF
+       1  U1GCR
+     660  UART_BuadCount
+      14  Uart0SendByte
+      11  Uart1SendByte
+       1  _A_IEN0
+       1  _A_U1CSR
+       4  __Constant_40000000
+       4  __Constant_41e00000
+       4  __Constant_45960000
+       4  __Constant_46160000
+       4  __Constant_46960000
+       4  __Constant_47160000
+       4  __Constant_47960000
+       4  __Constant_48610000
+       4  __Constant_c3800000
+       2  _input
+      20  at_uart_init
+      19  at_uart_set_input_call
+      17  at_uart_write
+      42  halUart0TxIsr
+      23  putchar
+     104  uart0Init
+     101  uart1Init
+
+ 
+ 946 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+  65 bytes in segment NEAR_CODE
+  15 bytes in segment SFR_AN
+  36 bytes in segment XDATA_ROM_C
+   2 bytes in segment XDATA_Z
+ 
+ 1 059 bytes of CODE  memory (+  3 bytes shared)
+     0 bytes of CONST memory (+ 36 bytes shared)
+     0 bytes of DATA  memory (+ 15 bytes shared)
+     2 bytes of XDATA memory
+
+Errors: none
+Warnings: none

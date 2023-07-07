@@ -1,0 +1,1465 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V9.10.1.2146 for 8051               07/Jul/2023  16:40:48
+// Copyright 2004-2014 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c
+//    Command line       =  
+//        -f "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DRTR_NWK) -f "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=8448
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+//        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+//        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)
+//        -DREJOIN_POLL_RATE=440 "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c"
+//        -D HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR -D NV_INIT -D
+//        XLAB -D CC2530_Serial -D MAKE_CRC_SHDW -D CC2530_USE_IAP -lC
+//        "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+//        -lA "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+//        --diag_suppress Pe001,Pa010 -o "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\"
+//        -e --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+//        --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -I
+//        "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\Source\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\common\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mt\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\"
+//        -I "I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        -On
+//    List file          =  
+//        I:\1_git_code\EPnode_OTA\CC2530
+//        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\zxbee-sys-command.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME `zxbee-sys-command`
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__iar_require _formatted_write", "int_specials"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?V4
+        EXTERN ?V5
+        EXTERN ?V6
+        EXTERN ?V7
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_DIV_MOD
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTACK_DISP101_8
+        EXTERN ?XSTACK_DISP102_8
+
+        PUBLIC ??ZXBeeSysCommandProc?relay
+        FUNCTION ??ZXBeeSysCommandProc?relay,0203H
+        PUBLIC ZXBeeSysCommandProc
+        FUNCTION ZXBeeSysCommandProc,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+GetChannel          SYMBOL "GetChannel"
+??GetChannel?relay  SYMBOL "?relay", GetChannel
+GetPanId            SYMBOL "GetPanId"
+??GetPanId?relay    SYMBOL "?relay", GetPanId
+SetChannel          SYMBOL "SetChannel"
+??SetChannel?relay  SYMBOL "?relay", SetChannel
+SetPanId            SYMBOL "SetPanId"
+??SetPanId?relay    SYMBOL "?relay", SetPanId
+ZXBeeAdd            SYMBOL "ZXBeeAdd"
+??ZXBeeAdd?relay    SYMBOL "?relay", ZXBeeAdd
+atoi                SYMBOL "atoi"
+??atoi?relay        SYMBOL "?relay", atoi
+getLastPkgLQI       SYMBOL "getLastPkgLQI"
+??getLastPkgLQI?relay SYMBOL "?relay", getLastPkgLQI
+getLastPkgRssi      SYMBOL "getLastPkgRssi"
+??getLastPkgRssi?relay SYMBOL "?relay", getLastPkgRssi
+sprintf             SYMBOL "sprintf"
+??sprintf?relay     SYMBOL "?relay", sprintf
+starReportTPN       SYMBOL "starReportTPN"
+??starReportTPN?relay SYMBOL "?relay", starReportTPN
+strchr              SYMBOL "strchr"
+??strchr?relay      SYMBOL "?relay", strchr
+strcmp              SYMBOL "strcmp"
+??strcmp?relay      SYMBOL "?relay", strcmp
+ZXBeeSysCommandProc SYMBOL "ZXBeeSysCommandProc"
+??ZXBeeSysCommandProc?relay SYMBOL "?relay", ZXBeeSysCommandProc
+
+        EXTERN ??GetChannel?relay
+        FUNCTION ??GetChannel?relay,00H
+        EXTERN ??GetPanId?relay
+        FUNCTION ??GetPanId?relay,00H
+        EXTERN ??SetChannel?relay
+        FUNCTION ??SetChannel?relay,00H
+        EXTERN ??SetPanId?relay
+        FUNCTION ??SetPanId?relay,00H
+        EXTERN ??ZXBeeAdd?relay
+        FUNCTION ??ZXBeeAdd?relay,00H
+        EXTERN ??atoi?relay
+        FUNCTION ??atoi?relay,00H
+        EXTERN ??getLastPkgLQI?relay
+        FUNCTION ??getLastPkgLQI?relay,00H
+        EXTERN ??getLastPkgRssi?relay
+        FUNCTION ??getLastPkgRssi?relay,00H
+        EXTERN ??sprintf?relay
+        FUNCTION ??sprintf?relay,00H
+        EXTERN ??starReportTPN?relay
+        FUNCTION ??starReportTPN?relay,00H
+        EXTERN ??strchr?relay
+        FUNCTION ??strchr?relay,00H
+        EXTERN ??strcmp?relay
+        FUNCTION ??strcmp?relay,00H
+        EXTERN GetChannel
+        FUNCTION GetChannel,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN GetPanId
+        FUNCTION GetPanId,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SetChannel
+        FUNCTION SetChannel,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SetPanId
+        FUNCTION SetPanId,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZXBeeAdd
+        FUNCTION ZXBeeAdd,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN atoi
+        FUNCTION atoi,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN getLastPkgLQI
+        FUNCTION getLastPkgLQI,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN getLastPkgRssi
+        FUNCTION getLastPkgRssi,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN sprintf
+        FUNCTION sprintf,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN starReportTPN
+        FUNCTION starReportTPN,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN strchr
+        FUNCTION strchr,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN strcmp
+        FUNCTION strcmp,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\common\zxbee-sys-command.c
+//    1 /*********************************************************************************************
+//    2 * 文件：zxbee-sys-command.c
+//    3 * 作者：Xuzhy 2018.5.16
+//    4 * 说明：ZXBee通信协议数据包命令解析
+//    5 * 修改：fuyou 增加透传驱动
+//    6 * 注释：
+//    7 *********************************************************************************************/
+//    8 
+//    9 /*********************************************************************************************
+//   10 * 头文件
+//   11 *********************************************************************************************/
+//   12 #include "string.h"
+//   13 #include "hal_types.h"
+//   14 #include "AppCommon.h"
+//   15 #include "ZComDef.h"
+//   16 #include "sensor.h"
+//   17 #include "zxbee.h"
+//   18 #include "stdlib.h"
+//   19 #include "stdio.h"
+//   20 #include "at.h"
+//   21 /*********************************************************************************************
+//   22 * 函数原型说明
+//   23 *********************************************************************************************/
+//   24 void starReportTPN(uint16 t, uint16 n);
+//   25 /*********************************************************************************************
+//   26 * 名称：ZXBeeSysCommandProc()
+//   27 * 功能：ZXBee通信协议数据包命令解析
+//   28 * 参数：*ptag -- 变量；*pval -- 值
+//   29 * 返回：
+//   30 * 修改：
+//   31 * 注释：
+//   32 *********************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   33 int ZXBeeSysCommandProc(char *ptag, char *pval)
+ZXBeeSysCommandProc:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function ZXBeeSysCommandProc
+        CODE
+//   34 {
+        FUNCALL ZXBeeSysCommandProc, atoi
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, ZXBeeAdd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, getLastPkgRssi
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, sprintf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, ZXBeeAdd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, getLastPkgLQI
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, sprintf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, ZXBeeAdd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, GetPanId
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, sprintf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, ZXBeeAdd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, SetPanId
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, GetChannel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, sprintf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, ZXBeeAdd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, SetChannel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, strchr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, atoi
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, atoi
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZXBeeSysCommandProc, starReportTPN
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 40, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 40, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 24
+        MOV     A,#-0x18
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 40)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//   35     int val;
+//   36     int ret = -1;
+        MOV     R6,#-0x1
+        MOV     R7,#-0x1
+//   37     char buf[16];
+//   38     
+//   39     val = atoi(pval);
+        ; Setup parameters for call to function atoi
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??atoi?relay         ; Banked call to: atoi
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     ?V0,?V2
+        MOV     ?V1,?V3
+//   40     if (0 == strcmp("ECHO", ptag)) {
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "ECHO">` & 0xff
+        MOV     R3,#(`?<Constant "ECHO">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_0
+//   41         ZXBeeAdd("ECHO", pval);
+        ; Setup parameters for call to function ZXBeeAdd
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "ECHO">` & 0xff
+        MOV     R3,#(`?<Constant "ECHO">` >> 8) & 0xff
+        LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+        MOV     A,R1
+//   42         ret = 1;
+        MOV     R6,#0x1
+        MOV     R7,#0x0
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   43     } else  
+//   44       if (0 == strcmp("RSSI", ptag)) {
+??ZXBeeSysCommandProc_0:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "RSSI">` & 0xff
+        MOV     R3,#(`?<Constant "RSSI">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_2
+//   45         if (0 == strcmp("?", pval)){
+        ; Setup parameters for call to function strcmp
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "?">` & 0xff
+        MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JZ      $+5
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   46           int8 getLastPkgRssi(void);
+//   47           sprintf(buf, "%d", getLastPkgRssi());
+        ; Setup parameters for call to function getLastPkgRssi
+        LCALL   ??getLastPkgRssi?relay; Banked call to: getLastPkgRssi
+        MOV     A,R1
+        ; Setup parameters for call to function sprintf
+        MOV     ?V2,A
+        RLC     A
+        SUBB    A,0xE0 /* A   */
+        MOV     ?V3,A
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#`?<Constant "%d">` & 0xff
+        MOV     R5,#(`?<Constant "%d">` >> 8) & 0xff
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   ??sprintf?relay      ; Banked call to: sprintf
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 40)
+//   48           ZXBeeAdd("RSSI", buf);
+        ; Setup parameters for call to function ZXBeeAdd
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R2,#`?<Constant "RSSI">` & 0xff
+        MOV     R3,#(`?<Constant "RSSI">` >> 8) & 0xff
+        LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+        MOV     A,R1
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   49         }
+//   50       } else if (0 == strcmp("LQI", ptag)) {
+??ZXBeeSysCommandProc_2:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "LQI">` & 0xff
+        MOV     R3,#(`?<Constant "LQI">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_3
+//   51         if (0 == strcmp("?", pval)){
+        ; Setup parameters for call to function strcmp
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "?">` & 0xff
+        MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JZ      $+5
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   52           uint8 getLastPkgLQI(void);
+//   53           sprintf(buf, "%d", getLastPkgLQI());
+        ; Setup parameters for call to function getLastPkgLQI
+        LCALL   ??getLastPkgLQI?relay; Banked call to: getLastPkgLQI
+        MOV     A,R1
+        MOV     ?V2,A
+        ; Setup parameters for call to function sprintf
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#`?<Constant "%d">` & 0xff
+        MOV     R5,#(`?<Constant "%d">` >> 8) & 0xff
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   ??sprintf?relay      ; Banked call to: sprintf
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 40)
+//   54           ZXBeeAdd("LQI", buf);
+        ; Setup parameters for call to function ZXBeeAdd
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R2,#`?<Constant "LQI">` & 0xff
+        MOV     R3,#(`?<Constant "LQI">` >> 8) & 0xff
+        LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+        MOV     A,R1
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   55         }
+//   56       } else
+//   57         if (0 == strcmp("PANID", ptag)) { 
+??ZXBeeSysCommandProc_3:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "PANID">` & 0xff
+        MOV     R3,#(`?<Constant "PANID">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_4
+//   58             if (0 == strcmp("?", pval)) {
+        ; Setup parameters for call to function strcmp
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "?">` & 0xff
+        MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_5
+//   59                 uint16 tmp16 = GetPanId();
+        ; Setup parameters for call to function GetPanId
+        LCALL   ??GetPanId?relay     ; Banked call to: GetPanId
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V2,?V4
+        MOV     ?V3,?V5
+//   60                 sprintf(buf, "%u", tmp16);
+        ; Setup parameters for call to function sprintf
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#`?<Constant "%u">` & 0xff
+        MOV     R5,#(`?<Constant "%u">` >> 8) & 0xff
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   ??sprintf?relay      ; Banked call to: sprintf
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 40)
+//   61                 ZXBeeAdd("PANID", buf); 
+        ; Setup parameters for call to function ZXBeeAdd
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R2,#`?<Constant "PANID">` & 0xff
+        MOV     R3,#(`?<Constant "PANID">` >> 8) & 0xff
+        LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+        MOV     A,R1
+        SJMP    ??ZXBeeSysCommandProc_6
+//   62             } else {
+//   63                 SetPanId(val);
+??ZXBeeSysCommandProc_5:
+        ; Setup parameters for call to function SetPanId
+        MOV     R2,?V0
+        MOV     R3,?V1
+        LCALL   ??SetPanId?relay     ; Banked call to: SetPanId
+//   64             }
+//   65             ret = 1;
+??ZXBeeSysCommandProc_6:
+        MOV     R6,#0x1
+        MOV     R7,#0x0
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   66         } else
+//   67             if (0 == strcmp("CHANNEL", ptag)) { 
+??ZXBeeSysCommandProc_4:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "CHANNEL">` & 0xff
+        MOV     R3,#(`?<Constant "CHANNEL">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_7
+//   68                 if (0 == strcmp("?", pval)) {
+        ; Setup parameters for call to function strcmp
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "?">` & 0xff
+        MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_8
+//   69                     sprintf(buf, "%u", GetChannel());
+        ; Setup parameters for call to function GetChannel
+        LCALL   ??GetChannel?relay   ; Banked call to: GetChannel
+        MOV     A,R1
+        MOV     ?V2,A
+        ; Setup parameters for call to function sprintf
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#`?<Constant "%u">` & 0xff
+        MOV     R5,#(`?<Constant "%u">` >> 8) & 0xff
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   ??sprintf?relay      ; Banked call to: sprintf
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 40)
+//   70                     ZXBeeAdd("CHANNEL", buf);
+        ; Setup parameters for call to function ZXBeeAdd
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R2,#`?<Constant "CHANNEL">` & 0xff
+        MOV     R3,#(`?<Constant "CHANNEL">` >> 8) & 0xff
+        LCALL   ??ZXBeeAdd?relay     ; Banked call to: ZXBeeAdd
+        MOV     A,R1
+//   71                     ret = 1;
+        MOV     R6,#0x1
+        MOV     R7,#0x0
+        SJMP    ??ZXBeeSysCommandProc_9
+//   72                 } else {
+//   73                     SetChannel(val);
+??ZXBeeSysCommandProc_8:
+        ; Setup parameters for call to function SetChannel
+        MOV     R1,?V0
+        LCALL   ??SetChannel?relay   ; Banked call to: SetChannel
+//   74                 }
+//   75                 ret = 1;
+??ZXBeeSysCommandProc_9:
+        MOV     R6,#0x1
+        MOV     R7,#0x0
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   76             }
+//   77             else if (0 == strcmp("TYPE", ptag))
+??ZXBeeSysCommandProc_7:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "TYPE">` & 0xff
+        MOV     R3,#(`?<Constant "TYPE">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??ZXBeeSysCommandProc_10
+//   78             {
+//   79                 if (0 == strcmp("?", pval))
+        ; Setup parameters for call to function strcmp
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "?">` & 0xff
+        MOV     R3,#(`?<Constant "?">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     R0,?V2
+        MOV     R1,?V3
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   80                 {
+//   81 #ifndef CC2530_Serial
+//   82                     sprintf(buf, "%d%d%s", NODE_CATEGORY, GetCurrentLogicalType(), NODE_NAME);
+//   83                     ZXBeeAdd("TYPE", buf);
+//   84                     ret = 1;
+//   85 #else
+//   86                     //at_notify_data("AT+TYPE?\r\n",strlen("AT+TYPE?\r\n"));
+//   87 #endif
+//   88                 }
+//   89             }
+//   90             else if (0 == strcmp("TPN", ptag))
+??ZXBeeSysCommandProc_10:
+        ; Setup parameters for call to function strcmp
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#`?<Constant "TPN">` & 0xff
+        MOV     R3,#(`?<Constant "TPN">` >> 8) & 0xff
+        LCALL   ??strcmp?relay       ; Banked call to: strcmp
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     A,?V2
+        ORL     A,?V3
+        JZ      $+5
+        LJMP    ??ZXBeeSysCommandProc_1 & 0xFFFF
+//   91             {
+//   92                 /*  参数格式 x/y  表示在y分钟内上报x次数据
+//   93                 *  x = 0 停止上报,
+//   94                 *  限制每分钟最大上报6次,最少上报1次
+//   95                 */
+//   96                 char *s = strchr(pval, '/');
+        ; Setup parameters for call to function strchr
+        MOV     R4,#0x2f
+        MOV     R5,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??strchr?relay       ; Banked call to: strchr
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//   97                 if (s != NULL)
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     $+5
+        LJMP    ??ZXBeeSysCommandProc_11 & 0xFFFF
+//   98                 {
+//   99                     int v1, v2;
+//  100                     
+//  101                     *s = 0;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  102                     v1 = atoi(pval);
+        ; Setup parameters for call to function atoi
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??atoi?relay         ; Banked call to: atoi
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     ?V6,?V2
+        MOV     ?V7,?V3
+//  103                     v2 = atoi(s+1);
+        ; Setup parameters for call to function atoi
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??atoi?relay         ; Banked call to: atoi
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  104                     
+//  105                     if (v1 > 0 && v2 > 0)
+        CLR     C
+        MOV     A,?V6
+        SUBB    A,#0x1
+        MOV     A,?V7
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??ZXBeeSysCommandProc_11
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x1
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??ZXBeeSysCommandProc_11
+//  106                     {
+//  107                         uint16 delay = v2*60/v1;
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x3c
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x3c
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     R2,?V6
+        MOV     R3,?V7
+        LCALL   ?S_DIV_MOD
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     ?V2,?V4
+        MOV     ?V3,?V5
+//  108                         uint16 cnt = v1;
+        MOV     ?V4,?V6
+        MOV     ?V5,?V7
+//  109                         if (delay >= 10 && delay <= 65)
+        CLR     C
+        MOV     A,?V2
+        SUBB    A,#0xa
+        MOV     A,?V3
+        SUBB    A,#0x0
+        JC      ??ZXBeeSysCommandProc_11
+        CLR     C
+        MOV     A,?V2
+        SUBB    A,#0x42
+        MOV     A,?V3
+        SUBB    A,#0x0
+        JNC     ??ZXBeeSysCommandProc_11
+//  110                         {
+//  111                             starReportTPN(delay, cnt);
+        ; Setup parameters for call to function starReportTPN
+        MOV     R4,?V4
+        MOV     R5,?V5
+        MOV     R2,?V2
+        MOV     R3,?V3
+        LCALL   ??starReportTPN?relay; Banked call to: starReportTPN
+//  112                         }
+//  113                     }
+//  114                 }
+//  115                 ret = 1;
+??ZXBeeSysCommandProc_11:
+        MOV     R6,#0x1
+        MOV     R7,#0x0
+//  116             } //TPN
+//  117     return ret;
+??ZXBeeSysCommandProc_1:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     A,#0x18
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock0
+//  118 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ZXBeeSysCommandProc?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZXBeeSysCommandProc
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "ECHO">`:
+        DB "ECHO"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "RSSI">`:
+        DB "RSSI"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+`?<Constant "?">`:
+        DB "?"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "%d">`:
+        DB "%d"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant "LQI">`:
+        DB "LQI"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "PANID">`:
+        DB "PANID"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "%u">`:
+        DB "%u"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "CHANNEL">`:
+        DB "CHANNEL"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "TYPE">`:
+        DB "TYPE"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant "TPN">`:
+        DB "TPN"
+
+        END
+// 
+// 899 bytes in segment BANKED_CODE
+//   6 bytes in segment BANK_RELAYS
+//  45 bytes in segment XDATA_ROM_C
+// 
+// 905 bytes of CODE  memory
+//  45 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

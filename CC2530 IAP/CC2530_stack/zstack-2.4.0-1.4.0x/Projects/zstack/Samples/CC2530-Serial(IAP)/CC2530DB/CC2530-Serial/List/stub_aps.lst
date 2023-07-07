@@ -1,0 +1,3389 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                07/Jul/2023  16:40:43
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Components\stack\nwk\stub_aps.c
+#    Command line       =  
+#        -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DRTR_NWK) -f "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=8448
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)
+#        -DREJOIN_POLL_RATE=440 "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Components\stack\nwk\stub_aps.c"
+#        -D HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR -D NV_INIT -D
+#        XLAB -D CC2530_Serial -D MAKE_CRC_SHDW -D CC2530_USE_IAP -lC
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        -lA "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\"
+#        --diag_suppress Pe001,Pa010 -o "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\"
+#        -e --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 8 -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\Source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\common\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -On
+#    List file          =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\List\stub_aps.lst
+#    Object file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-Serial(IAP)\CC2530DB\CC2530-Serial\Obj\stub_aps.r51
+#
+###############################################################################
+
+I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Components\stack\nwk\stub_aps.c
+      1          /**************************************************************************************************
+      2            Filename:       stub_aps.c
+      3            Revised:        $Date: 2008-1-04 13:13:13 -0700 (Fri, 04 Jan 2008) $
+      4            Revision:       $Revision: 1 $
+      5          
+      6            Description:    Stub APS processing functions
+      7          
+      8          
+      9            Copyright 2008 - 2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "osal.h"
+     44          #include "mac_spec.h"
+     45          #include "nwk_util.h"
+     46          #include "AF.h"
+     47          
+     48          #include "stub_aps.h"
+     49          
+     50          /*********************************************************************
+     51           * MACROS
+     52           */
+     53          
+     54          /*********************************************************************
+     55           * CONSTANTS
+     56           */
+     57          
+     58          // Stub NWK header length
+     59          #define STUB_NWK_HDR_LEN                2
+     60          
+     61          // Start of the Stub APS header in the Inter-PAN frame
+     62          #define STUB_APS_HDR_FRAME_CTRL         STUB_NWK_HDR_LEN
+     63          
+     64          // Stub APS event identifiers
+     65          #define CHANNEL_CHANGE_EVT              0x0001
+     66          
+     67          #define CHANNEL_CHANGE_RETRY_TIMEOUT    100
+     68          
+     69          /*********************************************************************
+     70           * TYPEDEFS
+     71           */
+     72          typedef struct
+     73          {
+     74            zAddrType_t addr;
+     75            uint16 panId;
+     76          } pan_t;
+     77          
+     78          /*********************************************************************
+     79           * GLOBAL VARIABLES
+     80           */
+     81          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     82          uint8 StubAPS_TaskID = 0xFF;    // Task ID for internal task/event processing
+   \                     StubAPS_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for StubAPS_TaskID>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     83          
+     84          /*********************************************************************
+     85           * EXTERNAL VARIABLES
+     86           */
+     87          
+     88          
+     89          /*********************************************************************
+     90           * EXTERNAL FUNCTIONS
+     91           */
+     92          
+     93          
+     94          /*********************************************************************
+     95           * LOCAL VARIABLES
+     96           */
+     97          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     98          static uint8 newChannel;
+   \                     newChannel:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     99          static uint8 channelChangeInProgress = FALSE;
+   \                     channelChangeInProgress:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    100          
+    101          // Application info
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    102          static uint8 appTaskID = 0xFF;  // Application task id
+   \                     appTaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for appTaskID>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    103          static uint8 appEndPoint = 0;   // Application endpoint
+   \                     appEndPoint:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    104          
+    105          
+    106          /*********************************************************************
+    107           * LOCAL FUNCTIONS
+    108           */
+    109          
+    110          static void StubNWK_ParseMsg( uint8 *buf, uint8 bufLength, NLDE_FrameFormat_t *snff );
+    111          static void StubAPS_ParseMsg( NLDE_FrameFormat_t *snff, aps_FrameFormat_t *saff );
+    112          static void StubNWK_BuildMsg( uint8 *nwkHdr );
+    113          static void StubAPS_BuildMsg( uint8 *apsHdr, uint8 frmCtrl, uint16 groupID, APSDE_DataReq_t *req );
+    114          static ZStatus_t StubAPS_BuildFrameControl( uint8 *frmCtrl, zAddrType_t *dstAddr, 
+    115                                                      uint16 *groupID, APSDE_DataReq_t *req );
+    116          static ZStatus_t StubAPS_SetNewChannel( uint8 channel );
+    117          static void StubAPS_NotifyApp( uint8 status );
+    118          
+    119          uint8 StubAPS_ZMacCallback( uint8 *msgPtr );
+    120          
+    121          /*********************************************************************
+    122           * @fn      StubAPS_Init()
+    123           *
+    124           * @brief   Initialize stub APS layer
+    125           *
+    126           * @param   task_id - Task identifier for the desired task
+    127           *
+    128           * @return  none
+    129           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    130          void StubAPS_Init( uint8 task_id )
+   \                     StubAPS_Init:
+    131          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    132            StubAPS_TaskID = task_id;
+   \   000004   E9           MOV     A,R1
+   \   000005   90....       MOV     DPTR,#StubAPS_TaskID
+   \   000008   F0           MOVX    @DPTR,A
+    133              
+    134            // register with ZMAC
+    135            pZMac_AppCallback = StubAPS_ZMacCallback;
+   \   000009   90....       MOV     DPTR,#pZMac_AppCallback
+   \   00000C   74..         MOV     A,#??StubAPS_ZMacCallback?relay & 0xff
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   A3           INC     DPTR
+   \   000010   74..         MOV     A,#(??StubAPS_ZMacCallback?relay >> 8) & 0xff
+   \   000012   F0           MOVX    @DPTR,A
+    136            
+    137          } /* StubAPS_Init() */
+   \   000013   D083         POP     DPH
+   \   000015   D082         POP     DPL
+   \   000017   02....       LJMP    ?BRET
+    138          
+    139          /*********************************************************************
+    140           * @fn      StubAPS_ProcessEvent()
+    141           *
+    142           * @brief   Main event loop for Stub APS task. This function should be called
+    143           *          at periodic intervals when event occur.
+    144           *
+    145           * @param   task_id - Task ID
+    146           * @param   events  - Bitmap of events
+    147           *
+    148           * @return  none
+    149           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    150          UINT16 StubAPS_ProcessEvent( uint8 task_id, uint16 events )
+   \                     StubAPS_ProcessEvent:
+    151          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   89..         MOV     ?V2,R1
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FE           MOV     R6,A
+   \   00000E   EB           MOV     A,R3
+   \   00000F   FF           MOV     R7,A
+    152            (void)task_id; // Intentionally unreferenced parameter
+    153            
+    154            if ( events & SYS_EVENT_MSG )
+   \   000010   EE           MOV     A,R6
+   \   000011   5400         ANL     A,#0x0
+   \   000013   F8           MOV     R0,A
+   \   000014   EF           MOV     A,R7
+   \   000015   5480         ANL     A,#0x80
+   \   000017   F9           MOV     R1,A
+   \   000018   E8           MOV     A,R0
+   \   000019   49           ORL     A,R1
+   \   00001A   6052         JZ      ??StubAPS_ProcessEvent_0
+    155            {
+    156              osal_event_hdr_t *msg_ptr;
+    157          
+    158              while ( (msg_ptr = (osal_event_hdr_t *)osal_msg_receive( StubAPS_TaskID )) != NULL )
+   \                     ??StubAPS_ProcessEvent_1:
+   \   00001C                ; Setup parameters for call to function osal_msg_receive
+   \   00001C   90....       MOV     DPTR,#StubAPS_TaskID
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   F9           MOV     R1,A
+   \   000021   12....       LCALL   ??osal_msg_receive?relay; Banked call to: osal_msg_receive
+   \   000024   8A..         MOV     ?V4,R2
+   \   000026   8B..         MOV     ?V5,R3
+   \   000028   A8..         MOV     R0,?V4
+   \   00002A   A9..         MOV     R1,?V5
+   \   00002C   88..         MOV     ?V0,R0
+   \   00002E   89..         MOV     ?V1,R1
+   \   000030   E8           MOV     A,R0
+   \   000031   49           ORL     A,R1
+   \   000032   6030         JZ      ??StubAPS_ProcessEvent_2
+    159              {
+    160                if ( msg_ptr->event == MAC_MCPS_DATA_CNF )
+   \   000034   85..82       MOV     DPL,?V0
+   \   000037   85..83       MOV     DPH,?V1
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   640C         XRL     A,#0xc
+   \   00003D   7009         JNZ     ??StubAPS_ProcessEvent_3
+    161                {
+    162                  INTERP_DataConfirm( (ZMacDataCnf_t *)msg_ptr );
+   \   00003F                ; Setup parameters for call to function INTERP_DataConfirm
+   \   00003F   AA..         MOV     R2,?V0
+   \   000041   AB..         MOV     R3,?V1
+   \   000043   12....       LCALL   ??INTERP_DataConfirm?relay; Banked call to: INTERP_DataConfirm
+   \   000046   8012         SJMP    ??StubAPS_ProcessEvent_4
+    163                }
+    164                else if ( msg_ptr->event == MAC_MCPS_DATA_IND )
+   \                     ??StubAPS_ProcessEvent_3:
+   \   000048   85..82       MOV     DPL,?V0
+   \   00004B   85..83       MOV     DPH,?V1
+   \   00004E   E0           MOVX    A,@DPTR
+   \   00004F   640D         XRL     A,#0xd
+   \   000051   7007         JNZ     ??StubAPS_ProcessEvent_4
+    165                {
+    166                  INTERP_DataIndication( (macMcpsDataInd_t *)msg_ptr );
+   \   000053                ; Setup parameters for call to function INTERP_DataIndication
+   \   000053   AA..         MOV     R2,?V0
+   \   000055   AB..         MOV     R3,?V1
+   \   000057   12....       LCALL   ??INTERP_DataIndication?relay; Banked call to: INTERP_DataIndication
+    167                }
+    168                
+    169                osal_msg_deallocate( (uint8 *)msg_ptr );
+   \                     ??StubAPS_ProcessEvent_4:
+   \   00005A                ; Setup parameters for call to function osal_msg_deallocate
+   \   00005A   AA..         MOV     R2,?V0
+   \   00005C   AB..         MOV     R3,?V1
+   \   00005E   12....       LCALL   ??osal_msg_deallocate?relay; Banked call to: osal_msg_deallocate
+   \   000061   E9           MOV     A,R1
+   \   000062   80B8         SJMP    ??StubAPS_ProcessEvent_1
+    170              }
+    171              
+    172              // Return unproccessed events
+    173              return ( events ^ SYS_EVENT_MSG );
+   \                     ??StubAPS_ProcessEvent_2:
+   \   000064   EE           MOV     A,R6
+   \   000065   6400         XRL     A,#0x0
+   \   000067   FA           MOV     R2,A
+   \   000068   EF           MOV     A,R7
+   \   000069   6480         XRL     A,#0x80
+   \   00006B   FB           MOV     R3,A
+   \   00006C   8045         SJMP    ??StubAPS_ProcessEvent_5
+    174            }
+    175          
+    176            if ( events & CHANNEL_CHANGE_EVT )
+   \                     ??StubAPS_ProcessEvent_0:
+   \   00006E   EE           MOV     A,R6
+   \   00006F   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000071   503C         JNC     ??StubAPS_ProcessEvent_6
+    177            {
+    178              // try to change to the new channel
+    179              ZStatus_t status = StubAPS_SetNewChannel( newChannel );
+   \   000073                ; Setup parameters for call to function StubAPS_SetNewChannel
+   \   000073   90....       MOV     DPTR,#newChannel
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   F9           MOV     R1,A
+   \   000078   12....       LCALL   ??StubAPS_SetNewChannel?relay; Banked call to: StubAPS_SetNewChannel
+   \   00007B   E9           MOV     A,R1
+   \   00007C   F5..         MOV     ?V0,A
+    180              if ( status != ZSuccess )
+   \   00007E   E5..         MOV     A,?V0
+   \   000080   601E         JZ      ??StubAPS_ProcessEvent_7
+    181              {
+    182                // turn MAC receiver back on
+    183                uint8 rxOnIdle = true;
+   \   000082   85..82       MOV     DPL,?XSP + 0
+   \   000085   85..83       MOV     DPH,?XSP + 1
+   \   000088   7401         MOV     A,#0x1
+   \   00008A   F0           MOVX    @DPTR,A
+    184                ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+   \   00008B                ; Setup parameters for call to function ZMacSetReq
+   \   00008B   AA..         MOV     R2,?XSP + 0
+   \   00008D   AB..         MOV     R3,?XSP + 1
+   \   00008F   7952         MOV     R1,#0x52
+   \   000091   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   000094   E9           MOV     A,R1
+    185             
+    186                // set NWK task to run
+    187                nwk_setStateIdle( FALSE );
+   \   000095                ; Setup parameters for call to function nwk_setStateIdle
+   \   000095   7900         MOV     R1,#0x0
+   \   000097   12....       LCALL   ??nwk_setStateIdle?relay; Banked call to: nwk_setStateIdle
+    188                
+    189                channelChangeInProgress = FALSE;
+   \   00009A   90....       MOV     DPTR,#channelChangeInProgress
+   \   00009D   7400         MOV     A,#0x0
+   \   00009F   F0           MOVX    @DPTR,A
+    190              }
+    191              
+    192              // notify the application
+    193              StubAPS_NotifyApp( status );
+   \                     ??StubAPS_ProcessEvent_7:
+   \   0000A0                ; Setup parameters for call to function StubAPS_NotifyApp
+   \   0000A0   A9..         MOV     R1,?V0
+   \   0000A2   12....       LCALL   ??StubAPS_NotifyApp?relay; Banked call to: StubAPS_NotifyApp
+    194              
+    195              return ( events ^ CHANNEL_CHANGE_EVT );
+   \   0000A5   EE           MOV     A,R6
+   \   0000A6   6401         XRL     A,#0x1
+   \   0000A8   FA           MOV     R2,A
+   \   0000A9   EF           MOV     A,R7
+   \   0000AA   6400         XRL     A,#0x0
+   \   0000AC   FB           MOV     R3,A
+   \   0000AD   8004         SJMP    ??StubAPS_ProcessEvent_5
+    196            }
+    197            
+    198            // If reach here, the events are unknown
+    199            // Discard or make more handlers
+    200            return 0;
+   \                     ??StubAPS_ProcessEvent_6:
+   \   0000AF   7A00         MOV     R2,#0x0
+   \   0000B1   7B00         MOV     R3,#0x0
+   \                     ??StubAPS_ProcessEvent_5:
+   \   0000B3   7401         MOV     A,#0x1
+   \   0000B5   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B8   7F06         MOV     R7,#0x6
+   \   0000BA   02....       LJMP    ?BANKED_LEAVE_XDATA
+    201          
+    202          } /* StubAPS_ProcessEvent() */
+    203          
+    204          
+    205          /*********************************************************************
+    206           * @fn          StubNWK_ParseMsg
+    207           *
+    208           * @brief       Call this function to parse an incoming Stub NWK frame.
+    209           *
+    210           * @param       buf - pointer incoming message buffer
+    211           * @param       bufLength - length of incoming message
+    212           * @param       snff  - pointer Frame Format Parameters
+    213           *
+    214           * @return      pointer to network packet, NULL if error
+    215           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    216          static void StubNWK_ParseMsg( uint8 *buf, uint8 bufLength, NLDE_FrameFormat_t *snff )
+   \                     StubNWK_ParseMsg:
+    217          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0,R2
+   \   000007   8B..         MOV     ?V1,R3
+   \   000009   89..         MOV     ?V2,R1
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FE           MOV     R6,A
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FF           MOV     R7,A
+    218            uint16 fc;
+    219          
+    220            osal_memset( snff, 0, sizeof(NLDE_FrameFormat_t) );
+   \   00000F                ; Setup parameters for call to function osal_memset
+   \   00000F   7C1F         MOV     R4,#0x1f
+   \   000011   7D00         MOV     R5,#0x0
+   \   000013   7900         MOV     R1,#0x0
+   \   000015   EE           MOV     A,R6
+   \   000016   FA           MOV     R2,A
+   \   000017   EF           MOV     A,R7
+   \   000018   FB           MOV     R3,A
+   \   000019   12....       LCALL   ??osal_memset?relay  ; Banked call to: osal_memset
+    221            
+    222            snff->bufLength = bufLength;
+   \   00001C   E5..         MOV     A,?V2
+   \   00001E   C0E0         PUSH    A
+   \   000020   8E82         MOV     DPL,R6
+   \   000022   8F83         MOV     DPH,R7
+   \   000024   D0E0         POP     A
+   \   000026   F0           MOVX    @DPTR,A
+    223          
+    224            // get the frame control
+    225            fc = BUILD_UINT16( buf[NWK_HDR_FRAME_CTRL_LSB], buf[NWK_HDR_FRAME_CTRL_MSB] );
+   \   000027   85..82       MOV     DPL,?V0
+   \   00002A   85..83       MOV     DPH,?V1
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   FA           MOV     R2,A
+   \   00002F   7B00         MOV     R3,#0x0
+   \   000031   85..82       MOV     DPL,?V0
+   \   000034   85..83       MOV     DPH,?V1
+   \   000037   A3           INC     DPTR
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F8           MOV     R0,A
+   \   00003A   7900         MOV     R1,#0x0
+   \   00003C   E4           CLR     A
+   \   00003D   C8           XCH     A,R0
+   \   00003E   F9           MOV     R1,A
+   \   00003F   EA           MOV     A,R2
+   \   000040   28           ADD     A,R0
+   \   000041   F8           MOV     R0,A
+   \   000042   EB           MOV     A,R3
+   \   000043   39           ADDC    A,R1
+   \   000044   F9           MOV     R1,A
+   \   000045   88..         MOV     ?V4,R0
+   \   000047   89..         MOV     ?V5,R1
+    226            
+    227            // parse the frame control
+    228            NLDE_ParseFrameControl( fc, snff );
+   \   000049                ; Setup parameters for call to function NLDE_ParseFrameControl
+   \   000049   EE           MOV     A,R6
+   \   00004A   FC           MOV     R4,A
+   \   00004B   EF           MOV     A,R7
+   \   00004C   FD           MOV     R5,A
+   \   00004D   AA..         MOV     R2,?V4
+   \   00004F   AB..         MOV     R3,?V5
+   \   000051   12....       LCALL   ??NLDE_ParseFrameControl?relay; Banked call to: NLDE_ParseFrameControl
+   \   000054   E9           MOV     A,R1
+    229            
+    230            snff->hdrLen = STUB_NWK_HDR_LEN;
+   \   000055   8E82         MOV     DPL,R6
+   \   000057   8F83         MOV     DPH,R7
+   \   000059   A3           INC     DPTR
+   \   00005A   7402         MOV     A,#0x2
+   \   00005C   F0           MOVX    @DPTR,A
+    231            
+    232            // Stub NWK payload
+    233            snff->nsdu = buf + snff->hdrLen;
+   \   00005D   8E82         MOV     DPL,R6
+   \   00005F   8F83         MOV     DPH,R7
+   \   000061   A3           INC     DPTR
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   F8           MOV     R0,A
+   \   000064   7900         MOV     R1,#0x0
+   \   000066   E5..         MOV     A,?V0
+   \   000068   28           ADD     A,R0
+   \   000069   F8           MOV     R0,A
+   \   00006A   E5..         MOV     A,?V1
+   \   00006C   39           ADDC    A,R1
+   \   00006D   F9           MOV     R1,A
+   \   00006E   EE           MOV     A,R6
+   \   00006F   241D         ADD     A,#0x1d
+   \   000071   F582         MOV     DPL,A
+   \   000073   E4           CLR     A
+   \   000074   3F           ADDC    A,R7
+   \   000075   F583         MOV     DPH,A
+   \   000077   E8           MOV     A,R0
+   \   000078   F0           MOVX    @DPTR,A
+   \   000079   A3           INC     DPTR
+   \   00007A   E9           MOV     A,R1
+   \   00007B   F0           MOVX    @DPTR,A
+    234            snff->nsduLength = snff->bufLength - snff->hdrLen;
+   \   00007C   8E82         MOV     DPL,R6
+   \   00007E   8F83         MOV     DPH,R7
+   \   000080   A3           INC     DPTR
+   \   000081   E0           MOVX    A,@DPTR
+   \   000082   F8           MOV     R0,A
+   \   000083   8E82         MOV     DPL,R6
+   \   000085   8F83         MOV     DPH,R7
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   C3           CLR     C
+   \   000089   98           SUBB    A,R0
+   \   00008A   C0E0         PUSH    A
+   \   00008C   EE           MOV     A,R6
+   \   00008D   2417         ADD     A,#0x17
+   \   00008F   F582         MOV     DPL,A
+   \   000091   E4           CLR     A
+   \   000092   3F           ADDC    A,R7
+   \   000093   F583         MOV     DPH,A
+   \   000095   D0E0         POP     A
+   \   000097   F0           MOVX    @DPTR,A
+    235          
+    236          } /* StubNWK_ParseMsg */
+   \   000098   7F06         MOV     R7,#0x6
+   \   00009A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    237          
+    238          /*********************************************************************
+    239           * @fn          StubAPS_ParseMsg
+    240           *
+    241           * @brief       Call this function to parse an incoming Stub APS frame.
+    242           *
+    243           * @param       naff  - pointer Stub NWK Frame Format Parameters
+    244           * @param       saff  - pointer Stub APS Format Parameters
+    245           *
+    246           * @return      none
+    247           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    248          static void StubAPS_ParseMsg( NLDE_FrameFormat_t *snff, aps_FrameFormat_t *saff )
+   \                     StubAPS_ParseMsg:
+    249          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V4,R2
+   \   000007   8B..         MOV     ?V5,R3
+   \   000009   8C..         MOV     ?V0,R4
+   \   00000B   8D..         MOV     ?V1,R5
+    250            uint8 fcb;
+    251            uint8 *asdu;
+    252            
+    253            osal_memset( saff, 0, sizeof(aps_FrameFormat_t) );
+   \   00000D                ; Setup parameters for call to function osal_memset
+   \   00000D   7C15         MOV     R4,#0x15
+   \   00000F   7D00         MOV     R5,#0x0
+   \   000011   7900         MOV     R1,#0x0
+   \   000013   AA..         MOV     R2,?V0
+   \   000015   AB..         MOV     R3,?V1
+   \   000017   12....       LCALL   ??osal_memset?relay  ; Banked call to: osal_memset
+    254            
+    255            saff->asduLength = snff->nsduLength;
+   \   00001A   E5..         MOV     A,?V4
+   \   00001C   2417         ADD     A,#0x17
+   \   00001E   F582         MOV     DPL,A
+   \   000020   E4           CLR     A
+   \   000021   35..         ADDC    A,?V5
+   \   000023   F583         MOV     DPH,A
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   C0E0         PUSH    A
+   \   000028   E5..         MOV     A,?V0
+   \   00002A   2410         ADD     A,#0x10
+   \   00002C   F582         MOV     DPL,A
+   \   00002E   E4           CLR     A
+   \   00002F   35..         ADDC    A,?V1
+   \   000031   F583         MOV     DPH,A
+   \   000033   D0E0         POP     A
+   \   000035   F0           MOVX    @DPTR,A
+    256            asdu = snff->nsdu;
+   \   000036   E5..         MOV     A,?V4
+   \   000038   241D         ADD     A,#0x1d
+   \   00003A   F582         MOV     DPL,A
+   \   00003C   E4           CLR     A
+   \   00003D   35..         ADDC    A,?V5
+   \   00003F   F583         MOV     DPH,A
+   \   000041   E0           MOVX    A,@DPTR
+   \   000042   F8           MOV     R0,A
+   \   000043   A3           INC     DPTR
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F9           MOV     R1,A
+   \   000046   E8           MOV     A,R0
+   \   000047   FE           MOV     R6,A
+   \   000048   E9           MOV     A,R1
+   \   000049   FF           MOV     R7,A
+    257            saff->macDestAddr = snff->macDstAddr;
+   \   00004A   E5..         MOV     A,?V4
+   \   00004C   240D         ADD     A,#0xd
+   \   00004E   F582         MOV     DPL,A
+   \   000050   E4           CLR     A
+   \   000051   35..         ADDC    A,?V5
+   \   000053   F583         MOV     DPH,A
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   F8           MOV     R0,A
+   \   000057   A3           INC     DPTR
+   \   000058   E0           MOVX    A,@DPTR
+   \   000059   F9           MOV     R1,A
+   \   00005A   85..82       MOV     DPL,?V0
+   \   00005D   85..83       MOV     DPH,?V1
+   \   000060   A3           INC     DPTR
+   \   000061   A3           INC     DPTR
+   \   000062   A3           INC     DPTR
+   \   000063   A3           INC     DPTR
+   \   000064   A3           INC     DPTR
+   \   000065   A3           INC     DPTR
+   \   000066   A3           INC     DPTR
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   E8           MOV     A,R0
+   \   00006B   F0           MOVX    @DPTR,A
+   \   00006C   A3           INC     DPTR
+   \   00006D   E9           MOV     A,R1
+   \   00006E   F0           MOVX    @DPTR,A
+    258            
+    259            // First byte is Frame Control.
+    260            saff->FrmCtrl = *asdu++;
+   \   00006F   8E82         MOV     DPL,R6
+   \   000071   8F83         MOV     DPH,R7
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   C0E0         PUSH    A
+   \   000076   85..82       MOV     DPL,?V0
+   \   000079   85..83       MOV     DPH,?V1
+   \   00007C   D0E0         POP     A
+   \   00007E   F0           MOVX    @DPTR,A
+   \   00007F   8E82         MOV     DPL,R6
+   \   000081   8F83         MOV     DPH,R7
+   \   000083   A3           INC     DPTR
+   \   000084   AE82         MOV     R6,DPL
+   \   000086   AF83         MOV     R7,DPH
+    261          
+    262            fcb = saff->FrmCtrl & APS_FRAME_TYPE_MASK;
+   \   000088   85..82       MOV     DPL,?V0
+   \   00008B   85..83       MOV     DPH,?V1
+   \   00008E   E0           MOVX    A,@DPTR
+   \   00008F   5403         ANL     A,#0x3
+   \   000091   F5..         MOV     ?V2,A
+    263            if ( fcb == STUB_APS_FRAME )
+   \   000093   7403         MOV     A,#0x3
+   \   000095   65..         XRL     A,?V2
+   \   000097   6003         JZ      $+5
+   \   000099   02....       LJMP    ??StubAPS_ParseMsg_0 & 0xFFFF
+    264            {
+    265              fcb = saff->FrmCtrl & APS_DELIVERYMODE_MASK;
+   \   00009C   85..82       MOV     DPL,?V0
+   \   00009F   85..83       MOV     DPH,?V1
+   \   0000A2   E0           MOVX    A,@DPTR
+   \   0000A3   540C         ANL     A,#0xc
+   \   0000A5   F5..         MOV     ?V2,A
+    266              if ( fcb == APS_FC_DM_BROADCAST )
+   \   0000A7   7408         MOV     A,#0x8
+   \   0000A9   65..         XRL     A,?V2
+   \   0000AB   7010         JNZ     ??StubAPS_ParseMsg_1
+    267                saff->wasBroadcast = true;
+   \   0000AD   E5..         MOV     A,?V0
+   \   0000AF   240C         ADD     A,#0xc
+   \   0000B1   F582         MOV     DPL,A
+   \   0000B3   E4           CLR     A
+   \   0000B4   35..         ADDC    A,?V1
+   \   0000B6   F583         MOV     DPH,A
+   \   0000B8   7401         MOV     A,#0x1
+   \   0000BA   F0           MOVX    @DPTR,A
+   \   0000BB   800E         SJMP    ??StubAPS_ParseMsg_2
+    268              else
+    269                saff->wasBroadcast = false;
+   \                     ??StubAPS_ParseMsg_1:
+   \   0000BD   E5..         MOV     A,?V0
+   \   0000BF   240C         ADD     A,#0xc
+   \   0000C1   F582         MOV     DPL,A
+   \   0000C3   E4           CLR     A
+   \   0000C4   35..         ADDC    A,?V1
+   \   0000C6   F583         MOV     DPH,A
+   \   0000C8   7400         MOV     A,#0x0
+   \   0000CA   F0           MOVX    @DPTR,A
+    270              
+    271              if ( fcb == APS_FC_DM_GROUP )
+   \                     ??StubAPS_ParseMsg_2:
+   \   0000CB   740C         MOV     A,#0xc
+   \   0000CD   65..         XRL     A,?V2
+   \   0000CF   7030         JNZ     ??StubAPS_ParseMsg_3
+    272              {
+    273                saff->GroupID = BUILD_UINT16( asdu[0], asdu[1] );
+   \   0000D1   8E82         MOV     DPL,R6
+   \   0000D3   8F83         MOV     DPH,R7
+   \   0000D5   E0           MOVX    A,@DPTR
+   \   0000D6   FA           MOV     R2,A
+   \   0000D7   7B00         MOV     R3,#0x0
+   \   0000D9   8E82         MOV     DPL,R6
+   \   0000DB   8F83         MOV     DPH,R7
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   E0           MOVX    A,@DPTR
+   \   0000DF   F8           MOV     R0,A
+   \   0000E0   7900         MOV     R1,#0x0
+   \   0000E2   E4           CLR     A
+   \   0000E3   C8           XCH     A,R0
+   \   0000E4   F9           MOV     R1,A
+   \   0000E5   EA           MOV     A,R2
+   \   0000E6   28           ADD     A,R0
+   \   0000E7   F8           MOV     R0,A
+   \   0000E8   EB           MOV     A,R3
+   \   0000E9   39           ADDC    A,R1
+   \   0000EA   F9           MOV     R1,A
+   \   0000EB   85..82       MOV     DPL,?V0
+   \   0000EE   85..83       MOV     DPH,?V1
+   \   0000F1   A3           INC     DPTR
+   \   0000F2   A3           INC     DPTR
+   \   0000F3   A3           INC     DPTR
+   \   0000F4   A3           INC     DPTR
+   \   0000F5   E8           MOV     A,R0
+   \   0000F6   F0           MOVX    @DPTR,A
+   \   0000F7   A3           INC     DPTR
+   \   0000F8   E9           MOV     A,R1
+   \   0000F9   F0           MOVX    @DPTR,A
+    274                asdu += sizeof( uint16 );
+   \   0000FA   EE           MOV     A,R6
+   \   0000FB   2402         ADD     A,#0x2
+   \   0000FD   FE           MOV     R6,A
+   \   0000FE   5001         JNC     ??StubAPS_ParseMsg_3
+   \   000100   0F           INC     R7
+    275              }
+    276              
+    277              // Pull out the Cluster ID
+    278              saff->ClusterID = BUILD_UINT16( asdu[0], asdu[1] );
+   \                     ??StubAPS_ParseMsg_3:
+   \   000101   8E82         MOV     DPL,R6
+   \   000103   8F83         MOV     DPH,R7
+   \   000105   E0           MOVX    A,@DPTR
+   \   000106   FA           MOV     R2,A
+   \   000107   7B00         MOV     R3,#0x0
+   \   000109   8E82         MOV     DPL,R6
+   \   00010B   8F83         MOV     DPH,R7
+   \   00010D   A3           INC     DPTR
+   \   00010E   E0           MOVX    A,@DPTR
+   \   00010F   F8           MOV     R0,A
+   \   000110   7900         MOV     R1,#0x0
+   \   000112   E4           CLR     A
+   \   000113   C8           XCH     A,R0
+   \   000114   F9           MOV     R1,A
+   \   000115   EA           MOV     A,R2
+   \   000116   28           ADD     A,R0
+   \   000117   F8           MOV     R0,A
+   \   000118   EB           MOV     A,R3
+   \   000119   39           ADDC    A,R1
+   \   00011A   F9           MOV     R1,A
+   \   00011B   85..82       MOV     DPL,?V0
+   \   00011E   85..83       MOV     DPH,?V1
+   \   000121   A3           INC     DPTR
+   \   000122   A3           INC     DPTR
+   \   000123   A3           INC     DPTR
+   \   000124   A3           INC     DPTR
+   \   000125   A3           INC     DPTR
+   \   000126   A3           INC     DPTR
+   \   000127   E8           MOV     A,R0
+   \   000128   F0           MOVX    @DPTR,A
+   \   000129   A3           INC     DPTR
+   \   00012A   E9           MOV     A,R1
+   \   00012B   F0           MOVX    @DPTR,A
+    279              asdu += sizeof( uint16 );
+   \   00012C   EE           MOV     A,R6
+   \   00012D   2402         ADD     A,#0x2
+   \   00012F   FE           MOV     R6,A
+   \   000130   5001         JNC     ??StubAPS_ParseMsg_4
+   \   000132   0F           INC     R7
+    280          
+    281              // Pull out the profile ID
+    282              saff->ProfileID = BUILD_UINT16( asdu[0], asdu[1] );
+   \                     ??StubAPS_ParseMsg_4:
+   \   000133   8E82         MOV     DPL,R6
+   \   000135   8F83         MOV     DPH,R7
+   \   000137   E0           MOVX    A,@DPTR
+   \   000138   FA           MOV     R2,A
+   \   000139   7B00         MOV     R3,#0x0
+   \   00013B   8E82         MOV     DPL,R6
+   \   00013D   8F83         MOV     DPH,R7
+   \   00013F   A3           INC     DPTR
+   \   000140   E0           MOVX    A,@DPTR
+   \   000141   F8           MOV     R0,A
+   \   000142   7900         MOV     R1,#0x0
+   \   000144   E4           CLR     A
+   \   000145   C8           XCH     A,R0
+   \   000146   F9           MOV     R1,A
+   \   000147   EA           MOV     A,R2
+   \   000148   28           ADD     A,R0
+   \   000149   F8           MOV     R0,A
+   \   00014A   EB           MOV     A,R3
+   \   00014B   39           ADDC    A,R1
+   \   00014C   F9           MOV     R1,A
+   \   00014D   85..82       MOV     DPL,?V0
+   \   000150   85..83       MOV     DPH,?V1
+   \   000153   A3           INC     DPTR
+   \   000154   A3           INC     DPTR
+   \   000155   A3           INC     DPTR
+   \   000156   A3           INC     DPTR
+   \   000157   A3           INC     DPTR
+   \   000158   A3           INC     DPTR
+   \   000159   A3           INC     DPTR
+   \   00015A   A3           INC     DPTR
+   \   00015B   E8           MOV     A,R0
+   \   00015C   F0           MOVX    @DPTR,A
+   \   00015D   A3           INC     DPTR
+   \   00015E   E9           MOV     A,R1
+   \   00015F   F0           MOVX    @DPTR,A
+    283              asdu += 2;
+   \   000160   EE           MOV     A,R6
+   \   000161   2402         ADD     A,#0x2
+   \   000163   FE           MOV     R6,A
+   \   000164   5001         JNC     ??StubAPS_ParseMsg_0
+   \   000166   0F           INC     R7
+    284            }
+    285            
+    286            saff->asdu = asdu;
+   \                     ??StubAPS_ParseMsg_0:
+   \   000167   E5..         MOV     A,?V0
+   \   000169   240E         ADD     A,#0xe
+   \   00016B   F582         MOV     DPL,A
+   \   00016D   E4           CLR     A
+   \   00016E   35..         ADDC    A,?V1
+   \   000170   F583         MOV     DPH,A
+   \   000172   EE           MOV     A,R6
+   \   000173   F0           MOVX    @DPTR,A
+   \   000174   A3           INC     DPTR
+   \   000175   EF           MOV     A,R7
+   \   000176   F0           MOVX    @DPTR,A
+    287            saff->asduLength -= (uint8) (asdu - snff->nsdu);
+   \   000177   E5..         MOV     A,?V4
+   \   000179   241D         ADD     A,#0x1d
+   \   00017B   F582         MOV     DPL,A
+   \   00017D   E4           CLR     A
+   \   00017E   35..         ADDC    A,?V5
+   \   000180   F583         MOV     DPH,A
+   \   000182   E0           MOVX    A,@DPTR
+   \   000183   F8           MOV     R0,A
+   \   000184   A3           INC     DPTR
+   \   000185   E0           MOVX    A,@DPTR
+   \   000186   F9           MOV     R1,A
+   \   000187   EE           MOV     A,R6
+   \   000188   C3           CLR     C
+   \   000189   98           SUBB    A,R0
+   \   00018A   F8           MOV     R0,A
+   \   00018B   E5..         MOV     A,?V0
+   \   00018D   2410         ADD     A,#0x10
+   \   00018F   F582         MOV     DPL,A
+   \   000191   E4           CLR     A
+   \   000192   35..         ADDC    A,?V1
+   \   000194   F583         MOV     DPH,A
+   \   000196   E0           MOVX    A,@DPTR
+   \   000197   C3           CLR     C
+   \   000198   98           SUBB    A,R0
+   \   000199   F0           MOVX    @DPTR,A
+    288            saff->apsHdrLen = snff->nsduLength - saff->asduLength;
+   \   00019A   E5..         MOV     A,?V0
+   \   00019C   2410         ADD     A,#0x10
+   \   00019E   F582         MOV     DPL,A
+   \   0001A0   E4           CLR     A
+   \   0001A1   35..         ADDC    A,?V1
+   \   0001A3   F583         MOV     DPH,A
+   \   0001A5   E0           MOVX    A,@DPTR
+   \   0001A6   F8           MOV     R0,A
+   \   0001A7   E5..         MOV     A,?V4
+   \   0001A9   2417         ADD     A,#0x17
+   \   0001AB   F582         MOV     DPL,A
+   \   0001AD   E4           CLR     A
+   \   0001AE   35..         ADDC    A,?V5
+   \   0001B0   F583         MOV     DPH,A
+   \   0001B2   E0           MOVX    A,@DPTR
+   \   0001B3   C3           CLR     C
+   \   0001B4   98           SUBB    A,R0
+   \   0001B5   C0E0         PUSH    A
+   \   0001B7   E5..         MOV     A,?V0
+   \   0001B9   240D         ADD     A,#0xd
+   \   0001BB   F582         MOV     DPL,A
+   \   0001BD   E4           CLR     A
+   \   0001BE   35..         ADDC    A,?V1
+   \   0001C0   F583         MOV     DPH,A
+   \   0001C2   D0E0         POP     A
+   \   0001C4   F0           MOVX    @DPTR,A
+    289            
+    290          } /* StubAPS_ParseMsg */
+   \   0001C5   7F06         MOV     R7,#0x6
+   \   0001C7   02....       LJMP    ?BANKED_LEAVE_XDATA
+    291          
+    292          /******************************************************************************
+    293           * @fn          StubAPS_BuildFrameControl
+    294           *
+    295           * @brief       This function builds Stub APS Frame Control and the destination
+    296           *              address parameter for the MCPS-DATA Request.
+    297           *
+    298           * @param       frmCtrl - frame control
+    299           * @param       dstAddr - destination address for MCPS-DATA Request
+    300           * @param       groupID - group id
+    301           * @param       req - APSDE_DataReq_t
+    302           *
+    303           * @return      ZStatus_t
+    304           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    305          static ZStatus_t StubAPS_BuildFrameControl( uint8 *frmCtrl, zAddrType_t *dstAddr, 
+   \                     StubAPS_BuildFrameControl:
+    306                                                      uint16 *groupID, APSDE_DataReq_t *req )
+    307          { 
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V2,R2
+   \   000007   8B..         MOV     ?V3,R3
+   \   000009   8C..         MOV     ?V0,R4
+   \   00000B   8D..         MOV     ?V1,R5
+   \   00000D   740E         MOV     A,#0xe
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F5..         MOV     ?V4,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   F5..         MOV     ?V5,A
+   \   000019   7410         MOV     A,#0x10
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   FE           MOV     R6,A
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FF           MOV     R7,A
+    308            // Security
+    309            if ( req->txOptions & APS_TX_OPTIONS_SECURITY_ENABLE )
+   \   000023   EE           MOV     A,R6
+   \   000024   2415         ADD     A,#0x15
+   \   000026   F582         MOV     DPL,A
+   \   000028   E4           CLR     A
+   \   000029   3F           ADDC    A,R7
+   \   00002A   F583         MOV     DPH,A
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F8           MOV     R0,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F9           MOV     R1,A
+   \   000031   E8           MOV     A,R0
+   \   000032   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000034   5005         JNC     ??StubAPS_BuildFrameControl_0
+    310              return ( ZApsNotSupported );
+   \   000036   79B6         MOV     R1,#-0x4a
+   \   000038   02....       LJMP    ??StubAPS_BuildFrameControl_1 & 0xFFFF
+    311              
+    312            // Ack request
+    313            if ( req->txOptions & APS_TX_OPTIONS_ACK )
+   \                     ??StubAPS_BuildFrameControl_0:
+   \   00003B   EE           MOV     A,R6
+   \   00003C   2415         ADD     A,#0x15
+   \   00003E   F582         MOV     DPL,A
+   \   000040   E4           CLR     A
+   \   000041   3F           ADDC    A,R7
+   \   000042   F583         MOV     DPH,A
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F8           MOV     R0,A
+   \   000046   A3           INC     DPTR
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   F9           MOV     R1,A
+   \   000049   E8           MOV     A,R0
+   \   00004A   5404         ANL     A,#0x4
+   \   00004C   6005         JZ      ??StubAPS_BuildFrameControl_2
+    314              return ( ZApsNotSupported );
+   \   00004E   79B6         MOV     R1,#-0x4a
+   \   000050   02....       LJMP    ??StubAPS_BuildFrameControl_1 & 0xFFFF
+    315            
+    316             // Fragmentation
+    317            if ( req->txOptions & APS_TX_OPTIONS_PERMIT_FRAGMENT )
+   \                     ??StubAPS_BuildFrameControl_2:
+   \   000053   EE           MOV     A,R6
+   \   000054   2415         ADD     A,#0x15
+   \   000056   F582         MOV     DPL,A
+   \   000058   E4           CLR     A
+   \   000059   3F           ADDC    A,R7
+   \   00005A   F583         MOV     DPH,A
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   F8           MOV     R0,A
+   \   00005E   A3           INC     DPTR
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   F9           MOV     R1,A
+   \   000061   E8           MOV     A,R0
+   \   000062   5408         ANL     A,#0x8
+   \   000064   6005         JZ      ??StubAPS_BuildFrameControl_3
+    318              return ( ZApsNotSupported );
+   \   000066   79B6         MOV     R1,#-0x4a
+   \   000068   02....       LJMP    ??StubAPS_BuildFrameControl_1 & 0xFFFF
+    319            
+    320            // set delivery mode
+    321            if ( req->dstAddr.addrMode == AddrNotPresent )
+   \                     ??StubAPS_BuildFrameControl_3:
+   \   00006B   8E82         MOV     DPL,R6
+   \   00006D   8F83         MOV     DPH,R7
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   A3           INC     DPTR
+   \   000072   A3           INC     DPTR
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   7005         JNZ     ??StubAPS_BuildFrameControl_4
+    322              return ( ZApsNotSupported ); // No REFLECTOR
+   \   00007A   79B6         MOV     R1,#-0x4a
+   \   00007C   02....       LJMP    ??StubAPS_BuildFrameControl_1 & 0xFFFF
+    323          
+    324            // set frame type
+    325            *frmCtrl = STUB_APS_FRAME;
+   \                     ??StubAPS_BuildFrameControl_4:
+   \   00007F   85..82       MOV     DPL,?V2
+   \   000082   85..83       MOV     DPH,?V3
+   \   000085   7403         MOV     A,#0x3
+   \   000087   F0           MOVX    @DPTR,A
+    326            
+    327            // set DstAddrMode of MCPS-DATA Request to DstAddrMode of INTERP-Data Request
+    328            dstAddr->addrMode = req->dstAddr.addrMode;
+   \   000088   8E82         MOV     DPL,R6
+   \   00008A   8F83         MOV     DPH,R7
+   \   00008C   A3           INC     DPTR
+   \   00008D   A3           INC     DPTR
+   \   00008E   A3           INC     DPTR
+   \   00008F   A3           INC     DPTR
+   \   000090   A3           INC     DPTR
+   \   000091   A3           INC     DPTR
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   C0E0         PUSH    A
+   \   000097   85..82       MOV     DPL,?V0
+   \   00009A   85..83       MOV     DPH,?V1
+   \   00009D   A3           INC     DPTR
+   \   00009E   A3           INC     DPTR
+   \   00009F   A3           INC     DPTR
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   A3           INC     DPTR
+   \   0000A2   A3           INC     DPTR
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   D0E0         POP     A
+   \   0000A7   F0           MOVX    @DPTR,A
+    329          
+    330            // set DstAddr of MCPS-DATA Request to DstAddr of INTERP-Data Request
+    331            if ( req->dstAddr.addrMode == AddrBroadcast )
+   \   0000A8   8E82         MOV     DPL,R6
+   \   0000AA   8F83         MOV     DPH,R7
+   \   0000AC   A3           INC     DPTR
+   \   0000AD   A3           INC     DPTR
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   A3           INC     DPTR
+   \   0000B0   A3           INC     DPTR
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   A3           INC     DPTR
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   640F         XRL     A,#0xf
+   \   0000B7   7032         JNZ     ??StubAPS_BuildFrameControl_5
+    332            {
+    333              *frmCtrl |= APS_FC_DM_BROADCAST;
+   \   0000B9   85..82       MOV     DPL,?V2
+   \   0000BC   85..83       MOV     DPH,?V3
+   \   0000BF   E0           MOVX    A,@DPTR
+   \   0000C0   D2E3         SETB    0xE0 /* A   */.3
+   \   0000C2   F0           MOVX    @DPTR,A
+    334              
+    335              // set DstAddrMode of MCPS-DATA Request to short address
+    336              dstAddr->addrMode = Addr16Bit;
+   \   0000C3   85..82       MOV     DPL,?V0
+   \   0000C6   85..83       MOV     DPH,?V1
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   A3           INC     DPTR
+   \   0000D0   A3           INC     DPTR
+   \   0000D1   7402         MOV     A,#0x2
+   \   0000D3   F0           MOVX    @DPTR,A
+    337              dstAddr->addr.shortAddr = req->dstAddr.addr.shortAddr;
+   \   0000D4   8E82         MOV     DPL,R6
+   \   0000D6   8F83         MOV     DPH,R7
+   \   0000D8   E0           MOVX    A,@DPTR
+   \   0000D9   F8           MOV     R0,A
+   \   0000DA   A3           INC     DPTR
+   \   0000DB   E0           MOVX    A,@DPTR
+   \   0000DC   F9           MOV     R1,A
+   \   0000DD   85..82       MOV     DPL,?V0
+   \   0000E0   85..83       MOV     DPH,?V1
+   \   0000E3   E8           MOV     A,R0
+   \   0000E4   F0           MOVX    @DPTR,A
+   \   0000E5   A3           INC     DPTR
+   \   0000E6   E9           MOV     A,R1
+   \   0000E7   F0           MOVX    @DPTR,A
+   \   0000E8   02....       LJMP    ??StubAPS_BuildFrameControl_6 & 0xFFFF
+    338            }
+    339            else if ( req->dstAddr.addrMode == Addr16Bit )
+   \                     ??StubAPS_BuildFrameControl_5:
+   \   0000EB   8E82         MOV     DPL,R6
+   \   0000ED   8F83         MOV     DPH,R7
+   \   0000EF   A3           INC     DPTR
+   \   0000F0   A3           INC     DPTR
+   \   0000F1   A3           INC     DPTR
+   \   0000F2   A3           INC     DPTR
+   \   0000F3   A3           INC     DPTR
+   \   0000F4   A3           INC     DPTR
+   \   0000F5   A3           INC     DPTR
+   \   0000F6   A3           INC     DPTR
+   \   0000F7   E0           MOVX    A,@DPTR
+   \   0000F8   6402         XRL     A,#0x2
+   \   0000FA   7028         JNZ     ??StubAPS_BuildFrameControl_7
+    340            {
+    341              *frmCtrl |= APS_FC_DM_UNICAST;
+   \   0000FC   85..82       MOV     DPL,?V2
+   \   0000FF   85..83       MOV     DPH,?V3
+   \   000102   E0           MOVX    A,@DPTR
+   \   000103   C0E0         PUSH    A
+   \   000105   85..82       MOV     DPL,?V2
+   \   000108   85..83       MOV     DPH,?V3
+   \   00010B   D0E0         POP     A
+   \   00010D   F0           MOVX    @DPTR,A
+    342              dstAddr->addr.shortAddr = req->dstAddr.addr.shortAddr;
+   \   00010E   8E82         MOV     DPL,R6
+   \   000110   8F83         MOV     DPH,R7
+   \   000112   E0           MOVX    A,@DPTR
+   \   000113   F8           MOV     R0,A
+   \   000114   A3           INC     DPTR
+   \   000115   E0           MOVX    A,@DPTR
+   \   000116   F9           MOV     R1,A
+   \   000117   85..82       MOV     DPL,?V0
+   \   00011A   85..83       MOV     DPH,?V1
+   \   00011D   E8           MOV     A,R0
+   \   00011E   F0           MOVX    @DPTR,A
+   \   00011F   A3           INC     DPTR
+   \   000120   E9           MOV     A,R1
+   \   000121   F0           MOVX    @DPTR,A
+   \   000122   807D         SJMP    ??StubAPS_BuildFrameControl_6
+    343            }
+    344            else if ( req->dstAddr.addrMode == Addr64Bit )
+   \                     ??StubAPS_BuildFrameControl_7:
+   \   000124   8E82         MOV     DPL,R6
+   \   000126   8F83         MOV     DPH,R7
+   \   000128   A3           INC     DPTR
+   \   000129   A3           INC     DPTR
+   \   00012A   A3           INC     DPTR
+   \   00012B   A3           INC     DPTR
+   \   00012C   A3           INC     DPTR
+   \   00012D   A3           INC     DPTR
+   \   00012E   A3           INC     DPTR
+   \   00012F   A3           INC     DPTR
+   \   000130   E0           MOVX    A,@DPTR
+   \   000131   6403         XRL     A,#0x3
+   \   000133   701F         JNZ     ??StubAPS_BuildFrameControl_8
+    345            {
+    346              *frmCtrl |= APS_FC_DM_UNICAST;
+   \   000135   85..82       MOV     DPL,?V2
+   \   000138   85..83       MOV     DPH,?V3
+   \   00013B   E0           MOVX    A,@DPTR
+   \   00013C   C0E0         PUSH    A
+   \   00013E   85..82       MOV     DPL,?V2
+   \   000141   85..83       MOV     DPH,?V3
+   \   000144   D0E0         POP     A
+   \   000146   F0           MOVX    @DPTR,A
+    347              osal_cpyExtAddr( dstAddr->addr.extAddr, req->dstAddr.addr.extAddr );
+   \   000147                ; Setup parameters for call to function sAddrExtCpy
+   \   000147   EE           MOV     A,R6
+   \   000148   FC           MOV     R4,A
+   \   000149   EF           MOV     A,R7
+   \   00014A   FD           MOV     R5,A
+   \   00014B   AA..         MOV     R2,?V0
+   \   00014D   AB..         MOV     R3,?V1
+   \   00014F   12....       LCALL   ??sAddrExtCpy?relay  ; Banked call to: sAddrExtCpy
+   \   000152   804D         SJMP    ??StubAPS_BuildFrameControl_6
+    348            }
+    349            else if ( req->dstAddr.addrMode == AddrGroup )
+   \                     ??StubAPS_BuildFrameControl_8:
+   \   000154   8E82         MOV     DPL,R6
+   \   000156   8F83         MOV     DPH,R7
+   \   000158   A3           INC     DPTR
+   \   000159   A3           INC     DPTR
+   \   00015A   A3           INC     DPTR
+   \   00015B   A3           INC     DPTR
+   \   00015C   A3           INC     DPTR
+   \   00015D   A3           INC     DPTR
+   \   00015E   A3           INC     DPTR
+   \   00015F   A3           INC     DPTR
+   \   000160   E0           MOVX    A,@DPTR
+   \   000161   6401         XRL     A,#0x1
+   \   000163   703C         JNZ     ??StubAPS_BuildFrameControl_6
+    350            {
+    351              *frmCtrl |= APS_FC_DM_GROUP;
+   \   000165   85..82       MOV     DPL,?V2
+   \   000168   85..83       MOV     DPH,?V3
+   \   00016B   E0           MOVX    A,@DPTR
+   \   00016C   440C         ORL     A,#0xc
+   \   00016E   F0           MOVX    @DPTR,A
+    352              
+    353              // set DstAddrMode of MCPS-DATA Request to short address
+    354              dstAddr->addrMode = Addr16Bit;
+   \   00016F   85..82       MOV     DPL,?V0
+   \   000172   85..83       MOV     DPH,?V1
+   \   000175   A3           INC     DPTR
+   \   000176   A3           INC     DPTR
+   \   000177   A3           INC     DPTR
+   \   000178   A3           INC     DPTR
+   \   000179   A3           INC     DPTR
+   \   00017A   A3           INC     DPTR
+   \   00017B   A3           INC     DPTR
+   \   00017C   A3           INC     DPTR
+   \   00017D   7402         MOV     A,#0x2
+   \   00017F   F0           MOVX    @DPTR,A
+    355              
+    356              // set DstAddr of MCPS-DATA Request to 0xFFFF
+    357              dstAddr->addr.shortAddr = NWK_BROADCAST_SHORTADDR_DEVALL;
+   \   000180   85..82       MOV     DPL,?V0
+   \   000183   85..83       MOV     DPH,?V1
+   \   000186   74FF         MOV     A,#-0x1
+   \   000188   F0           MOVX    @DPTR,A
+   \   000189   A3           INC     DPTR
+   \   00018A   74FF         MOV     A,#-0x1
+   \   00018C   F0           MOVX    @DPTR,A
+    358              
+    359              // set Group ID to DstAddr of INTERP-Data Request
+    360              *groupID = req->dstAddr.addr.shortAddr;
+   \   00018D   8E82         MOV     DPL,R6
+   \   00018F   8F83         MOV     DPH,R7
+   \   000191   E0           MOVX    A,@DPTR
+   \   000192   F8           MOV     R0,A
+   \   000193   A3           INC     DPTR
+   \   000194   E0           MOVX    A,@DPTR
+   \   000195   F9           MOV     R1,A
+   \   000196   85..82       MOV     DPL,?V4
+   \   000199   85..83       MOV     DPH,?V5
+   \   00019C   E8           MOV     A,R0
+   \   00019D   F0           MOVX    @DPTR,A
+   \   00019E   A3           INC     DPTR
+   \   00019F   E9           MOV     A,R1
+   \   0001A0   F0           MOVX    @DPTR,A
+    361            }
+    362            
+    363            return ( ZSuccess );
+   \                     ??StubAPS_BuildFrameControl_6:
+   \   0001A1   7900         MOV     R1,#0x0
+   \                     ??StubAPS_BuildFrameControl_1:
+   \   0001A3   7F06         MOV     R7,#0x6
+   \   0001A5   02....       LJMP    ?BANKED_LEAVE_XDATA
+    364            
+    365          } /* StubAPS_BuildFrameControl */
+    366          
+    367          /******************************************************************************
+    368           * @fn          StubNWK_BuildMsg
+    369           *
+    370           * @brief       This function builds a Stub NWK frame.
+    371           *
+    372           * @param       nwkHdr - stub NWK header
+    373           *
+    374           * @return      none
+    375           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    376          static void StubNWK_BuildMsg( uint8 *nwkHdr )
+   \                     StubNWK_BuildMsg:
+    377          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    378            uint16 frmCtrl = 0;
+   \   000009   75..00       MOV     ?V0,#0x0
+   \   00000C   75..00       MOV     ?V1,#0x0
+    379            uint8  protoVer = NLME_GetProtocolVersion();
+   \   00000F                ; Setup parameters for call to function NLME_GetProtocolVersion
+   \   00000F   12....       LCALL   ??NLME_GetProtocolVersion?relay; Banked call to: NLME_GetProtocolVersion
+   \   000012   E9           MOV     A,R1
+   \   000013   FA           MOV     R2,A
+    380          
+    381            // frame type
+    382            frmCtrl |= (STUB_NWK_FRAME_TYPE << NWK_FC_FRAME_TYPE);
+   \   000014   7403         MOV     A,#0x3
+   \   000016   45..         ORL     A,?V0
+   \   000018   F5..         MOV     ?V0,A
+   \   00001A   7400         MOV     A,#0x0
+   \   00001C   45..         ORL     A,?V1
+   \   00001E   F5..         MOV     ?V1,A
+    383          
+    384            // protocol version
+    385            frmCtrl |= (protoVer << NWK_FC_PROT_VERSION);
+   \   000020   8A..         MOV     ?V2,R2
+   \   000022   75..00       MOV     ?V3,#0x0
+   \   000025   7402         MOV     A,#0x2
+   \   000027   78..         MOV     R0,#?V2
+   \   000029   12....       LCALL   ?S_SHL
+   \   00002C   E5..         MOV     A,?V2
+   \   00002E   45..         ORL     A,?V0
+   \   000030   F5..         MOV     ?V0,A
+   \   000032   E5..         MOV     A,?V3
+   \   000034   45..         ORL     A,?V1
+   \   000036   F5..         MOV     ?V1,A
+    386            
+    387            // set Stub NWK header
+    388            *nwkHdr++ = LO_UINT16( frmCtrl );
+   \   000038   E5..         MOV     A,?V0
+   \   00003A   C0E0         PUSH    A
+   \   00003C   8E82         MOV     DPL,R6
+   \   00003E   8F83         MOV     DPH,R7
+   \   000040   D0E0         POP     A
+   \   000042   F0           MOVX    @DPTR,A
+   \   000043   8E82         MOV     DPL,R6
+   \   000045   8F83         MOV     DPH,R7
+   \   000047   A3           INC     DPTR
+   \   000048   AE82         MOV     R6,DPL
+   \   00004A   AF83         MOV     R7,DPH
+    389            *nwkHdr++ = HI_UINT16( frmCtrl );
+   \   00004C   A8..         MOV     R0,?V0
+   \   00004E   A9..         MOV     R1,?V1
+   \   000050   E4           CLR     A
+   \   000051   C9           XCH     A,R1
+   \   000052   F8           MOV     R0,A
+   \   000053   E8           MOV     A,R0
+   \   000054   C0E0         PUSH    A
+   \   000056   8E82         MOV     DPL,R6
+   \   000058   8F83         MOV     DPH,R7
+   \   00005A   D0E0         POP     A
+   \   00005C   F0           MOVX    @DPTR,A
+   \   00005D   8E82         MOV     DPL,R6
+   \   00005F   8F83         MOV     DPH,R7
+   \   000061   A3           INC     DPTR
+   \   000062   AE82         MOV     R6,DPL
+   \   000064   AF83         MOV     R7,DPH
+    390            
+    391          } /* StubNWK_BuildMsg */
+   \   000066   7F04         MOV     R7,#0x4
+   \   000068   02....       LJMP    ?BANKED_LEAVE_XDATA
+    392          
+    393          /******************************************************************************
+    394           * @fn          StubAPS_BuildMsg
+    395           *
+    396           * @brief       This function builds a Stub APS frame.
+    397           *
+    398           * @param       apsHdr - stub APS header
+    399           * @param       frmCtrl - stub APS frame control
+    400           * @param       groupID - group id
+    401           * @param       req - APSDE_DataReq_t
+    402           *
+    403           * @return      none
+    404           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    405          static void StubAPS_BuildMsg( uint8 *apsHdr, uint8 frmCtrl, uint16 groupID, APSDE_DataReq_t *req )
+   \                     StubAPS_BuildMsg:
+    406          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V3,R1
+   \   00000B   8C..         MOV     ?V4,R4
+   \   00000D   8D..         MOV     ?V5,R5
+   \   00000F   7410         MOV     A,#0x10
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V6,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V7,A
+    407            // add frame type
+    408            *apsHdr++ = frmCtrl;
+   \   00001B   E5..         MOV     A,?V3
+   \   00001D   C0E0         PUSH    A
+   \   00001F   8E82         MOV     DPL,R6
+   \   000021   8F83         MOV     DPH,R7
+   \   000023   D0E0         POP     A
+   \   000025   F0           MOVX    @DPTR,A
+   \   000026   8E82         MOV     DPL,R6
+   \   000028   8F83         MOV     DPH,R7
+   \   00002A   A3           INC     DPTR
+   \   00002B   AE82         MOV     R6,DPL
+   \   00002D   AF83         MOV     R7,DPH
+    409              
+    410            // add Group ID
+    411            if ( ( frmCtrl & APS_DELIVERYMODE_MASK ) == APS_FC_DM_GROUP )
+   \   00002F   740C         MOV     A,#0xc
+   \   000031   55..         ANL     A,?V3
+   \   000033   640C         XRL     A,#0xc
+   \   000035   702E         JNZ     ??StubAPS_BuildMsg_0
+    412            {
+    413              *apsHdr++ = LO_UINT16( groupID );
+   \   000037   E5..         MOV     A,?V4
+   \   000039   C0E0         PUSH    A
+   \   00003B   8E82         MOV     DPL,R6
+   \   00003D   8F83         MOV     DPH,R7
+   \   00003F   D0E0         POP     A
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   8E82         MOV     DPL,R6
+   \   000044   8F83         MOV     DPH,R7
+   \   000046   A3           INC     DPTR
+   \   000047   AE82         MOV     R6,DPL
+   \   000049   AF83         MOV     R7,DPH
+    414              *apsHdr++ = HI_UINT16( groupID );
+   \   00004B   A8..         MOV     R0,?V4
+   \   00004D   A9..         MOV     R1,?V5
+   \   00004F   E4           CLR     A
+   \   000050   C9           XCH     A,R1
+   \   000051   F8           MOV     R0,A
+   \   000052   E8           MOV     A,R0
+   \   000053   C0E0         PUSH    A
+   \   000055   8E82         MOV     DPL,R6
+   \   000057   8F83         MOV     DPH,R7
+   \   000059   D0E0         POP     A
+   \   00005B   F0           MOVX    @DPTR,A
+   \   00005C   8E82         MOV     DPL,R6
+   \   00005E   8F83         MOV     DPH,R7
+   \   000060   A3           INC     DPTR
+   \   000061   AE82         MOV     R6,DPL
+   \   000063   AF83         MOV     R7,DPH
+    415            }
+    416          
+    417            // add clusterID
+    418            *apsHdr++ = LO_UINT16( req->clusterID );
+   \                     ??StubAPS_BuildMsg_0:
+   \   000065   E5..         MOV     A,?V6
+   \   000067   240D         ADD     A,#0xd
+   \   000069   F582         MOV     DPL,A
+   \   00006B   E4           CLR     A
+   \   00006C   35..         ADDC    A,?V7
+   \   00006E   F583         MOV     DPH,A
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   E8           MOV     A,R0
+   \   000076   C0E0         PUSH    A
+   \   000078   8E82         MOV     DPL,R6
+   \   00007A   8F83         MOV     DPH,R7
+   \   00007C   D0E0         POP     A
+   \   00007E   F0           MOVX    @DPTR,A
+   \   00007F   8E82         MOV     DPL,R6
+   \   000081   8F83         MOV     DPH,R7
+   \   000083   A3           INC     DPTR
+   \   000084   AE82         MOV     R6,DPL
+   \   000086   AF83         MOV     R7,DPH
+    419            *apsHdr++ = HI_UINT16( req->clusterID );
+   \   000088   E5..         MOV     A,?V6
+   \   00008A   240D         ADD     A,#0xd
+   \   00008C   F582         MOV     DPL,A
+   \   00008E   E4           CLR     A
+   \   00008F   35..         ADDC    A,?V7
+   \   000091   F583         MOV     DPH,A
+   \   000093   E0           MOVX    A,@DPTR
+   \   000094   F8           MOV     R0,A
+   \   000095   A3           INC     DPTR
+   \   000096   E0           MOVX    A,@DPTR
+   \   000097   F9           MOV     R1,A
+   \   000098   E4           CLR     A
+   \   000099   C9           XCH     A,R1
+   \   00009A   F8           MOV     R0,A
+   \   00009B   E8           MOV     A,R0
+   \   00009C   C0E0         PUSH    A
+   \   00009E   8E82         MOV     DPL,R6
+   \   0000A0   8F83         MOV     DPH,R7
+   \   0000A2   D0E0         POP     A
+   \   0000A4   F0           MOVX    @DPTR,A
+   \   0000A5   8E82         MOV     DPL,R6
+   \   0000A7   8F83         MOV     DPH,R7
+   \   0000A9   A3           INC     DPTR
+   \   0000AA   AE82         MOV     R6,DPL
+   \   0000AC   AF83         MOV     R7,DPH
+    420            
+    421            // add profile ID
+    422            *apsHdr++ = LO_UINT16( req->profileID );
+   \   0000AE   E5..         MOV     A,?V6
+   \   0000B0   240F         ADD     A,#0xf
+   \   0000B2   F582         MOV     DPL,A
+   \   0000B4   E4           CLR     A
+   \   0000B5   35..         ADDC    A,?V7
+   \   0000B7   F583         MOV     DPH,A
+   \   0000B9   E0           MOVX    A,@DPTR
+   \   0000BA   F8           MOV     R0,A
+   \   0000BB   A3           INC     DPTR
+   \   0000BC   E0           MOVX    A,@DPTR
+   \   0000BD   F9           MOV     R1,A
+   \   0000BE   E8           MOV     A,R0
+   \   0000BF   C0E0         PUSH    A
+   \   0000C1   8E82         MOV     DPL,R6
+   \   0000C3   8F83         MOV     DPH,R7
+   \   0000C5   D0E0         POP     A
+   \   0000C7   F0           MOVX    @DPTR,A
+   \   0000C8   8E82         MOV     DPL,R6
+   \   0000CA   8F83         MOV     DPH,R7
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   AE82         MOV     R6,DPL
+   \   0000CF   AF83         MOV     R7,DPH
+    423            *apsHdr++ = HI_UINT16( req->profileID );
+   \   0000D1   E5..         MOV     A,?V6
+   \   0000D3   240F         ADD     A,#0xf
+   \   0000D5   F582         MOV     DPL,A
+   \   0000D7   E4           CLR     A
+   \   0000D8   35..         ADDC    A,?V7
+   \   0000DA   F583         MOV     DPH,A
+   \   0000DC   E0           MOVX    A,@DPTR
+   \   0000DD   F8           MOV     R0,A
+   \   0000DE   A3           INC     DPTR
+   \   0000DF   E0           MOVX    A,@DPTR
+   \   0000E0   F9           MOV     R1,A
+   \   0000E1   E4           CLR     A
+   \   0000E2   C9           XCH     A,R1
+   \   0000E3   F8           MOV     R0,A
+   \   0000E4   E8           MOV     A,R0
+   \   0000E5   C0E0         PUSH    A
+   \   0000E7   8E82         MOV     DPL,R6
+   \   0000E9   8F83         MOV     DPH,R7
+   \   0000EB   D0E0         POP     A
+   \   0000ED   F0           MOVX    @DPTR,A
+   \   0000EE   8E82         MOV     DPL,R6
+   \   0000F0   8F83         MOV     DPH,R7
+   \   0000F2   A3           INC     DPTR
+   \   0000F3   AE82         MOV     R6,DPL
+   \   0000F5   AF83         MOV     R7,DPH
+    424              
+    425            // copy ASDU data into frame
+    426            osal_memcpy ( apsHdr, req->asdu, req->asduLen );
+   \   0000F7                ; Setup parameters for call to function osal_memcpy
+   \   0000F7   E5..         MOV     A,?V6
+   \   0000F9   2413         ADD     A,#0x13
+   \   0000FB   F582         MOV     DPL,A
+   \   0000FD   E4           CLR     A
+   \   0000FE   35..         ADDC    A,?V7
+   \   000100   F583         MOV     DPH,A
+   \   000102   E0           MOVX    A,@DPTR
+   \   000103   F5..         MOV     ?V0,A
+   \   000105   A3           INC     DPTR
+   \   000106   E0           MOVX    A,@DPTR
+   \   000107   F5..         MOV     ?V1,A
+   \   000109   75..00       MOV     ?V2,#0x0
+   \   00010C   78..         MOV     R0,#?V0
+   \   00010E   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000111   E5..         MOV     A,?V6
+   \   000113   2411         ADD     A,#0x11
+   \   000115   F582         MOV     DPL,A
+   \   000117   E4           CLR     A
+   \   000118   35..         ADDC    A,?V7
+   \   00011A   F583         MOV     DPH,A
+   \   00011C   E0           MOVX    A,@DPTR
+   \   00011D   FC           MOV     R4,A
+   \   00011E   A3           INC     DPTR
+   \   00011F   E0           MOVX    A,@DPTR
+   \   000120   FD           MOV     R5,A
+   \   000121   EE           MOV     A,R6
+   \   000122   FA           MOV     R2,A
+   \   000123   EF           MOV     A,R7
+   \   000124   FB           MOV     R3,A
+   \   000125   12....       LCALL   ??osal_memcpy?relay  ; Banked call to: osal_memcpy
+   \   000128   7403         MOV     A,#0x3
+   \   00012A   12....       LCALL   ?DEALLOC_XSTACK8
+    427            
+    428          } /* StubAPS_BuildMsg */
+   \   00012D   7F08         MOV     R7,#0x8
+   \   00012F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    429          
+    430          /******************************************************************************
+    431           * @fn          StubAPS_setNewChannel
+    432           *
+    433           * @brief       This function changes the device's channel.
+    434           *
+    435           * @param       none
+    436           *
+    437           * @return      ZStatus_t
+    438           */ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    439          static ZStatus_t StubAPS_SetNewChannel( uint8 channel )
+   \                     StubAPS_SetNewChannel:
+    440          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 2
+   \   000004   74FE         MOV     A,#-0x2
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+   \   000009   E9           MOV     A,R1
+   \   00000A   C0E0         PUSH    A
+   \   00000C   7401         MOV     A,#0x1
+   \   00000E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000011   D0E0         POP     A
+   \   000013   F0           MOVX    @DPTR,A
+    441            uint8 rxOnIdle;
+    442            
+    443            // make sure MAC has nothing to transmit
+    444            if ( ( nwkDB_CountTypes( NWK_DATABUF_SENT ) == 0 ) && ZMacStateIdle() )
+   \   000014                ; Setup parameters for call to function nwkDB_CountTypes
+   \   000014   7902         MOV     R1,#0x2
+   \   000016   12....       LCALL   ??nwkDB_CountTypes?relay; Banked call to: nwkDB_CountTypes
+   \   000019   E9           MOV     A,R1
+   \   00001A   702E         JNZ     ??StubAPS_SetNewChannel_0
+   \   00001C                ; Setup parameters for call to function ZMacStateIdle
+   \   00001C   12....       LCALL   ??ZMacStateIdle?relay; Banked call to: ZMacStateIdle
+   \   00001F   E9           MOV     A,R1
+   \   000020   6028         JZ      ??StubAPS_SetNewChannel_0
+    445            {
+    446              // set the new channel
+    447              ZMacSetReq( ZMacChannel, &channel );
+   \   000022                ; Setup parameters for call to function ZMacSetReq
+   \   000022   7401         MOV     A,#0x1
+   \   000024   12....       LCALL   ?XSTACK_DISP101_8
+   \   000027   79E1         MOV     R1,#-0x1f
+   \   000029   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   00002C   E9           MOV     A,R1
+    448          
+    449              // turn MAC receiver back on
+    450              rxOnIdle = true;
+   \   00002D   85..82       MOV     DPL,?XSP + 0
+   \   000030   85..83       MOV     DPH,?XSP + 1
+   \   000033   7401         MOV     A,#0x1
+   \   000035   F0           MOVX    @DPTR,A
+    451              ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+   \   000036                ; Setup parameters for call to function ZMacSetReq
+   \   000036   AA..         MOV     R2,?XSP + 0
+   \   000038   AB..         MOV     R3,?XSP + 1
+   \   00003A   7952         MOV     R1,#0x52
+   \   00003C   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   00003F   E9           MOV     A,R1
+    452            
+    453              channelChangeInProgress = FALSE;
+   \   000040   90....       MOV     DPTR,#channelChangeInProgress
+   \   000043   7400         MOV     A,#0x0
+   \   000045   F0           MOVX    @DPTR,A
+    454              
+    455              return ( ZSuccess );
+   \   000046   7900         MOV     R1,#0x0
+   \   000048   8002         SJMP    ??StubAPS_SetNewChannel_1
+    456            }
+    457            
+    458            return ( ZFailure );
+   \                     ??StubAPS_SetNewChannel_0:
+   \   00004A   7901         MOV     R1,#0x1
+   \                     ??StubAPS_SetNewChannel_1:
+   \   00004C   7402         MOV     A,#0x2
+   \   00004E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000051   D083         POP     DPH
+   \   000053   D082         POP     DPL
+   \   000055   02....       LJMP    ?BRET
+    459            
+    460          } /* StubAPS_setNewChannel */
+    461          
+    462          
+    463          /******************************************************************************
+    464           * @fn          StubAPS_NotifyApp
+    465           *
+    466           * @brief       This function sends an OSAL message to the Application task.
+    467           *
+    468           * @param       status - command status
+    469           *
+    470           * @return      none
+    471           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    472          static void StubAPS_NotifyApp( uint8 status )
+   \                     StubAPS_NotifyApp:
+    473          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0,R1
+    474            osal_event_hdr_t *msgPtr;
+    475            
+    476            // Notify the application task
+    477            msgPtr = (osal_event_hdr_t *)osal_msg_allocate( sizeof(osal_event_hdr_t) );
+   \   000007                ; Setup parameters for call to function osal_msg_allocate
+   \   000007   7A02         MOV     R2,#0x2
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??osal_msg_allocate?relay; Banked call to: osal_msg_allocate
+   \   00000E   8A..         MOV     ?V2,R2
+   \   000010   8B..         MOV     ?V3,R3
+   \   000012   AE..         MOV     R6,?V2
+   \   000014   AF..         MOV     R7,?V3
+    478            if ( msgPtr )
+   \   000016   EE           MOV     A,R6
+   \   000017   4F           ORL     A,R7
+   \   000018   6020         JZ      ??StubAPS_NotifyApp_0
+    479            {
+    480              msgPtr->event = SAPS_CHANNEL_CHANGE;
+   \   00001A   8E82         MOV     DPL,R6
+   \   00001C   8F83         MOV     DPH,R7
+   \   00001E   7433         MOV     A,#0x33
+   \   000020   F0           MOVX    @DPTR,A
+    481              msgPtr->status = status;
+   \   000021   E5..         MOV     A,?V0
+   \   000023   C0E0         PUSH    A
+   \   000025   8E82         MOV     DPL,R6
+   \   000027   8F83         MOV     DPH,R7
+   \   000029   A3           INC     DPTR
+   \   00002A   D0E0         POP     A
+   \   00002C   F0           MOVX    @DPTR,A
+    482              
+    483              osal_msg_send( appTaskID, (uint8 *)msgPtr );
+   \   00002D                ; Setup parameters for call to function osal_msg_send
+   \   00002D   EE           MOV     A,R6
+   \   00002E   FA           MOV     R2,A
+   \   00002F   EF           MOV     A,R7
+   \   000030   FB           MOV     R3,A
+   \   000031   90....       MOV     DPTR,#appTaskID
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F9           MOV     R1,A
+   \   000036   12....       LCALL   ??osal_msg_send?relay; Banked call to: osal_msg_send
+   \   000039   E9           MOV     A,R1
+    484            }
+    485            
+    486          } /* StubAPS_NotifyApp */
+   \                     ??StubAPS_NotifyApp_0:
+   \   00003A   7F04         MOV     R7,#0x4
+   \   00003C   02....       LJMP    ?BANKED_LEAVE_XDATA
+    487          
+    488          /******************************************************************************
+    489           *
+    490           *  External APIs provided to the Application.
+    491           */
+    492          
+    493          /******************************************************************************
+    494           * @fn          StubAPS_SetInterPanChannel
+    495           *
+    496           * @brief       This function changes the device's channel for inter-PAN communication.
+    497           *
+    498           * @param       channel - new channel
+    499           *
+    500           * @return      ZStatus_t
+    501           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    502          ZStatus_t StubAPS_SetInterPanChannel( uint8 channel )
+   \                     StubAPS_SetInterPanChannel:
+    503          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    504            uint8 currChannel;
+    505            uint8 rxOnIdle;
+    506            
+    507            if ( channelChangeInProgress )
+   \   00000C   90....       MOV     DPTR,#channelChangeInProgress
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   6004         JZ      ??StubAPS_SetInterPanChannel_0
+    508              return ( ZFailure );
+   \   000012   7901         MOV     R1,#0x1
+   \   000014   805A         SJMP    ??StubAPS_SetInterPanChannel_1
+    509          
+    510            ZMacGetReq( ZMacChannel, &currChannel );
+   \                     ??StubAPS_SetInterPanChannel_0:
+   \   000016                ; Setup parameters for call to function ZMacGetReq
+   \   000016   7401         MOV     A,#0x1
+   \   000018   12....       LCALL   ?XSTACK_DISP101_8
+   \   00001B   79E1         MOV     R1,#-0x1f
+   \   00001D   12....       LCALL   ??ZMacGetReq?relay   ; Banked call to: ZMacGetReq
+   \   000020   E9           MOV     A,R1
+    511            if ( currChannel == channel )
+   \   000021   7401         MOV     A,#0x1
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6E           XRL     A,R6
+   \   000028   7004         JNZ     ??StubAPS_SetInterPanChannel_2
+    512            {
+    513              // inter PANs communication within the same channel
+    514              return ( ZSuccess );
+   \   00002A   7900         MOV     R1,#0x0
+   \   00002C   8042         SJMP    ??StubAPS_SetInterPanChannel_1
+    515            }
+    516            
+    517            // go into channel transition state
+    518            channelChangeInProgress = TRUE;
+   \                     ??StubAPS_SetInterPanChannel_2:
+   \   00002E   90....       MOV     DPTR,#channelChangeInProgress
+   \   000031   7401         MOV     A,#0x1
+   \   000033   F0           MOVX    @DPTR,A
+    519            
+    520            // set NWK task to idle
+    521            nwk_setStateIdle( TRUE );
+   \   000034                ; Setup parameters for call to function nwk_setStateIdle
+   \   000034   7901         MOV     R1,#0x1
+   \   000036   12....       LCALL   ??nwk_setStateIdle?relay; Banked call to: nwk_setStateIdle
+    522            
+    523            // turn MAC receiver off
+    524            rxOnIdle = false;
+   \   000039   85..82       MOV     DPL,?XSP + 0
+   \   00003C   85..83       MOV     DPH,?XSP + 1
+   \   00003F   7400         MOV     A,#0x0
+   \   000041   F0           MOVX    @DPTR,A
+    525            ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+   \   000042                ; Setup parameters for call to function ZMacSetReq
+   \   000042   AA..         MOV     R2,?XSP + 0
+   \   000044   AB..         MOV     R3,?XSP + 1
+   \   000046   7952         MOV     R1,#0x52
+   \   000048   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   00004B   E9           MOV     A,R1
+    526          
+    527            // try to change to the new channel
+    528            if ( StubAPS_SetNewChannel( channel ) == ZSuccess )
+   \   00004C                ; Setup parameters for call to function StubAPS_SetNewChannel
+   \   00004C   EE           MOV     A,R6
+   \   00004D   F9           MOV     R1,A
+   \   00004E   12....       LCALL   ??StubAPS_SetNewChannel?relay; Banked call to: StubAPS_SetNewChannel
+   \   000051   E9           MOV     A,R1
+   \   000052   7004         JNZ     ??StubAPS_SetInterPanChannel_3
+    529              return ( ZSuccess );
+   \   000054   7900         MOV     R1,#0x0
+   \   000056   8018         SJMP    ??StubAPS_SetInterPanChannel_1
+    530              
+    531            // save the new channel for retry
+    532            newChannel = channel;
+   \                     ??StubAPS_SetInterPanChannel_3:
+   \   000058   EE           MOV     A,R6
+   \   000059   90....       MOV     DPTR,#newChannel
+   \   00005C   F0           MOVX    @DPTR,A
+    533            
+    534            // ask StubAPS task to retry it later
+    535            osal_start_timerEx( StubAPS_TaskID, CHANNEL_CHANGE_EVT, CHANNEL_CHANGE_RETRY_TIMEOUT );
+   \   00005D                ; Setup parameters for call to function osal_start_timerEx
+   \   00005D   7C64         MOV     R4,#0x64
+   \   00005F   7D00         MOV     R5,#0x0
+   \   000061   7A01         MOV     R2,#0x1
+   \   000063   7B00         MOV     R3,#0x0
+   \   000065   90....       MOV     DPTR,#StubAPS_TaskID
+   \   000068   E0           MOVX    A,@DPTR
+   \   000069   F9           MOV     R1,A
+   \   00006A   12....       LCALL   ??osal_start_timerEx?relay; Banked call to: osal_start_timerEx
+   \   00006D   E9           MOV     A,R1
+    536              
+    537            return ( ZApsNotAllowed );
+   \   00006E   79BA         MOV     R1,#-0x46
+   \                     ??StubAPS_SetInterPanChannel_1:
+   \   000070   7402         MOV     A,#0x2
+   \   000072   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000075   7F01         MOV     R7,#0x1
+   \   000077   02....       LJMP    ?BANKED_LEAVE_XDATA
+    538            
+    539          } /* StubAPS_SetInterPanChannel */
+    540          
+    541          /******************************************************************************
+    542           * @fn          StubAPS_SetIntraPanChannel
+    543           *
+    544           * @brief       This function sets the device's channel back to the NIB channel.
+    545           *
+    546           * @param       none
+    547           *
+    548           * @return      ZStatus_t
+    549           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    550          ZStatus_t StubAPS_SetIntraPanChannel( void )
+   \                     StubAPS_SetIntraPanChannel:
+    551          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 2
+   \   000004   74FE         MOV     A,#-0x2
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    552            uint8 currChannel;
+    553            uint8 rxOnIdle;
+    554            
+    555            if ( channelChangeInProgress )
+   \   000009   90....       MOV     DPTR,#channelChangeInProgress
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   6004         JZ      ??StubAPS_SetIntraPanChannel_0
+    556              return ( ZFailure );
+   \   00000F   7901         MOV     R1,#0x1
+   \   000011   8060         SJMP    ??StubAPS_SetIntraPanChannel_1
+    557            
+    558            ZMacGetReq( ZMacChannel, &currChannel );
+   \                     ??StubAPS_SetIntraPanChannel_0:
+   \   000013                ; Setup parameters for call to function ZMacGetReq
+   \   000013   7401         MOV     A,#0x1
+   \   000015   12....       LCALL   ?XSTACK_DISP101_8
+   \   000018   79E1         MOV     R1,#-0x1f
+   \   00001A   12....       LCALL   ??ZMacGetReq?relay   ; Banked call to: ZMacGetReq
+   \   00001D   E9           MOV     A,R1
+    559            if ( currChannel == _NIB.nwkLogicalChannel )
+   \   00001E   7401         MOV     A,#0x1
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   E0           MOVX    A,@DPTR
+   \   000024   F8           MOV     R0,A
+   \   000025   90....       MOV     DPTR,#_NIB + 22
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   68           XRL     A,R0
+   \   00002A   7004         JNZ     ??StubAPS_SetIntraPanChannel_2
+    560              return ( ZSuccess );
+   \   00002C   7900         MOV     R1,#0x0
+   \   00002E   8043         SJMP    ??StubAPS_SetIntraPanChannel_1
+    561            
+    562            channelChangeInProgress = TRUE;
+   \                     ??StubAPS_SetIntraPanChannel_2:
+   \   000030   90....       MOV     DPTR,#channelChangeInProgress
+   \   000033   7401         MOV     A,#0x1
+   \   000035   F0           MOVX    @DPTR,A
+    563            
+    564            // turn MAC receiver off
+    565            rxOnIdle = false;
+   \   000036   85..82       MOV     DPL,?XSP + 0
+   \   000039   85..83       MOV     DPH,?XSP + 1
+   \   00003C   7400         MOV     A,#0x0
+   \   00003E   F0           MOVX    @DPTR,A
+    566            ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+   \   00003F                ; Setup parameters for call to function ZMacSetReq
+   \   00003F   AA..         MOV     R2,?XSP + 0
+   \   000041   AB..         MOV     R3,?XSP + 1
+   \   000043   7952         MOV     R1,#0x52
+   \   000045   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   000048   E9           MOV     A,R1
+    567            
+    568            // set the NIB channel
+    569            ZMacSetReq( ZMacChannel, &(_NIB.nwkLogicalChannel) );
+   \   000049                ; Setup parameters for call to function ZMacSetReq
+   \   000049   7A..         MOV     R2,#(_NIB + 22) & 0xff
+   \   00004B   7B..         MOV     R3,#((_NIB + 22) >> 8) & 0xff
+   \   00004D   79E1         MOV     R1,#-0x1f
+   \   00004F   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   000052   E9           MOV     A,R1
+    570            
+    571            // turn MAC receiver back on
+    572            rxOnIdle = true;
+   \   000053   85..82       MOV     DPL,?XSP + 0
+   \   000056   85..83       MOV     DPH,?XSP + 1
+   \   000059   7401         MOV     A,#0x1
+   \   00005B   F0           MOVX    @DPTR,A
+    573            ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+   \   00005C                ; Setup parameters for call to function ZMacSetReq
+   \   00005C   AA..         MOV     R2,?XSP + 0
+   \   00005E   AB..         MOV     R3,?XSP + 1
+   \   000060   7952         MOV     R1,#0x52
+   \   000062   12....       LCALL   ??ZMacSetReq?relay   ; Banked call to: ZMacSetReq
+   \   000065   E9           MOV     A,R1
+    574             
+    575            // set NWK task to run
+    576            nwk_setStateIdle( FALSE );
+   \   000066                ; Setup parameters for call to function nwk_setStateIdle
+   \   000066   7900         MOV     R1,#0x0
+   \   000068   12....       LCALL   ??nwk_setStateIdle?relay; Banked call to: nwk_setStateIdle
+    577            
+    578            channelChangeInProgress = FALSE;
+   \   00006B   90....       MOV     DPTR,#channelChangeInProgress
+   \   00006E   7400         MOV     A,#0x0
+   \   000070   F0           MOVX    @DPTR,A
+    579            
+    580            return ( ZSuccess );
+   \   000071   7900         MOV     R1,#0x0
+   \                     ??StubAPS_SetIntraPanChannel_1:
+   \   000073   7402         MOV     A,#0x2
+   \   000075   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000078   D083         POP     DPH
+   \   00007A   D082         POP     DPL
+   \   00007C   02....       LJMP    ?BRET
+    581            
+    582          } /* StubAPS_SetIntraPanChannel */
+    583          
+    584          /******************************************************************************
+    585           * @fn          StubAPS_InterPan
+    586           *
+    587           * @brief       This function checks to see if a PAN is an Inter-PAN.
+    588           *
+    589           * @param       panId - PAN ID
+    590           * @param       endPoint - endpoint
+    591           *
+    592           * @return      TRUE if PAN is Inter-PAN, FALSE otherwise
+    593           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    594          uint8 StubAPS_InterPan( uint16 panId, uint8 endPoint )
+   \                     StubAPS_InterPan:
+    595          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   89..         MOV     ?V0,R1
+    596            uint8 currChannel;
+    597            
+    598            if ( panId != 0 )
+   \   000010   EE           MOV     A,R6
+   \   000011   4F           ORL     A,R7
+   \   000012   6037         JZ      ??StubAPS_InterPan_0
+    599            {
+    600              ZMacGetReq( ZMacChannel, &currChannel );
+   \   000014                ; Setup parameters for call to function ZMacGetReq
+   \   000014   AA..         MOV     R2,?XSP + 0
+   \   000016   AB..         MOV     R3,?XSP + 1
+   \   000018   79E1         MOV     R1,#-0x1f
+   \   00001A   12....       LCALL   ??ZMacGetReq?relay   ; Banked call to: ZMacGetReq
+   \   00001D   E9           MOV     A,R1
+    601              if ( currChannel != _NIB.nwkLogicalChannel )
+   \   00001E   85..82       MOV     DPL,?XSP + 0
+   \   000021   85..83       MOV     DPH,?XSP + 1
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   F8           MOV     R0,A
+   \   000026   90....       MOV     DPTR,#_NIB + 22
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   68           XRL     A,R0
+   \   00002B   6004         JZ      ??StubAPS_InterPan_1
+    602              {
+    603                // different Channels
+    604                return ( TRUE );
+   \   00002D   7901         MOV     R1,#0x1
+   \   00002F   801C         SJMP    ??StubAPS_InterPan_2
+    605              }
+    606            
+    607              // same Channels
+    608              if ( panId != _NIB.nwkPanId )
+   \                     ??StubAPS_InterPan_1:
+   \   000031   90....       MOV     DPTR,#_NIB + 33
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   6E           XRL     A,R6
+   \   000036   7003         JNZ     ??StubAPS_InterPan_3
+   \   000038   A3           INC     DPTR
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   6F           XRL     A,R7
+   \                     ??StubAPS_InterPan_3:
+   \   00003B   6004         JZ      ??StubAPS_InterPan_4
+    609              {
+    610                // different PAN IDs
+    611                return ( TRUE );
+   \   00003D   7901         MOV     R1,#0x1
+   \   00003F   800C         SJMP    ??StubAPS_InterPan_2
+    612              }
+    613            
+    614              // same Channels and same PAN IDs
+    615              if ( endPoint == STUBAPS_INTER_PAN_EP )
+   \                     ??StubAPS_InterPan_4:
+   \   000041   74FE         MOV     A,#-0x2
+   \   000043   65..         XRL     A,?V0
+   \   000045   7004         JNZ     ??StubAPS_InterPan_0
+    616              {
+    617                // Inter-PAN endpoint
+    618                return ( TRUE );
+   \   000047   7901         MOV     R1,#0x1
+   \   000049   8002         SJMP    ??StubAPS_InterPan_2
+    619              }
+    620            }
+    621            
+    622            return ( FALSE );
+   \                     ??StubAPS_InterPan_0:
+   \   00004B   7900         MOV     R1,#0x0
+   \                     ??StubAPS_InterPan_2:
+   \   00004D   7401         MOV     A,#0x1
+   \   00004F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000052   7F01         MOV     R7,#0x1
+   \   000054   02....       LJMP    ?BANKED_LEAVE_XDATA
+    623            
+    624          } /* StubAPS_InterPan */
+    625          
+    626          /******************************************************************************
+    627           * @fn          StubAPS_RegisterApp
+    628           *
+    629           * @brief       This function registers the Application with the Stub APS layer.
+    630           *
+    631           *              NOTE: Since Stub APS messages don't include the application
+    632           *                    endpoint, the application has to register its endpoint
+    633           *                    with Stub APS.
+    634           *
+    635           * @param       epDesc - application's endpoint descriptor
+    636           *
+    637           * @return      none
+    638           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    639          void StubAPS_RegisterApp( endPointDesc_t *epDesc )
+   \                     StubAPS_RegisterApp:
+    640          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    641            appTaskID = *epDesc->task_id;
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F8           MOV     R0,A
+   \   00000B   A3           INC     DPTR
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   F583         MOV     DPH,A
+   \   00000F   8882         MOV     DPL,R0
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   90....       MOV     DPTR,#appTaskID
+   \   000015   F0           MOVX    @DPTR,A
+    642            appEndPoint = epDesc->endPoint;
+   \   000016   8A82         MOV     DPL,R2
+   \   000018   8B83         MOV     DPH,R3
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   90....       MOV     DPTR,#appEndPoint
+   \   00001E   F0           MOVX    @DPTR,A
+    643            
+    644          } /* StubAPS_RegisterApp */
+   \   00001F   D083         POP     DPH
+   \   000021   D082         POP     DPL
+   \   000023   02....       LJMP    ?BRET
+    645          
+    646          /******************************************************************************
+    647           * @fn          StubAPS_ZMacCallback
+    648           *
+    649           * @brief       This function accepts an inter-PAN message from ZMac.
+    650           *
+    651           * @param       msgPtr - received message
+    652           *
+    653           * @return      TRUE if message is processed. FALSE otherwise.
+    654           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    655          uint8 StubAPS_ZMacCallback( uint8 *msgPtr )
+   \                     StubAPS_ZMacCallback:
+    656          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V4,R2
+   \   000007   8B..         MOV     ?V5,R3
+    657            uint16 nwk_fc;
+    658            uint8  aps_fc;
+    659            uint8  frameType;
+    660            uint8 *buf = NULL;
+   \   000009   75..00       MOV     ?V0,#0x0
+   \   00000C   75..00       MOV     ?V1,#0x0
+    661            uint8  event = ((osal_event_hdr_t *)msgPtr)->event;
+   \   00000F   85..82       MOV     DPL,?V4
+   \   000012   85..83       MOV     DPH,?V5
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F5..         MOV     ?V3,A
+    662          
+    663            if ( event == MAC_MCPS_DATA_IND )
+   \   000018   740D         MOV     A,#0xd
+   \   00001A   65..         XRL     A,?V3
+   \   00001C   7013         JNZ     ??StubAPS_ZMacCallback_0
+    664            {
+    665              buf = ((macMcpsDataInd_t *)msgPtr)->msdu.p;
+   \   00001E   85..82       MOV     DPL,?V4
+   \   000021   85..83       MOV     DPH,?V5
+   \   000024   A3           INC     DPTR
+   \   000025   A3           INC     DPTR
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   F8           MOV     R0,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F9           MOV     R1,A
+   \   00002B   88..         MOV     ?V0,R0
+   \   00002D   89..         MOV     ?V1,R1
+   \   00002F   8022         SJMP    ??StubAPS_ZMacCallback_1
+    666            }
+    667            else if ( event == MAC_MCPS_DATA_CNF )
+   \                     ??StubAPS_ZMacCallback_0:
+   \   000031   740C         MOV     A,#0xc
+   \   000033   65..         XRL     A,?V3
+   \   000035   701C         JNZ     ??StubAPS_ZMacCallback_1
+    668            {
+    669              buf = ((macMcpsDataCnf_t *)msgPtr)->pDataReq->msdu.p;
+   \   000037   85..82       MOV     DPL,?V4
+   \   00003A   85..83       MOV     DPH,?V5
+   \   00003D   A3           INC     DPTR
+   \   00003E   A3           INC     DPTR
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   F8           MOV     R0,A
+   \   000042   A3           INC     DPTR
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   F583         MOV     DPH,A
+   \   000046   8882         MOV     DPL,R0
+   \   000048   A3           INC     DPTR
+   \   000049   A3           INC     DPTR
+   \   00004A   E0           MOVX    A,@DPTR
+   \   00004B   F8           MOV     R0,A
+   \   00004C   A3           INC     DPTR
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   F9           MOV     R1,A
+   \   00004F   88..         MOV     ?V0,R0
+   \   000051   89..         MOV     ?V1,R1
+    670            }
+    671            
+    672            if ( buf )
+   \                     ??StubAPS_ZMacCallback_1:
+   \   000053   E5..         MOV     A,?V0
+   \   000055   45..         ORL     A,?V1
+   \   000057   605D         JZ      ??StubAPS_ZMacCallback_2
+    673            {
+    674              // get the NWK frame control
+    675              nwk_fc = BUILD_UINT16( buf[NWK_HDR_FRAME_CTRL_LSB], buf[NWK_HDR_FRAME_CTRL_MSB] );
+   \   000059   85..82       MOV     DPL,?V0
+   \   00005C   85..83       MOV     DPH,?V1
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   FA           MOV     R2,A
+   \   000061   7B00         MOV     R3,#0x0
+   \   000063   85..82       MOV     DPL,?V0
+   \   000066   85..83       MOV     DPH,?V1
+   \   000069   A3           INC     DPTR
+   \   00006A   E0           MOVX    A,@DPTR
+   \   00006B   F8           MOV     R0,A
+   \   00006C   7900         MOV     R1,#0x0
+   \   00006E   E4           CLR     A
+   \   00006F   C8           XCH     A,R0
+   \   000070   F9           MOV     R1,A
+   \   000071   EA           MOV     A,R2
+   \   000072   28           ADD     A,R0
+   \   000073   F8           MOV     R0,A
+   \   000074   EB           MOV     A,R3
+   \   000075   39           ADDC    A,R1
+   \   000076   F9           MOV     R1,A
+   \   000077   E8           MOV     A,R0
+   \   000078   FE           MOV     R6,A
+   \   000079   E9           MOV     A,R1
+   \   00007A   FF           MOV     R7,A
+    676            
+    677              // frame type
+    678              frameType = (uint8)((nwk_fc >> NWK_FC_FRAME_TYPE) & NWK_FC_FRAME_TYPE_MASK);
+   \   00007B   EE           MOV     A,R6
+   \   00007C   5403         ANL     A,#0x3
+   \   00007E   F5..         MOV     ?V2,A
+    679            
+    680              // check if incoming frame is of the right type
+    681              if ( frameType != STUB_NWK_FRAME_TYPE )
+   \   000080   7403         MOV     A,#0x3
+   \   000082   65..         XRL     A,?V2
+   \   000084   6004         JZ      ??StubAPS_ZMacCallback_3
+    682              {
+    683                // message doesn't belong to Stub APS
+    684                return ( FALSE );
+   \   000086   7900         MOV     R1,#0x0
+   \   000088   802E         SJMP    ??StubAPS_ZMacCallback_4
+    685              }
+    686           
+    687              // get the APS frame control
+    688              aps_fc = buf[STUB_APS_HDR_FRAME_CTRL];
+   \                     ??StubAPS_ZMacCallback_3:
+   \   00008A   85..82       MOV     DPL,?V0
+   \   00008D   85..83       MOV     DPH,?V1
+   \   000090   A3           INC     DPTR
+   \   000091   A3           INC     DPTR
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   F5..         MOV     ?V6,A
+    689            
+    690              // frame type
+    691              frameType = aps_fc & APS_FRAME_TYPE_MASK;
+   \   000095   7403         MOV     A,#0x3
+   \   000097   55..         ANL     A,?V6
+   \   000099   F5..         MOV     ?V2,A
+    692              
+    693              // check if incoming frame is of the right type
+    694              if ( frameType != STUB_APS_FRAME )
+   \   00009B   7403         MOV     A,#0x3
+   \   00009D   65..         XRL     A,?V2
+   \   00009F   6004         JZ      ??StubAPS_ZMacCallback_5
+    695              {
+    696                // message doesn't belong to Stub APS
+    697                return ( FALSE );
+   \   0000A1   7900         MOV     R1,#0x0
+   \   0000A3   8013         SJMP    ??StubAPS_ZMacCallback_4
+    698              }
+    699              
+    700              // message belongs to Stub APS
+    701              osal_msg_send( StubAPS_TaskID, (uint8 *)msgPtr );
+   \                     ??StubAPS_ZMacCallback_5:
+   \   0000A5                ; Setup parameters for call to function osal_msg_send
+   \   0000A5   AA..         MOV     R2,?V4
+   \   0000A7   AB..         MOV     R3,?V5
+   \   0000A9   90....       MOV     DPTR,#StubAPS_TaskID
+   \   0000AC   E0           MOVX    A,@DPTR
+   \   0000AD   F9           MOV     R1,A
+   \   0000AE   12....       LCALL   ??osal_msg_send?relay; Banked call to: osal_msg_send
+   \   0000B1   E9           MOV     A,R1
+    702           
+    703              return ( TRUE );
+   \   0000B2   7901         MOV     R1,#0x1
+   \   0000B4   8002         SJMP    ??StubAPS_ZMacCallback_4
+    704            }
+    705            
+    706            // message doesn't belong to Stub APS
+    707            return ( FALSE );
+   \                     ??StubAPS_ZMacCallback_2:
+   \   0000B6   7900         MOV     R1,#0x0
+   \                     ??StubAPS_ZMacCallback_4:
+   \   0000B8   7F07         MOV     R7,#0x7
+   \   0000BA   02....       LJMP    ?BANKED_LEAVE_XDATA
+    708              
+    709          } /* StubAPS_ZMacCallback */
+    710          
+    711          /******************************************************************************
+    712           *
+    713           *  Stub APS Inter-PAN interface INTERP and its callbacks.
+    714           */
+    715          
+    716          /******************************************************************************
+    717           * @fn          INTERP_DataReq
+    718           *
+    719           * @brief       This function requests the transfer of data from the next
+    720           *              higher layer to a single peer entity.
+    721           *
+    722           * @param       req - APSDE_DataReq_t
+    723           *
+    724           * @return      ZStatus_t
+    725           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    726          ZStatus_t INTERP_DataReq( APSDE_DataReq_t *req )
+   \                     INTERP_DataReq:
+    727          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 33
+   \   000005   74DF         MOV     A,#-0x21
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0,R2
+   \   00000C   8B..         MOV     ?V1,R3
+    728            uint8 apsFrmCtrl;
+    729            uint16 groupID = 0;
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   12....       LCALL   ?XSTACK_DISP0_8
+   \   000013   7400         MOV     A,#0x0
+   \   000015   F0           MOVX    @DPTR,A
+   \   000016   A3           INC     DPTR
+   \   000017   7400         MOV     A,#0x0
+   \   000019   F0           MOVX    @DPTR,A
+    730            uint8 *buf;
+    731            uint8 hdrLen;
+    732            ZMacDataReq_t dataReq;
+    733            ZStatus_t status;
+    734            
+    735            if ( channelChangeInProgress || !StubAPS_InterPan( req->dstPanId, req->dstEP ) )
+   \   00001A   90....       MOV     DPTR,#channelChangeInProgress
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   7028         JNZ     ??INTERP_DataReq_0
+   \   000020                ; Setup parameters for call to function StubAPS_InterPan
+   \   000020   85..82       MOV     DPL,?V0
+   \   000023   85..83       MOV     DPH,?V1
+   \   000026   A3           INC     DPTR
+   \   000027   A3           INC     DPTR
+   \   000028   A3           INC     DPTR
+   \   000029   A3           INC     DPTR
+   \   00002A   A3           INC     DPTR
+   \   00002B   A3           INC     DPTR
+   \   00002C   A3           INC     DPTR
+   \   00002D   A3           INC     DPTR
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   F9           MOV     R1,A
+   \   000032   E5..         MOV     A,?V0
+   \   000034   240B         ADD     A,#0xb
+   \   000036   F582         MOV     DPL,A
+   \   000038   E4           CLR     A
+   \   000039   35..         ADDC    A,?V1
+   \   00003B   F583         MOV     DPH,A
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   FA           MOV     R2,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   FB           MOV     R3,A
+   \   000042   12....       LCALL   ??StubAPS_InterPan?relay; Banked call to: StubAPS_InterPan
+   \   000045   E9           MOV     A,R1
+   \   000046   7005         JNZ     ??INTERP_DataReq_1
+    736              return ( ZFailure );
+   \                     ??INTERP_DataReq_0:
+   \   000048   7901         MOV     R1,#0x1
+   \   00004A   02....       LJMP    ??INTERP_DataReq_2 & 0xFFFF
+    737            
+    738            osal_memset( &dataReq, 0, sizeof( ZMacDataReq_t ) );
+   \                     ??INTERP_DataReq_1:
+   \   00004D                ; Setup parameters for call to function osal_memset
+   \   00004D   7C1E         MOV     R4,#0x1e
+   \   00004F   7D00         MOV     R5,#0x0
+   \   000051   7900         MOV     R1,#0x0
+   \   000053   7403         MOV     A,#0x3
+   \   000055   12....       LCALL   ?XSTACK_DISP101_8
+   \   000058   12....       LCALL   ??osal_memset?relay  ; Banked call to: osal_memset
+    739            
+    740            // Build Stub APS header
+    741            status = StubAPS_BuildFrameControl( &apsFrmCtrl, &(dataReq.DstAddr), &groupID, req );
+   \   00005B                ; Setup parameters for call to function StubAPS_BuildFrameControl
+   \   00005B   78..         MOV     R0,#?V0
+   \   00005D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000060   7403         MOV     A,#0x3
+   \   000062   12....       LCALL   ?XSTACK_DISP100_8
+   \   000065   88..         MOV     ?V2,R0
+   \   000067   89..         MOV     ?V3,R1
+   \   000069   78..         MOV     R0,#?V2
+   \   00006B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00006E   7407         MOV     A,#0x7
+   \   000070   12....       LCALL   ?XSTACK_DISP102_8
+   \   000073   7404         MOV     A,#0x4
+   \   000075   12....       LCALL   ?XSTACK_DISP101_8
+   \   000078   12....       LCALL   ??StubAPS_BuildFrameControl?relay; Banked call to: StubAPS_BuildFrameControl
+   \   00007B   7404         MOV     A,#0x4
+   \   00007D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000080   E9           MOV     A,R1
+   \   000081   FE           MOV     R6,A
+    742            if ( status != ZSuccess )
+   \   000082   EE           MOV     A,R6
+   \   000083   6005         JZ      ??INTERP_DataReq_3
+    743              return ( status );
+   \   000085   EE           MOV     A,R6
+   \   000086   F9           MOV     R1,A
+   \   000087   02....       LJMP    ??INTERP_DataReq_2 & 0xFFFF
+    744          
+    745            // set default Stub APS header length
+    746            hdrLen = APS_FRAME_CTRL_FIELD_LEN;
+   \                     ??INTERP_DataReq_3:
+   \   00008A   7F01         MOV     R7,#0x1
+    747            
+    748            // add group ID length
+    749            if ( ( apsFrmCtrl & APS_DELIVERYMODE_MASK ) == APS_FC_DM_GROUP )
+   \   00008C   85..82       MOV     DPL,?XSP + 0
+   \   00008F   85..83       MOV     DPH,?XSP + 1
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   540C         ANL     A,#0xc
+   \   000095   640C         XRL     A,#0xc
+   \   000097   7004         JNZ     ??INTERP_DataReq_4
+    750              hdrLen += APS_GROUP_ID_FIELD_LEN;
+   \   000099   7402         MOV     A,#0x2
+   \   00009B   2F           ADD     A,R7
+   \   00009C   FF           MOV     R7,A
+    751            
+    752            // add cluster ID length
+    753            hdrLen += APS_CLUSTERID_FIELD_LEN;
+   \                     ??INTERP_DataReq_4:
+   \   00009D   7402         MOV     A,#0x2
+   \   00009F   2F           ADD     A,R7
+   \   0000A0   FF           MOV     R7,A
+    754            
+    755            // add profile ID length
+    756            hdrLen += APS_PROFILEID_FIELD_LEN;
+   \   0000A1   7402         MOV     A,#0x2
+   \   0000A3   2F           ADD     A,R7
+   \   0000A4   FF           MOV     R7,A
+    757            
+    758            // add default Stub NWK header length
+    759            hdrLen += STUB_NWK_HDR_LEN;
+   \   0000A5   7402         MOV     A,#0x2
+   \   0000A7   2F           ADD     A,R7
+   \   0000A8   FF           MOV     R7,A
+    760            
+    761            // calculate MSDU length
+    762            dataReq.msduLength = hdrLen + req->asduLen;
+   \   0000A9   E5..         MOV     A,?V0
+   \   0000AB   2411         ADD     A,#0x11
+   \   0000AD   F582         MOV     DPL,A
+   \   0000AF   E4           CLR     A
+   \   0000B0   35..         ADDC    A,?V1
+   \   0000B2   F583         MOV     DPH,A
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   F8           MOV     R0,A
+   \   0000B6   A3           INC     DPTR
+   \   0000B7   E0           MOVX    A,@DPTR
+   \   0000B8   F9           MOV     R1,A
+   \   0000B9   E8           MOV     A,R0
+   \   0000BA   2F           ADD     A,R7
+   \   0000BB   C0E0         PUSH    A
+   \   0000BD   741E         MOV     A,#0x1e
+   \   0000BF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C2   D0E0         POP     A
+   \   0000C4   F0           MOVX    @DPTR,A
+    763            
+    764            // allocate buffer
+    765            buf = osal_mem_alloc( dataReq.msduLength );
+   \   0000C5                ; Setup parameters for call to function osal_mem_alloc
+   \   0000C5   741E         MOV     A,#0x1e
+   \   0000C7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CA   E0           MOVX    A,@DPTR
+   \   0000CB   FA           MOV     R2,A
+   \   0000CC   7B00         MOV     R3,#0x0
+   \   0000CE   12....       LCALL   ??osal_mem_alloc?relay; Banked call to: osal_mem_alloc
+   \   0000D1   8A..         MOV     ?V2,R2
+   \   0000D3   8B..         MOV     ?V3,R3
+   \   0000D5   85....       MOV     ?V4,?V2
+   \   0000D8   85....       MOV     ?V5,?V3
+    766            if ( buf != NULL )
+   \   0000DB   E5..         MOV     A,?V4
+   \   0000DD   45..         ORL     A,?V5
+   \   0000DF   7003         JNZ     $+5
+   \   0000E1   02....       LJMP    ??INTERP_DataReq_5 & 0xFFFF
+    767            {
+    768              dataReq.msdu = buf;
+   \   0000E4   741F         MOV     A,#0x1f
+   \   0000E6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E9   E5..         MOV     A,?V4
+   \   0000EB   F0           MOVX    @DPTR,A
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   E5..         MOV     A,?V5
+   \   0000EF   F0           MOVX    @DPTR,A
+    769              
+    770              // Add Stub APS header and data
+    771              StubAPS_BuildMsg( &buf[STUB_APS_HDR_FRAME_CTRL], apsFrmCtrl, groupID, req );
+   \   0000F0                ; Setup parameters for call to function StubAPS_BuildMsg
+   \   0000F0   78..         MOV     R0,#?V0
+   \   0000F2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F5   7403         MOV     A,#0x3
+   \   0000F7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FA   E0           MOVX    A,@DPTR
+   \   0000FB   FC           MOV     R4,A
+   \   0000FC   A3           INC     DPTR
+   \   0000FD   E0           MOVX    A,@DPTR
+   \   0000FE   FD           MOV     R5,A
+   \   0000FF   7402         MOV     A,#0x2
+   \   000101   12....       LCALL   ?XSTACK_DISP0_8
+   \   000104   E0           MOVX    A,@DPTR
+   \   000105   F9           MOV     R1,A
+   \   000106   E5..         MOV     A,?V4
+   \   000108   2402         ADD     A,#0x2
+   \   00010A   FA           MOV     R2,A
+   \   00010B   E4           CLR     A
+   \   00010C   35..         ADDC    A,?V5
+   \   00010E   FB           MOV     R3,A
+   \   00010F   12....       LCALL   ??StubAPS_BuildMsg?relay; Banked call to: StubAPS_BuildMsg
+   \   000112   7402         MOV     A,#0x2
+   \   000114   12....       LCALL   ?DEALLOC_XSTACK8
+    772              
+    773              // Add Stub NWK header
+    774              StubNWK_BuildMsg( buf );  
+   \   000117                ; Setup parameters for call to function StubNWK_BuildMsg
+   \   000117   AA..         MOV     R2,?V4
+   \   000119   AB..         MOV     R3,?V5
+   \   00011B   12....       LCALL   ??StubNWK_BuildMsg?relay; Banked call to: StubNWK_BuildMsg
+    775          
+    776              // Set ZMac data request
+    777              dataReq.DstPANId = req->dstPanId;
+   \   00011E   E5..         MOV     A,?V0
+   \   000120   240B         ADD     A,#0xb
+   \   000122   F582         MOV     DPL,A
+   \   000124   E4           CLR     A
+   \   000125   35..         ADDC    A,?V1
+   \   000127   F583         MOV     DPH,A
+   \   000129   E0           MOVX    A,@DPTR
+   \   00012A   F8           MOV     R0,A
+   \   00012B   A3           INC     DPTR
+   \   00012C   E0           MOVX    A,@DPTR
+   \   00012D   F9           MOV     R1,A
+   \   00012E   740C         MOV     A,#0xc
+   \   000130   12....       LCALL   ?XSTACK_DISP0_8
+   \   000133   E8           MOV     A,R0
+   \   000134   F0           MOVX    @DPTR,A
+   \   000135   A3           INC     DPTR
+   \   000136   E9           MOV     A,R1
+   \   000137   F0           MOVX    @DPTR,A
+    778              dataReq.SrcAddrMode = Addr64Bit; 
+   \   000138   740E         MOV     A,#0xe
+   \   00013A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013D   7403         MOV     A,#0x3
+   \   00013F   F0           MOVX    @DPTR,A
+    779              dataReq.Handle = req->transID;
+   \   000140   E5..         MOV     A,?V0
+   \   000142   2417         ADD     A,#0x17
+   \   000144   F582         MOV     DPL,A
+   \   000146   E4           CLR     A
+   \   000147   35..         ADDC    A,?V1
+   \   000149   F583         MOV     DPH,A
+   \   00014B   E0           MOVX    A,@DPTR
+   \   00014C   C0E0         PUSH    A
+   \   00014E   740F         MOV     A,#0xf
+   \   000150   12....       LCALL   ?XSTACK_DISP0_8
+   \   000153   D0E0         POP     A
+   \   000155   F0           MOVX    @DPTR,A
+    780            
+    781              if ( ( apsFrmCtrl & APS_DELIVERYMODE_MASK ) == APS_FC_DM_UNICAST )
+   \   000156   85..82       MOV     DPL,?XSP + 0
+   \   000159   85..83       MOV     DPH,?XSP + 1
+   \   00015C   E0           MOVX    A,@DPTR
+   \   00015D   540C         ANL     A,#0xc
+   \   00015F   700A         JNZ     ??INTERP_DataReq_6
+    782                dataReq.TxOptions = NWK_TXOPTIONS_ACK;
+   \   000161   7410         MOV     A,#0x10
+   \   000163   12....       LCALL   ?XSTACK_DISP0_8
+   \   000166   7401         MOV     A,#0x1
+   \   000168   F0           MOVX    @DPTR,A
+   \   000169   8008         SJMP    ??INTERP_DataReq_7
+    783              else
+    784                dataReq.TxOptions = 0;
+   \                     ??INTERP_DataReq_6:
+   \   00016B   7410         MOV     A,#0x10
+   \   00016D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000170   7400         MOV     A,#0x0
+   \   000172   F0           MOVX    @DPTR,A
+    785              
+    786              // send the frame
+    787              status = ZMacDataReq( &dataReq );
+   \                     ??INTERP_DataReq_7:
+   \   000173                ; Setup parameters for call to function ZMacDataReq
+   \   000173   7403         MOV     A,#0x3
+   \   000175   12....       LCALL   ?XSTACK_DISP101_8
+   \   000178   12....       LCALL   ??ZMacDataReq?relay  ; Banked call to: ZMacDataReq
+   \   00017B   E9           MOV     A,R1
+   \   00017C   FE           MOV     R6,A
+    788              
+    789              // free the frame
+    790              osal_mem_free( buf );
+   \   00017D                ; Setup parameters for call to function osal_mem_free
+   \   00017D   AA..         MOV     R2,?V4
+   \   00017F   AB..         MOV     R3,?V5
+   \   000181   12....       LCALL   ??osal_mem_free?relay; Banked call to: osal_mem_free
+   \   000184   8002         SJMP    ??INTERP_DataReq_8
+    791            }
+    792            else
+    793            {
+    794              // flag a memory error
+    795              status = ZMemError;
+   \                     ??INTERP_DataReq_5:
+   \   000186   7E10         MOV     R6,#0x10
+    796            }
+    797            
+    798            return ( status );
+   \                     ??INTERP_DataReq_8:
+   \   000188   EE           MOV     A,R6
+   \   000189   F9           MOV     R1,A
+   \                     ??INTERP_DataReq_2:
+   \   00018A   7421         MOV     A,#0x21
+   \   00018C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00018F   7F06         MOV     R7,#0x6
+   \   000191   02....       LJMP    ?BANKED_LEAVE_XDATA
+    799            
+    800          } /* INTERP_DataReq */
+    801          
+    802          /******************************************************************************
+    803           * @fn          INTERP_DataReqMTU
+    804           *
+    805           * @brief       This function requests the MTU (Max Transport Unit) of the
+    806           *              Inter-PAN Data Service.
+    807           *
+    808           * @param       none
+    809           *
+    810           * @return      uint8 - MTU
+    811           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    812          uint8 INTERP_DataReqMTU( void )
+   \                     INTERP_DataReqMTU:
+    813          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    814            uint8 mtu;
+    815            uint8 hdrLen;
+    816            
+    817            // Use maximum header size for Stub APS header
+    818            hdrLen = APS_FRAME_CTRL_FIELD_LEN +
+    819                     APS_GROUP_ID_FIELD_LEN   +
+    820                     APS_CLUSTERID_FIELD_LEN  +
+    821                     APS_PROFILEID_FIELD_LEN;
+   \   000000   7807         MOV     R0,#0x7
+    822          
+    823            mtu = MAC_A_MAX_FRAME_SIZE - STUB_NWK_HDR_LEN - hdrLen;
+   \   000002   7464         MOV     A,#0x64
+   \   000004   C3           CLR     C
+   \   000005   98           SUBB    A,R0
+   \   000006   F9           MOV     R1,A
+    824          
+    825            return ( mtu );
+   \   000007   02....       LJMP    ?BRET
+    826          
+    827          } /* INTERP_DataReqMTU */
+    828          
+    829          /****************************************************************************
+    830           * @fn          INTERP_DataConfirm
+    831           *
+    832           * @brief       This function processes the data confirm from the MAC layer.
+    833           *
+    834           * @param       dataCnf - data confirm primitive
+    835           *
+    836           * @return      none
+    837           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    838          void INTERP_DataConfirm( ZMacDataCnf_t *dataCnf )
+   \                     INTERP_DataConfirm:
+    839          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    840            afDataConfirm( appEndPoint, dataCnf->msduHandle, dataCnf->hdr.Status );
+   \   000009                ; Setup parameters for call to function afDataConfirm
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   FB           MOV     R3,A
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   FA           MOV     R2,A
+   \   000018   90....       MOV     DPTR,#appEndPoint
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F9           MOV     R1,A
+   \   00001D   12....       LCALL   ??afDataConfirm?relay; Banked call to: afDataConfirm
+    841          
+    842          } /* INTERP_DataConfirm */
+   \   000020   7F01         MOV     R7,#0x1
+   \   000022   02....       LJMP    ?BANKED_LEAVE_XDATA
+    843          
+    844          /****************************************************************************
+    845           * @fn          INTERP_DataIndication
+    846           *
+    847           * @brief       This function indicates the transfer of a data SPDU (MSDU)
+    848           *              from the MAC layer to the local application layer entity.
+    849           *
+    850           * @param       dataInd - data indicate primitive
+    851           *
+    852           * @return      none
+    853           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    854          void INTERP_DataIndication( macMcpsDataInd_t *dataInd )
+   \                     INTERP_DataIndication:
+    855          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 64
+   \   000005   74C0         MOV     A,#-0x40
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    856            NLDE_FrameFormat_t snff;
+    857            aps_FrameFormat_t saff;
+    858            zAddrType_t srcAddr;
+    859            NLDE_Signal_t sig;
+    860          
+    861            // parse the Stub NWK header
+    862            StubNWK_ParseMsg( dataInd->msdu.p, dataInd->msdu.len, &snff );
+   \   00000E                ; Setup parameters for call to function StubNWK_ParseMsg
+   \   00000E   7418         MOV     A,#0x18
+   \   000010   12....       LCALL   ?XSTACK_DISP102_8
+   \   000013   8E82         MOV     DPL,R6
+   \   000015   8F83         MOV     DPH,R7
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F9           MOV     R1,A
+   \   00001D   8E82         MOV     DPL,R6
+   \   00001F   8F83         MOV     DPH,R7
+   \   000021   A3           INC     DPTR
+   \   000022   A3           INC     DPTR
+   \   000023   E0           MOVX    A,@DPTR
+   \   000024   FA           MOV     R2,A
+   \   000025   A3           INC     DPTR
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   FB           MOV     R3,A
+   \   000028   12....       LCALL   ??StubNWK_ParseMsg?relay; Banked call to: StubNWK_ParseMsg
+    863          
+    864            // Fill in MAC destination address
+    865            snff.macDstAddr = dataInd->mac.dstAddr.addr.shortAddr;
+   \   00002B   EE           MOV     A,R6
+   \   00002C   241B         ADD     A,#0x1b
+   \   00002E   F582         MOV     DPL,A
+   \   000030   E4           CLR     A
+   \   000031   3F           ADDC    A,R7
+   \   000032   F583         MOV     DPH,A
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F8           MOV     R0,A
+   \   000036   A3           INC     DPTR
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+   \   000039   7425         MOV     A,#0x25
+   \   00003B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003E   E8           MOV     A,R0
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   A3           INC     DPTR
+   \   000041   E9           MOV     A,R1
+   \   000042   F0           MOVX    @DPTR,A
+    866            
+    867            // fill in MAC source address (Stub NWK frame doesn't have address fields)
+    868            osal_copyAddress( &srcAddr, (zAddrType_t *)&(dataInd->mac.srcAddr) );
+   \   000043                ; Setup parameters for call to function sAddrCpy
+   \   000043   EE           MOV     A,R6
+   \   000044   2412         ADD     A,#0x12
+   \   000046   FC           MOV     R4,A
+   \   000047   E4           CLR     A
+   \   000048   3F           ADDC    A,R7
+   \   000049   FD           MOV     R5,A
+   \   00004A   7437         MOV     A,#0x37
+   \   00004C   12....       LCALL   ?XSTACK_DISP101_8
+   \   00004F   12....       LCALL   ??sAddrCpy?relay     ; Banked call to: sAddrCpy
+    869            
+    870            // check if incoming frame is of the right type
+    871            if ( snff.frameType != STUB_NWK_FRAME_TYPE )
+   \   000052   741A         MOV     A,#0x1a
+   \   000054   12....       LCALL   ?XSTACK_DISP0_8
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   6403         XRL     A,#0x3
+   \   00005A   6003         JZ      $+5
+   \   00005C   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    872              return;
+    873              
+    874            // check if incoming frame is of the right version
+    875            if ( snff.protocolVersion != NLME_GetProtocolVersion() )
+   \   00005F                ; Setup parameters for call to function NLME_GetProtocolVersion
+   \   00005F   12....       LCALL   ??NLME_GetProtocolVersion?relay; Banked call to: NLME_GetProtocolVersion
+   \   000062   E9           MOV     A,R1
+   \   000063   F8           MOV     R0,A
+   \   000064   741B         MOV     A,#0x1b
+   \   000066   12....       LCALL   ?XSTACK_DISP0_8
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   68           XRL     A,R0
+   \   00006B   6003         JZ      $+5
+   \   00006D   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    876              return;
+    877            
+    878            // check if the remaining sun-fields are zero
+    879            if ( ( snff.discoverRoute != 0 ) || ( snff.multicast != 0 )   ||
+    880                 ( snff.secure != 0 )        || ( snff.srcRouteSet != 0 ) ||
+    881                 ( snff.dstExtAddrSet != 0 ) || ( snff.srcExtAddrSet != 0 ) )
+   \   000070   741C         MOV     A,#0x1c
+   \   000072   12....       LCALL   ?XSTACK_DISP0_8
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   7028         JNZ     ??INTERP_DataIndication_1
+   \   000078   741D         MOV     A,#0x1d
+   \   00007A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   7020         JNZ     ??INTERP_DataIndication_1
+   \   000080   741E         MOV     A,#0x1e
+   \   000082   12....       LCALL   ?XSTACK_DISP0_8
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   7018         JNZ     ??INTERP_DataIndication_1
+   \   000088   7430         MOV     A,#0x30
+   \   00008A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008D   E0           MOVX    A,@DPTR
+   \   00008E   7010         JNZ     ??INTERP_DataIndication_1
+   \   000090   741F         MOV     A,#0x1f
+   \   000092   12....       LCALL   ?XSTACK_DISP0_8
+   \   000095   E0           MOVX    A,@DPTR
+   \   000096   7008         JNZ     ??INTERP_DataIndication_1
+   \   000098   7420         MOV     A,#0x20
+   \   00009A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009D   E0           MOVX    A,@DPTR
+   \   00009E   6003         JZ      ??INTERP_DataIndication_2
+    882            {
+    883              return;
+   \                     ??INTERP_DataIndication_1:
+   \   0000A0   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    884            }
+    885            
+    886            // parse the Stub APS header
+    887            StubAPS_ParseMsg( &snff, &saff );
+   \                     ??INTERP_DataIndication_2:
+   \   0000A3                ; Setup parameters for call to function StubAPS_ParseMsg
+   \   0000A3   7403         MOV     A,#0x3
+   \   0000A5   12....       LCALL   ?XSTACK_DISP102_8
+   \   0000A8   7418         MOV     A,#0x18
+   \   0000AA   12....       LCALL   ?XSTACK_DISP101_8
+   \   0000AD   12....       LCALL   ??StubAPS_ParseMsg?relay; Banked call to: StubAPS_ParseMsg
+    888          
+    889            // check if incoming frame is of the right type
+    890            if ( ( saff.FrmCtrl & APS_FRAME_TYPE_MASK ) != STUB_APS_FRAME )
+   \   0000B0   7403         MOV     A,#0x3
+   \   0000B2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   5403         ANL     A,#0x3
+   \   0000B8   6403         XRL     A,#0x3
+   \   0000BA   6003         JZ      $+5
+   \   0000BC   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    891              return;
+    892             
+    893            // check if delivery mode is of the right type
+    894            if ( ( saff.FrmCtrl & APS_DELIVERYMODE_MASK ) == APS_FC_DM_INDIRECT )
+   \   0000BF   7403         MOV     A,#0x3
+   \   0000C1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C4   E0           MOVX    A,@DPTR
+   \   0000C5   540C         ANL     A,#0xc
+   \   0000C7   6404         XRL     A,#0x4
+   \   0000C9   7003         JNZ     $+5
+   \   0000CB   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    895              return;
+    896            
+    897            // check if incoming frame is unsecured
+    898            if ( saff.FrmCtrl & APS_FC_SECURITY )
+   \   0000CE   7403         MOV     A,#0x3
+   \   0000D0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D3   E0           MOVX    A,@DPTR
+   \   0000D4   A2E5         MOV     C,0xE0 /* A   */.5
+   \   0000D6   5003         JNC     $+5
+   \   0000D8   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    899              return;
+    900            
+    901            // check if there's no extended header
+    902            if ( saff.FrmCtrl & APS_FC_EXTENDED )
+   \   0000DB   7403         MOV     A,#0x3
+   \   0000DD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E0   E0           MOVX    A,@DPTR
+   \   0000E1   A2E7         MOV     C,0xE0 /* A   */.7
+   \   0000E3   5003         JNC     $+5
+   \   0000E5   02....       LJMP    ??INTERP_DataIndication_0 & 0xFFFF
+    903                return;
+    904            
+    905            // Set the endpoints
+    906            saff.DstEndPoint = appEndPoint;
+   \   0000E8   90....       MOV     DPTR,#appEndPoint
+   \   0000EB   E0           MOVX    A,@DPTR
+   \   0000EC   C0E0         PUSH    A
+   \   0000EE   7405         MOV     A,#0x5
+   \   0000F0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F3   D0E0         POP     A
+   \   0000F5   F0           MOVX    @DPTR,A
+    907            saff.SrcEndPoint = STUBAPS_INTER_PAN_EP;
+   \   0000F6   7406         MOV     A,#0x6
+   \   0000F8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FB   74FE         MOV     A,#-0x2
+   \   0000FD   F0           MOVX    @DPTR,A
+    908            
+    909            // Set the signal strength information
+    910            sig.LinkQuality = dataInd->mac.mpduLinkQuality;
+   \   0000FE   EE           MOV     A,R6
+   \   0000FF   242E         ADD     A,#0x2e
+   \   000101   F582         MOV     DPL,A
+   \   000103   E4           CLR     A
+   \   000104   3F           ADDC    A,R7
+   \   000105   F583         MOV     DPH,A
+   \   000107   E0           MOVX    A,@DPTR
+   \   000108   C0E0         PUSH    A
+   \   00010A   85..82       MOV     DPL,?XSP + 0
+   \   00010D   85..83       MOV     DPH,?XSP + 1
+   \   000110   D0E0         POP     A
+   \   000112   F0           MOVX    @DPTR,A
+    911            sig.correlation = dataInd->mac.correlation;
+   \   000113   EE           MOV     A,R6
+   \   000114   242F         ADD     A,#0x2f
+   \   000116   F582         MOV     DPL,A
+   \   000118   E4           CLR     A
+   \   000119   3F           ADDC    A,R7
+   \   00011A   F583         MOV     DPH,A
+   \   00011C   E0           MOVX    A,@DPTR
+   \   00011D   C0E0         PUSH    A
+   \   00011F   7401         MOV     A,#0x1
+   \   000121   12....       LCALL   ?XSTACK_DISP0_8
+   \   000124   D0E0         POP     A
+   \   000126   F0           MOVX    @DPTR,A
+    912            sig.rssi = dataInd->mac.rssi;
+   \   000127   EE           MOV     A,R6
+   \   000128   2430         ADD     A,#0x30
+   \   00012A   F582         MOV     DPL,A
+   \   00012C   E4           CLR     A
+   \   00012D   3F           ADDC    A,R7
+   \   00012E   F583         MOV     DPH,A
+   \   000130   E0           MOVX    A,@DPTR
+   \   000131   C0E0         PUSH    A
+   \   000133   7402         MOV     A,#0x2
+   \   000135   12....       LCALL   ?XSTACK_DISP0_8
+   \   000138   D0E0         POP     A
+   \   00013A   F0           MOVX    @DPTR,A
+    913            
+    914            APSDE_DataIndication( &saff, &srcAddr, dataInd->mac.srcPanId, 
+    915                                  &sig, FALSE, dataInd->mac.timestamp );
+   \   00013B                ; Setup parameters for call to function APSDE_DataIndication
+   \   00013B   EE           MOV     A,R6
+   \   00013C   2424         ADD     A,#0x24
+   \   00013E   F582         MOV     DPL,A
+   \   000140   E4           CLR     A
+   \   000141   3F           ADDC    A,R7
+   \   000142   F583         MOV     DPH,A
+   \   000144   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000147   7404         MOV     A,#0x4
+   \   000149   12....       LCALL   ?XSTACK_DISP100_8
+   \   00014C   88..         MOV     ?V0,R0
+   \   00014E   89..         MOV     ?V1,R1
+   \   000150   78..         MOV     R0,#?V0
+   \   000152   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000155   EE           MOV     A,R6
+   \   000156   242A         ADD     A,#0x2a
+   \   000158   F582         MOV     DPL,A
+   \   00015A   E4           CLR     A
+   \   00015B   3F           ADDC    A,R7
+   \   00015C   F583         MOV     DPH,A
+   \   00015E   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   000161   7900         MOV     R1,#0x0
+   \   000163   743F         MOV     A,#0x3f
+   \   000165   12....       LCALL   ?XSTACK_DISP102_8
+   \   000168   740B         MOV     A,#0xb
+   \   00016A   12....       LCALL   ?XSTACK_DISP101_8
+   \   00016D   12....       LCALL   ??APSDE_DataIndication?relay; Banked call to: APSDE_DataIndication
+   \   000170   7408         MOV     A,#0x8
+   \   000172   12....       LCALL   ?DEALLOC_XSTACK8
+    916          
+    917          } /* INTERP_DataIndication */
+   \                     ??INTERP_DataIndication_0:
+   \   000175   7440         MOV     A,#0x40
+   \   000177   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00017A   7F02         MOV     R7,#0x2
+   \   00017C   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for StubAPS_TaskID>`:
+   \   000000   FF           DB 255
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for appTaskID>`:
+   \   000000   FF           DB 255
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubNWK_ParseMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubNWK_ParseMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_ParseMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_ParseMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_BuildFrameControl?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_BuildFrameControl
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubNWK_BuildMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubNWK_BuildMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_BuildMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_BuildMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_SetNewChannel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_SetNewChannel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_NotifyApp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_NotifyApp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_SetInterPanChannel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_SetInterPanChannel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_SetIntraPanChannel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_SetIntraPanChannel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_InterPan?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_InterPan
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_RegisterApp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_RegisterApp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StubAPS_ZMacCallback?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StubAPS_ZMacCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??INTERP_DataReq?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    INTERP_DataReq
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??INTERP_DataReqMTU?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    INTERP_DataReqMTU
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??INTERP_DataConfirm?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    INTERP_DataConfirm
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??INTERP_DataIndication?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    INTERP_DataIndication
+    918          
+    919          
+    920          /*********************************************************************
+    921          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     24   INTERP_DataConfirm
+        0      9   -> afDataConfirm
+      1     97   INTERP_DataIndication
+        0     82   -> APSDE_DataIndication
+        0     74   -> NLME_GetProtocolVersion
+        0     74   -> StubAPS_ParseMsg
+        0     74   -> StubNWK_ParseMsg
+        0     74   -> sAddrCpy
+      1     51   INTERP_DataReq
+        0     51   -> StubAPS_BuildFrameControl
+        0     49   -> StubAPS_BuildMsg
+        0     47   -> StubAPS_InterPan
+        0     47   -> StubNWK_BuildMsg
+        0     47   -> ZMacDataReq
+        0     47   -> osal_mem_alloc
+        0     47   -> osal_mem_free
+        0     47   -> osal_memset
+      0      0   INTERP_DataReqMTU
+      1     65   StubAPS_BuildFrameControl
+        0     14   -> sAddrExtCpy
+      1     68   StubAPS_BuildMsg
+        0     19   -> osal_memcpy
+      2      0   StubAPS_Init
+      0     57   StubAPS_InterPan
+        0     10   -> ZMacGetReq
+      1     27   StubAPS_NotifyApp
+        0     12   -> osal_msg_allocate
+        0     12   -> osal_msg_send
+      1     88   StubAPS_ParseMsg
+        0     14   -> osal_memset
+      0     15   StubAPS_ProcessEvent
+        0     15   -> INTERP_DataConfirm
+        0     15   -> INTERP_DataIndication
+        0     15   -> StubAPS_NotifyApp
+        0     15   -> StubAPS_SetNewChannel
+        0     15   -> ZMacSetReq
+        0     15   -> nwk_setStateIdle
+        0     15   -> osal_msg_deallocate
+        0     15   -> osal_msg_receive
+      2      0   StubAPS_RegisterApp
+      0     11   StubAPS_SetInterPanChannel
+        0     11   -> StubAPS_SetNewChannel
+        0     11   -> ZMacGetReq
+        0     11   -> ZMacSetReq
+        0     11   -> nwk_setStateIdle
+        0     11   -> osal_start_timerEx
+      2      2   StubAPS_SetIntraPanChannel
+        2      2   -> ZMacGetReq
+        2      2   -> ZMacSetReq
+        2      2   -> nwk_setStateIdle
+      3     17   StubAPS_SetNewChannel
+        2      2   -> ZMacSetReq
+        2      2   -> ZMacStateIdle
+        2      2   -> nwkDB_CountTypes
+      0     15   StubAPS_ZMacCallback
+        0     15   -> osal_msg_send
+      1     59   StubNWK_BuildMsg
+        0     12   -> NLME_GetProtocolVersion
+      1     88   StubNWK_ParseMsg
+        0     14   -> NLDE_ParseFrameControl
+        0     14   -> osal_memset
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       1  ?<Initializer for StubAPS_TaskID>
+       1  ?<Initializer for appTaskID>
+       6  ??INTERP_DataConfirm?relay
+       6  ??INTERP_DataIndication?relay
+       6  ??INTERP_DataReq?relay
+       6  ??INTERP_DataReqMTU?relay
+       6  ??StubAPS_BuildFrameControl?relay
+       6  ??StubAPS_BuildMsg?relay
+       6  ??StubAPS_Init?relay
+       6  ??StubAPS_InterPan?relay
+       6  ??StubAPS_NotifyApp?relay
+       6  ??StubAPS_ParseMsg?relay
+       6  ??StubAPS_ProcessEvent?relay
+       6  ??StubAPS_RegisterApp?relay
+       6  ??StubAPS_SetInterPanChannel?relay
+       6  ??StubAPS_SetIntraPanChannel?relay
+       6  ??StubAPS_SetNewChannel?relay
+       6  ??StubAPS_ZMacCallback?relay
+       6  ??StubNWK_BuildMsg?relay
+       6  ??StubNWK_ParseMsg?relay
+      37  INTERP_DataConfirm
+     383  INTERP_DataIndication
+     404  INTERP_DataReq
+      10  INTERP_DataReqMTU
+     424  StubAPS_BuildFrameControl
+     306  StubAPS_BuildMsg
+      26  StubAPS_Init
+      87  StubAPS_InterPan
+      63  StubAPS_NotifyApp
+     458  StubAPS_ParseMsg
+     189  StubAPS_ProcessEvent
+      38  StubAPS_RegisterApp
+     122  StubAPS_SetInterPanChannel
+     127  StubAPS_SetIntraPanChannel
+      88  StubAPS_SetNewChannel
+       1  StubAPS_TaskID
+     189  StubAPS_ZMacCallback
+     107  StubNWK_BuildMsg
+     157  StubNWK_ParseMsg
+       1  appEndPoint
+       1  appTaskID
+       1  channelChangeInProgress
+       1  newChannel
+
+ 
+ 3 215 bytes in segment BANKED_CODE
+   108 bytes in segment BANK_RELAYS
+     2 bytes in segment XDATA_I
+     2 bytes in segment XDATA_ID
+     3 bytes in segment XDATA_Z
+ 
+ 3 325 bytes of CODE  memory
+     5 bytes of XDATA memory
+
+Errors: none
+Warnings: none

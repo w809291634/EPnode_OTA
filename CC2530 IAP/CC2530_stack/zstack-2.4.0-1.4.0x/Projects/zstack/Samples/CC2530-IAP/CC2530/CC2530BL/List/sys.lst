@@ -1,0 +1,513 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                07/Jul/2023  16:40:19
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  near
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\sys\sys.c
+#    Command line       =  
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\sys\sys.c"
+#        -D HAL_SB_BOOT_CODE -D HAL_UART=TRUE -D HAL_UART_DMA=0 -D
+#        HAL_UART_ISR=1 -D HAL_UART_ISR_RX_MAX=254 -lC
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+#        -lA "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\"
+#        --diag_suppress Pe001,Pa010,Pa050 -o "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\Obj\"
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=near --calling_convention=xdata_reentrant
+#        --place_constants=data --nr_virtual_regs 8 -I
+#        "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\drive\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\iap\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\shell\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\sys\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\Source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\source\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\common\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\ZMain\TI2530DB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\_COMMON\CC2530\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\osal\include\"
+#        -I "I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\..\..\..\..\..\Components\services\saddr\"
+#        -Ohz
+#    List file          =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\List\sys.lst
+#    Object file        =  
+#        I:\1_git_code\EPnode_OTA\CC2530
+#        IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\CC2530\CC2530BL\Obj\sys.r51
+#
+###############################################################################
+
+I:\1_git_code\EPnode_OTA\CC2530 IAP\CC2530_stack\zstack-2.4.0-1.4.0x\Projects\zstack\Samples\CC2530-IAP\Source\sys\sys.c
+      1          #include "sys.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb4
+   \   unsigned char volatile __sfr ADCCON1
+   \                     ADCCON1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include "iap_config.h"
+      3          
+      4          // 初始化两个按键
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+      5          void keyInit(void)
+   \                     keyInit:
+      6          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      7            P1SEL &= ~0x0C;       //设置P1端口的2、3为IO模式
+   \   000000   53F4F3       ANL     0xf4,#0xf3
+      8            P1DIR &= ~0x0C;       //设置P1端口的2、3为输入模式
+   \   000003   53FEF3       ANL     0xfe,#0xf3
+      9          }
+   \   000006   22           RET
+   \   000007                REQUIRE P1SEL
+   \   000007                REQUIRE P1DIR
+     10          
+     11          // 初始化LED
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     12          void led_init(void)
+   \                     led_init:
+     13          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     14              P1SEL &= ~0x03;          //P1.0 P1.1为普通 I/O 口
+   \   000000   53F4FC       ANL     0xf4,#0xfc
+     15              P1DIR |= 0x03;           //输出
+   \   000003   43FE03       ORL     0xfe,#0x3
+     16              
+     17              LED2 = 1;                //关LED
+   \   000006   D290         SETB    0x90.0
+     18              LED1 = 1;
+   \   000008   D291         SETB    0x90.1
+     19          }
+   \   00000A   22           RET
+   \   00000B                REQUIRE P1SEL
+   \   00000B                REQUIRE P1DIR
+   \   00000B                REQUIRE _A_P1
+     20          
+     21          // LED的APP
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     22          void led_app(void)
+   \                     led_app:
+     23          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+     24            static uint32 times=0;
+     25            if(times>3000){
+   \   000005   90....       MOV     DPTR,#__Constant_bb9
+   \   000008   78..         MOV     R0,#?V0
+   \   00000A   12....       LCALL   ?L_MOV_X
+   \   00000D   90....       MOV     DPTR,#??times
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?UL_GT_X
+   \   000015   4017         JC      ??led_app_0
+     26              times=0;
+   \   000017   90....       MOV     DPTR,#??times
+   \   00001A   E4           CLR     A
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   F0           MOVX    @DPTR,A
+   \   00001E   A3           INC     DPTR
+   \   00001F   F0           MOVX    @DPTR,A
+   \   000020   A3           INC     DPTR
+   \   000021   F0           MOVX    @DPTR,A
+     27              LED1=!LED1;
+   \   000022   D2F0         SETB    B.0
+   \   000024   A291         MOV     C,0x90.1
+   \   000026   A291         MOV     C,0x90.1
+   \   000028   30F001       JNB     B.0,??led_app_1
+   \   00002B   B3           CPL     C
+   \                     ??led_app_1:
+   \   00002C   9291         MOV     0x90.1,C
+     28            }
+     29            times++;
+   \                     ??led_app_0:
+   \   00002E   90....       MOV     DPTR,#__Constant_1
+   \   000031   78..         MOV     R0,#?V0
+   \   000033   12....       LCALL   ?L_MOV_X
+   \   000036   90....       MOV     DPTR,#??times
+   \   000039   78..         MOV     R0,#?V0
+   \   00003B   12....       LCALL   ?L_ADD_TO_X
+     30          }
+   \   00003E   7F04         MOV     R7,#0x4
+   \   000040   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000043                REQUIRE _A_P1
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??times:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     31          
+     32          // 等待电压
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     33          void vddWait(uint8 vdd)
+   \                     vddWait:
+     34          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     35            uint8 cnt = 16;
+   \   000000   7810         MOV     R0,#0x10
+     36          
+     37            do {
+     38              do {
+     39                ADCCON3 = 0x0F;
+   \                     ??vddWait_0:
+   \   000002   75B60F       MOV     0xb6,#0xf
+     40                while (!(ADCCON1 & 0x80));
+   \                     ??vddWait_1:
+   \   000005   E5B4         MOV     A,0xb4
+   \   000007   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000009   50FA         JNC     ??vddWait_1
+     41              } while (ADCH < vdd);
+   \   00000B   E5BB         MOV     A,0xbb
+   \   00000D   C3           CLR     C
+   \   00000E   99           SUBB    A,R1
+   \   00000F   40F1         JC      ??vddWait_0
+     42            } while (--cnt);
+   \   000011   18           DEC     R0
+   \   000012   E8           MOV     A,R0
+   \   000013   70ED         JNZ     ??vddWait_0
+     43          }
+   \   000015   22           RET
+   \   000016                REQUIRE ADCCON3
+   \   000016                REQUIRE ADCCON1
+   \   000016                REQUIRE ADCH
+     44          
+     45          //功能：延时函数，ms
+     46          //参数：wait:延时时间,最大延时255ms
+     47          //返回：无
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     48          void halWait(unsigned char wait)
+   \                     halWait:
+     49          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     50            unsigned long largeWait;
+     51          
+     52            if(wait == 0)
+   \   000006   6054         JZ      ??halWait_0
+     53            {return;}
+     54            largeWait = ((unsigned short) (wait << 7));
+     55            largeWait += 114*wait;
+     56          
+     57            largeWait = (largeWait >> CLKSPEED);
+   \   000008   FC           MOV     R4,A
+   \   000009   8C..         MOV     ?V0,R4
+   \   00000B   75..00       MOV     ?V1,#0x0
+   \   00000E   7407         MOV     A,#0x7
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?S_SHL
+   \   000015   F5..         MOV     ?V2,A
+   \   000017   F5..         MOV     ?V3,A
+   \   000019   EC           MOV     A,R4
+   \   00001A   75F072       MOV     B,#0x72
+   \   00001D   A4           MUL     AB
+   \   00001E   FC           MOV     R4,A
+   \   00001F   A8F0         MOV     R0,B
+   \   000021   E4           CLR     A
+   \   000022   28           ADD     A,R0
+   \   000023   8C..         MOV     ?V4,R4
+   \   000025   F5..         MOV     ?V5,A
+   \   000027   33           RLC     A
+   \   000028   95E0         SUBB    A,0xE0 /* A   */
+   \   00002A   F5..         MOV     ?V6,A
+   \   00002C   F5..         MOV     ?V7,A
+   \   00002E   78..         MOV     R0,#?V0
+   \   000030   79..         MOV     R1,#?V4
+   \   000032   12....       LCALL   ?L_ADD
+   \   000035   E5C6         MOV     A,0xc6
+   \   000037   5407         ANL     A,#0x7
+   \   000039   78..         MOV     R0,#?V0
+   \   00003B   12....       LCALL   ?UL_SHR
+     58            while(largeWait--);
+   \                     ??halWait_1:
+   \   00003E   85....       MOV     ?V4,?V0
+   \   000041   85....       MOV     ?V5,?V1
+   \   000044   85....       MOV     ?V6,?V2
+   \   000047   85....       MOV     ?V7,?V3
+   \   00004A   90....       MOV     DPTR,#__Constant_ffffffff
+   \   00004D   78..         MOV     R0,#?V0
+   \   00004F   12....       LCALL   ?L_ADD_X
+   \   000052   E5..         MOV     A,?V4
+   \   000054   45..         ORL     A,?V5
+   \   000056   45..         ORL     A,?V6
+   \   000058   45..         ORL     A,?V7
+   \   00005A   70E2         JNZ     ??halWait_1
+     59          
+     60            return;
+   \                     ??halWait_0:
+   \   00005C   7F08         MOV     R7,#0x8
+   \   00005E   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000061                REQUIRE CLKCONCMD
+     61          }
+     62          
+     63          // 延时函数
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     64          void delay_ms(u16 t)
+   \                     delay_ms:
+     65          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8005         SJMP    ??delay_ms_0
+     66            while(t--)
+     67            {
+     68              halWait(1);
+   \                     ??delay_ms_1:
+   \   00000B                ; Setup parameters for call to function halWait
+   \   00000B   7901         MOV     R1,#0x1
+   \   00000D   12....       LCALL   halWait
+     69            }
+   \                     ??delay_ms_0:
+   \   000010   EE           MOV     A,R6
+   \   000011   F8           MOV     R0,A
+   \   000012   EF           MOV     A,R7
+   \   000013   F9           MOV     R1,A
+   \   000014   E8           MOV     A,R0
+   \   000015   24FF         ADD     A,#-0x1
+   \   000017   1E           DEC     R6
+   \   000018   E9           MOV     A,R1
+   \   000019   34FF         ADDC    A,#-0x1
+   \   00001B   FF           MOV     R7,A
+   \   00001C   E8           MOV     A,R0
+   \   00001D   49           ORL     A,R1
+   \   00001E   70EB         JNZ     ??delay_ms_1
+     70          }
+   \   000020   7F01         MOV     R7,#0x1
+   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+     71          
+     72          // 写系统参数
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     73          void write_sys_parameter()
+   \                     write_sys_parameter:
+     74          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     75            if(sizeof(sys_parameter)<=PARA_PARTITION_SIZE ){
+     76              HalFlashErase(PARA_PARTITION_PAGE);
+   \   000005                ; Setup parameters for call to function HalFlashErase
+   \   000005   7909         MOV     R1,#0x9
+   \   000007   12....       LCALL   HalFlashErase
+     77              SYS_PARAMETER_WRITE;
+   \   00000A                ; Setup parameters for call to function HalFlashWrite
+   \   00000A   75..01       MOV     ?V0,#0x1
+   \   00000D   75..00       MOV     ?V1,#0x0
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000015   7C..         MOV     R4,#sys_parameter & 0xff
+   \   000017   7D..         MOV     R5,#(sys_parameter >> 8) & 0xff
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7B12         MOV     R3,#0x12
+   \   00001D   12....       LCALL   HalFlashWrite
+   \   000020   7402         MOV     A,#0x2
+   \   000022   12....       LCALL   ?DEALLOC_XSTACK8
+     78              debug_info(INFO"System Parameter Write Success!\r\n");
+   \   000025                ; Setup parameters for call to function printf
+   \   000025   7A..         MOV     R2,#`?<Constant "INFORMATION:System Pa...">` & 0xff
+   \   000027   7B..         MOV     R3,#(`?<Constant "INFORMATION:System Pa...">` >> 8) & 0xff
+   \   000029   12....       LCALL   printf
+     79            }else{
+     80              debug_err(ERR"System Parameter Write Failed!");
+     81            }
+     82          }
+   \   00002C   7F02         MOV     R7,#0x2
+   \   00002E   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "INFORMATION:Syste`:
+   \   000000   494E464F     DB "INFORMATION:System Parameter Write Success!\015\012"
+   \            524D4154
+   \            494F4E3A
+   \            53797374
+   \            656D2050
+   \            6172616D
+   \            65746572
+   \            20577269
+   \            74652053
+   \            75636365
+   \            7373210D
+   \            0A00    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_bb9>`:
+   \   000000   B90B0000     DD 3001
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_1>`:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_ffffffff>`:
+   \   000000   FFFFFFFF     DD 4294967295
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "INFORMATION:System Pa...">`:
+   \   000000                DS 46
+   \   00002E                REQUIRE `?<Initializer for <Constant "INFORMATION:Syste`
+   \   00002E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_bb9:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_bb9>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_1:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_1>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_ffffffff:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_ffffffff>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      8   delay_ms
+        8   -> halWait
+     23   halWait
+      0   keyInit
+     11   led_app
+      0   led_init
+      0   vddWait
+     11   write_sys_parameter
+        9   -> HalFlashErase
+       11   -> HalFlashWrite
+        9   -> printf
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      46  ?<Constant "INFORMATION:System Pa...">
+      46  ?<Initializer for <Constant "INFORMATION:Syste
+       4  ?<Initializer for __Constant_1>
+       4  ?<Initializer for __Constant_bb9>
+       4  ?<Initializer for __Constant_ffffffff>
+       1  ADCCON1
+       1  ADCCON3
+       1  ADCH
+       1  CLKCONCMD
+       1  P1DIR
+       1  P1SEL
+       1  _A_P1
+       4  __Constant_1
+       4  __Constant_bb9
+       4  __Constant_ffffffff
+      37  delay_ms
+      97  halWait
+       7  keyInit
+      67  led_app
+      11  led_init
+       4  times
+      22  vddWait
+      49  write_sys_parameter
+
+ 
+ 290 bytes in segment NEAR_CODE
+   7 bytes in segment SFR_AN
+  58 bytes in segment XDATA_I
+  58 bytes in segment XDATA_ID
+   4 bytes in segment XDATA_Z
+ 
+ 336 bytes of CODE  memory (+ 12 bytes shared)
+   0 bytes of DATA  memory (+  7 bytes shared)
+  50 bytes of XDATA memory (+ 12 bytes shared)
+
+Errors: none
+Warnings: none

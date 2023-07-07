@@ -10,11 +10,23 @@
     <debug>1</debug>
     <settings>
       <name>General</name>
-      <archiveVersion>2</archiveVersion>
+      <archiveVersion>1</archiveVersion>
       <data>
-        <version>7</version>
+        <version>4</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
+        <option>
+          <name>DerivativeDescriptionFile</name>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
+        </option>
+        <option>
+          <name>Previous Derivative File</name>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
+        </option>
+        <option>
+          <name>Showed Derivative</name>
+          <state>CC2530F256</state>
+        </option>
         <option>
           <name>CPU Core</name>
           <version>1</version>
@@ -129,6 +141,16 @@
           <state>0</state>
         </option>
         <option>
+          <name>GRuntimeLibSelect</name>
+          <version>0</version>
+          <state>4</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave</name>
+          <version>0</version>
+          <state>4</state>
+        </option>
+        <option>
           <name>RTDescription</name>
           <state>Use the legacy C runtime library.</state>
         </option>
@@ -142,8 +164,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>1</version>
-          <state>3</state>
+          <version>0</version>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
@@ -151,8 +173,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>1</version>
-          <state>4</state>
+          <version>0</version>
+          <state>3</state>
         </option>
         <option>
           <name>Output description</name>
@@ -228,59 +250,13 @@
           <version>0</version>
           <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
         </option>
-        <option>
-          <name>GRuntimeLibSelect2</name>
-          <version>0</version>
-          <state>3</state>
-        </option>
-        <option>
-          <name>GRuntimeLibSelectSlave2</name>
-          <version>0</version>
-          <state>3</state>
-        </option>
-        <option>
-          <name>Extended stack address</name>
-          <state>0x9B</state>
-        </option>
-        <option>
-          <name>Extended stack mask</name>
-          <state>0x03</state>
-        </option>
-        <option>
-          <name>Extended stack is offset</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OGChipSelectMenu</name>
-          <state>CC2530F256	CC2530F256</state>
-        </option>
-        <option>
-          <name>OGChipSelectMenuSlave</name>
-          <state>CC2530F256	CC2530F256</state>
-        </option>
-        <option>
-          <name>DPC Address</name>
-          <state></state>
-        </option>
-        <option>
-          <name>AutoModificationType</name>
-          <state></state>
-        </option>
-        <option>
-          <name>UseHWMulDivUnit</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>UseMDU</name>
-          <state></state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>6</archiveVersion>
+      <archiveVersion>3</archiveVersion>
       <data>
-        <version>11</version>
+        <version>7</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -447,6 +423,10 @@
           <state>1</state>
         </option>
         <option>
+          <name>CCLangSelect</name>
+          <state>0</state>
+        </option>
+        <option>
           <name>NoUBROFMessages</name>
           <state>0</state>
         </option>
@@ -476,6 +456,11 @@
         <option>
           <name>CCStdIncCheck</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>CCStdIncludePath</name>
+          <state>$TOOLKIT_DIR$\INC\</state>
+          <state>$TOOLKIT_DIR$\INC\CLIB\</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -512,49 +497,13 @@
           <version>0</version>
           <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
         </option>
-        <option>
-          <name>IccLang</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccCDialect</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccAllowVLA</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccCppDialect</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccCppInlineSemantics</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccStaticDestr</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccFloatSemantics</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>NoSizeConstraints</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>UseHWMulDivUnit</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>6</version>
+        <version>4</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -627,6 +576,10 @@
           <state>0</state>
         </option>
         <option>
+          <name>NoStruct</name>
+          <state>1</state>
+        </option>
+        <option>
           <name>PageLengthCheck</name>
           <state>0</state>
         </option>
@@ -653,6 +606,11 @@
         <option>
           <name>AXRefDual</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>AIncludes</name>
+          <state>$TOOLKIT_DIR$\inc\</state>
+          <state>$TOOLKIT_DIR$\src\lib</state>
         </option>
         <option>
           <name>ADefines</name>
@@ -694,14 +652,6 @@
           <name>AMaxErrNum</name>
           <state>100</state>
         </option>
-        <option>
-          <name>Ignore standard include paths</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>Include directories</name>
-          <state>$TOOLKIT_DIR$\SRC\LIB</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -727,9 +677,9 @@
     </settings>
     <settings>
       <name>XLINK</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>3</archiveVersion>
       <data>
-        <version>19</version>
+        <version>17</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1044,15 +994,6 @@
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CrcUnitSize</name>
-          <version>0</version>
-          <state>0</state>
-        </option>
-        <option>
-          <name>XLink DPC Address</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -1081,11 +1022,6 @@
       </data>
     </settings>
     <settings>
-      <name>HWMUL</name>
-      <archiveVersion>0</archiveVersion>
-      <data/>
-    </settings>
-    <settings>
       <name>BILINK</name>
       <archiveVersion>0</archiveVersion>
       <data/>
@@ -1099,11 +1035,23 @@
     <debug>1</debug>
     <settings>
       <name>General</name>
-      <archiveVersion>2</archiveVersion>
+      <archiveVersion>1</archiveVersion>
       <data>
-        <version>7</version>
+        <version>4</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
+        <option>
+          <name>DerivativeDescriptionFile</name>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
+        </option>
+        <option>
+          <name>Previous Derivative File</name>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
+        </option>
+        <option>
+          <name>Showed Derivative</name>
+          <state>CC2530F256</state>
+        </option>
         <option>
           <name>CPU Core</name>
           <version>1</version>
@@ -1218,6 +1166,16 @@
           <state>0</state>
         </option>
         <option>
+          <name>GRuntimeLibSelect</name>
+          <version>0</version>
+          <state>4</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave</name>
+          <version>0</version>
+          <state>4</state>
+        </option>
+        <option>
           <name>RTDescription</name>
           <state>Use the legacy C runtime library.</state>
         </option>
@@ -1231,8 +1189,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>1</version>
-          <state>3</state>
+          <version>0</version>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
@@ -1240,8 +1198,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>1</version>
-          <state>4</state>
+          <version>0</version>
+          <state>3</state>
         </option>
         <option>
           <name>Output description</name>
@@ -1317,59 +1275,13 @@
           <version>0</version>
           <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
         </option>
-        <option>
-          <name>GRuntimeLibSelect2</name>
-          <version>0</version>
-          <state>3</state>
-        </option>
-        <option>
-          <name>GRuntimeLibSelectSlave2</name>
-          <version>0</version>
-          <state>3</state>
-        </option>
-        <option>
-          <name>Extended stack address</name>
-          <state>0x9B</state>
-        </option>
-        <option>
-          <name>Extended stack mask</name>
-          <state>0x03</state>
-        </option>
-        <option>
-          <name>Extended stack is offset</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OGChipSelectMenu</name>
-          <state>CC2530F256	CC2530F256</state>
-        </option>
-        <option>
-          <name>OGChipSelectMenuSlave</name>
-          <state>CC2530F256	CC2530F256</state>
-        </option>
-        <option>
-          <name>DPC Address</name>
-          <state></state>
-        </option>
-        <option>
-          <name>AutoModificationType</name>
-          <state></state>
-        </option>
-        <option>
-          <name>UseHWMulDivUnit</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>UseMDU</name>
-          <state></state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>6</archiveVersion>
+      <archiveVersion>3</archiveVersion>
       <data>
-        <version>11</version>
+        <version>7</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1537,6 +1449,10 @@
           <state>1</state>
         </option>
         <option>
+          <name>CCLangSelect</name>
+          <state>0</state>
+        </option>
+        <option>
           <name>NoUBROFMessages</name>
           <state>0</state>
         </option>
@@ -1566,6 +1482,11 @@
         <option>
           <name>CCStdIncCheck</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>CCStdIncludePath</name>
+          <state>$TOOLKIT_DIR$\INC\</state>
+          <state>$TOOLKIT_DIR$\INC\CLIB\</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -1602,49 +1523,13 @@
           <version>0</version>
           <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
         </option>
-        <option>
-          <name>IccLang</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccCDialect</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccAllowVLA</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccCppDialect</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccCppInlineSemantics</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IccStaticDestr</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IccFloatSemantics</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>NoSizeConstraints</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>UseHWMulDivUnit</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>6</version>
+        <version>4</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1717,6 +1602,10 @@
           <state>0</state>
         </option>
         <option>
+          <name>NoStruct</name>
+          <state>1</state>
+        </option>
+        <option>
           <name>PageLengthCheck</name>
           <state>0</state>
         </option>
@@ -1743,6 +1632,11 @@
         <option>
           <name>AXRefDual</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>AIncludes</name>
+          <state>$TOOLKIT_DIR$\inc\</state>
+          <state>$TOOLKIT_DIR$\src\lib</state>
         </option>
         <option>
           <name>ADefines</name>
@@ -1784,14 +1678,6 @@
           <name>AMaxErrNum</name>
           <state>100</state>
         </option>
-        <option>
-          <name>Ignore standard include paths</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>Include directories</name>
-          <state>$TOOLKIT_DIR$\SRC\LIB</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -1817,9 +1703,9 @@
     </settings>
     <settings>
       <name>XLINK</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>3</archiveVersion>
       <data>
-        <version>19</version>
+        <version>17</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -2134,15 +2020,6 @@
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CrcUnitSize</name>
-          <version>0</version>
-          <state>0</state>
-        </option>
-        <option>
-          <name>XLink DPC Address</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -2171,11 +2048,6 @@
       </data>
     </settings>
     <settings>
-      <name>HWMUL</name>
-      <archiveVersion>0</archiveVersion>
-      <data/>
-    </settings>
-    <settings>
       <name>BILINK</name>
       <archiveVersion>0</archiveVersion>
       <data/>
@@ -2184,7 +2056,7 @@
   <group>
     <name>App</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\Components\osal\include\comdef.h</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\osal\include\comdef.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\sb_exec.c</name>
@@ -2204,13 +2076,13 @@
     <group>
       <name>Include</name>
       <file>
-        <name>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_defs.h</name>
+        <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\hal\include\hal_defs.h</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_flash.h</name>
+        <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\hal\include\hal_flash.h</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\..\..\..\..\Components\hal\include\hal_uart.h</name>
+        <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\hal\include\hal_uart.h</name>
       </file>
     </group>
     <group>
@@ -2220,7 +2092,7 @@
         <group>
           <name>Config</name>
           <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\Components\hal\target\CC2530ZNP\hal_board_cfg.h</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\hal\target\CC2530ZNP\hal_board_cfg.h</name>
           </file>
         </group>
         <group>
